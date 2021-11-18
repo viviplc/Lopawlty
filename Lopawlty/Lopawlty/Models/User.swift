@@ -12,6 +12,7 @@ enum Pet : String {
 }
 
 class User {
+    //test push from Romeno
     var fullName : String
     var email : String
     var password : String
