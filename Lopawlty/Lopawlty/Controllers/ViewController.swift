@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        // Do any additional setup after loading the view
         BtnSignUp.layer.cornerRadius = 15
         BtnSignIn.layer.borderWidth = 1
         BtnSignIn.layer.borderColor = UIColor(red: 0, green: 122/255, blue: 255/255, alpha: 1).cgColor
