@@ -18,7 +18,8 @@
 		8B5F10F32739E21C006AB198 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B5F10F12739E21C006AB198 /* LaunchScreen.storyboard */; };
 		8B5F10FE2739E21D006AB198 /* LopawltyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5F10FD2739E21D006AB198 /* LopawltyTests.swift */; };
 		8B5F11092739E21D006AB198 /* LopawltyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5F11082739E21D006AB198 /* LopawltyUITests.swift */; };
-		B9557AFE273DF9F5006A2B81 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9557AFD273DF9F5006A2B81 /* User.swift */; };
+		B91557A82745E16500AA415C /* Lopawlty.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B91557A62745E16500AA415C /* Lopawlty.xcdatamodeld */; };
+		B91557AE2745E22F00AA415C /* Customer+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91557AC2745E22F00AA415C /* Customer+CoreDataClass.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,7 +57,8 @@
 		8B5F11042739E21D006AB198 /* LopawltyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LopawltyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B5F11082739E21D006AB198 /* LopawltyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LopawltyUITests.swift; sourceTree = "<group>"; };
 		8B5F110A2739E21D006AB198 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B9557AFD273DF9F5006A2B81 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		B91557A72745E16500AA415C /* Lopawlty.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Lopawlty.xcdatamodel; sourceTree = "<group>"; };
+		B91557AC2745E22F00AA415C /* Customer+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Customer+CoreDataClass.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 				8B5F10EF2739E21C006AB198 /* Assets.xcassets */,
 				8B5F10F12739E21C006AB198 /* LaunchScreen.storyboard */,
 				8B5F10F42739E21C006AB198 /* Info.plist */,
+				B91557A62745E16500AA415C /* Lopawlty.xcdatamodeld */,
 			);
 			path = Lopawlty;
 			sourceTree = "<group>";
@@ -151,7 +154,7 @@
 		B9557AFC273DF976006A2B81 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				B9557AFD273DF9F5006A2B81 /* User.swift */,
+				B91557AC2745E22F00AA415C /* Customer+CoreDataClass.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -287,12 +290,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B5F10EB2739E21C006AB198 /* ViewController.swift in Sources */,
+				B91557A82745E16500AA415C /* Lopawlty.xcdatamodeld in Sources */,
 				8B5F10E72739E21C006AB198 /* AppDelegate.swift in Sources */,
+				B91557AE2745E22F00AA415C /* Customer+CoreDataClass.swift in Sources */,
 				8B5414C4273DC1B400043F74 /* SignInViewController.swift in Sources */,
 				8B5414B7273DB69B00043F74 /* RegistrationViewController.swift in Sources */,
 				8B5F10E92739E21C006AB198 /* SceneDelegate.swift in Sources */,
 				8B5414BC273DB70900043F74 /* ProvinceSelecViewController.swift in Sources */,
-				B9557AFE273DF9F5006A2B81 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -619,6 +623,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B91557A62745E16500AA415C /* Lopawlty.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B91557A72745E16500AA415C /* Lopawlty.xcdatamodel */,
+			);
+			currentVersion = B91557A72745E16500AA415C /* Lopawlty.xcdatamodel */;
+			path = Lopawlty.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 8B5F10DB2739E21B006AB198 /* Project object */;
 }

@@ -39,7 +39,7 @@ class RegistrationViewController: UIViewController , UITextFieldDelegate {
         }
         
         let petTypeIndex = SelectorPetType.selectedSegmentIndex
-        var petType : Pet
+        /*var petType : Pet
         switch petTypeIndex{
             case 0:
                 petType = Pet.dog
@@ -56,7 +56,7 @@ class RegistrationViewController: UIViewController , UITextFieldDelegate {
         let newUser = User(fullName: fullname, email: email, password: password, petType: petType);
         
         print(newUser.firebaseDictionary)
-        
+        */
                 
     }
     
