@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B1C201D27471F75009B8A6A /* ProductsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1C201C27471F75009B8A6A /* ProductsListViewController.swift */; };
 		8B5414B7273DB69B00043F74 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5414B6273DB69B00043F74 /* RegistrationViewController.swift */; };
 		8B5414BC273DB70900043F74 /* ProvinceSelecViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5414BB273DB70900043F74 /* ProvinceSelecViewController.swift */; };
 		8B5414C4273DC1B400043F74 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5414C3273DC1B400043F74 /* SignInViewController.swift */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8B1C201C27471F75009B8A6A /* ProductsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsListViewController.swift; sourceTree = "<group>"; };
 		8B5414B6273DB69B00043F74 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		8B5414BB273DB70900043F74 /* ProvinceSelecViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProvinceSelecViewController.swift; sourceTree = "<group>"; };
 		8B5414C3273DC1B400043F74 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 				8B5F10EA2739E21C006AB198 /* ViewController.swift */,
 				8B5414BB273DB70900043F74 /* ProvinceSelecViewController.swift */,
 				8B5414C3273DC1B400043F74 /* SignInViewController.swift */,
+				8B1C201C27471F75009B8A6A /* ProductsListViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -297,6 +300,7 @@
 				8B5414B7273DB69B00043F74 /* RegistrationViewController.swift in Sources */,
 				8B5F10E92739E21C006AB198 /* SceneDelegate.swift in Sources */,
 				8B5414BC273DB70900043F74 /* ProvinceSelecViewController.swift in Sources */,
+				8B1C201D27471F75009B8A6A /* ProductsListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
