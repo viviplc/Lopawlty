@@ -19,6 +19,8 @@ class RegistrationViewController: UIViewController , UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         BtnCreateAccount.layer.cornerRadius = 15
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(DismissKeyboard))
+        self.view.addGestureRecognizer(tap)
     }
     
     @IBAction func CreateAccount_Click(_ sender: Any) {
@@ -69,30 +71,45 @@ class RegistrationViewController: UIViewController , UITextFieldDelegate {
         self.view.endEditing(true)
     }
     
+    
     func register(name: String, email : String, password: String, petType: String, province: String, address: String) {
         guard let appDelegate =
             UIApplication.shared.delegate as? AppDelegate else {
             return
           }
-          
-          // 1
           let managedContext = appDelegate.persistentContainer.viewContext
         
-        let customer = Customer(context: managedContext)
-        customer.name = name;
-        customer.email = email;
-        customer.password = password;
-        customer.petType = petType;
-        customer.province = province;
-        customer.address = address;
+      
         
         do{
-                       try managedContext.save()
-            print("SUCCESS!");
+            let request = Customer.fetchRequest() as NSFetchRequest<Customer>
+            let pred = NSPredicate(format: "email = %@",email)
+            request.predicate = pred
+            let user = try managedContext.fetch(request)
+                if (user.count == 0){
+                    let customer = Customer(context: managedContext)
+                    customer.name = name;
+                    customer.email = email;
+                    customer.password = password;
+                    customer.petType = petType;
+                    customer.province = province;
+                    customer.address = address;
+                    try managedContext.save()
+                     print("SUCCESS!");
+                } else {
+                    print("Error. Email already exists.");
+                }
+                       
                    } catch{
                        print("Error during saving data : \(error)")
                    }
         
+    }
+    
+    
+    @objc func DismissKeyboard(){
+    //Causes the view to resign from the status of first responder.
+    view.endEditing(true)
     }
     
 
