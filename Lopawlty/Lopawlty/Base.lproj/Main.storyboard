@@ -195,7 +195,6 @@
                                                 </state>
                                                 <connections>
                                                     <action selector="CreateAccount_Click:" destination="QFc-hl-HNx" eventType="touchUpInside" id="gg6-dY-8UM"/>
-                                                    <segue destination="12W-nY-Hwv" kind="show" id="4bz-lC-0fW"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Register and let your pet in good hands!" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ofd-0E-EfW">
@@ -247,11 +246,12 @@
                         <outlet property="TxtEmail" destination="77N-Jf-X4W" id="z98-p4-qZj"/>
                         <outlet property="TxtFullName" destination="VUN-oq-bOZ" id="8Fr-fc-Gke"/>
                         <outlet property="TxtPassword" destination="jdu-gL-rX6" id="NK4-TU-z9R"/>
+                        <segue destination="12W-nY-Hwv" kind="show" identifier="showProvinceSelector" id="Zjr-MK-s72"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C4y-pr-0S6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1873.913043478261" y="103.79464285714285"/>
+            <point key="canvasLocation" x="2071" y="104"/>
         </scene>
         <!--Sign In View Controller-->
         <scene sceneID="wsq-NY-tdY">
@@ -350,16 +350,17 @@
                         <outlet property="TxtPassword" destination="A4l-Cc-YAP" id="I6J-g6-Mb2"/>
                         <outlet property="txtEmail" destination="mdK-Zb-FlV" id="Uj0-Km-vgt"/>
                         <outlet property="txtPassword" destination="A4l-Cc-YAP" id="Ly6-Sb-7Pv"/>
+                        <segue destination="hkg-J2-g9x" kind="show" identifier="SignInToProducts" id="7dK-Ab-pko"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l1D-AO-E2r" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1873.913043478261" y="782.8125"/>
+            <point key="canvasLocation" x="1526" y="941"/>
         </scene>
         <!--Province Selec View Controller-->
         <scene sceneID="2aL-cA-dOs">
             <objects>
-                <viewController id="12W-nY-Hwv" customClass="ProvinceSelecViewController" customModule="Lopawlty" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="provinceSelection" id="12W-nY-Hwv" customClass="ProvinceSelecViewController" customModule="Lopawlty" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1KO-fg-FwF">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -392,6 +393,9 @@
                                 <state key="normal" title="Select">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="selectButtonClicked:" destination="12W-nY-Hwv" eventType="touchUpInside" id="g07-Ja-AQc"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="eMZ-S3-HJb"/>
@@ -412,6 +416,7 @@
                     <connections>
                         <outlet property="BtnSelectProv" destination="6ev-Qd-VfT" id="TaM-zi-2fu"/>
                         <outlet property="picker" destination="bxI-KC-1qP" id="aE9-1C-3zS"/>
+                        <segue destination="hkg-J2-g9x" kind="show" identifier="ProvinceSelectToProducts" id="xIx-9e-cHs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gwh-HU-M84" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -423,7 +428,7 @@
             <objects>
                 <viewController id="qqH-ND-hIH" customClass="ProductsListViewController" customModule="Lopawlty" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MwW-GF-Ymk">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="J15-AP-CGY">
@@ -481,8 +486,9 @@
         <!--Navigation Controller-->
         <scene sceneID="nFd-1m-kLJ">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hkg-J2-g9x" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="hkg-J2-g9x" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="BhW-Mp-jvm"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="ReJ-79-nUK">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -504,6 +510,9 @@
             <point key="canvasLocation" x="3834.7826086956525" y="460.71428571428567"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="xIx-9e-cHs"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="dog (3)" width="512" height="512"/>
         <image name="logo2" width="392" height="398"/>

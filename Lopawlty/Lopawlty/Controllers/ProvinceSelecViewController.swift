@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class ProvinceSelecViewController: UIViewController , UIPickerViewDelegate, UIPickerViewDataSource {
 
@@ -15,7 +16,11 @@ class ProvinceSelecViewController: UIViewController , UIPickerViewDelegate, UIPi
     var provinces: [String] = []
  
     var selectedProvince : String = ""
- 
+    
+    var loggedInCustomer : Customer = Customer()
+    
+    let managedContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -26,6 +31,10 @@ class ProvinceSelecViewController: UIViewController , UIPickerViewDelegate, UIPi
         BtnSelectProv.layer.cornerRadius = 15
         
         provinces = ["Alberta","British Columbia", "Manitoba", "New Brunswick", "Newfoundland and Labrador","Nova Scotia","Ontario","Prince Edward Island", "Quebec", "Saskatchewan"]
+        
+        setLoggedInCustomer()
+        
+        print("logged in customer is \(loggedInCustomer.name)")
     }
  
     override func didReceiveMemoryWarning() {
@@ -51,9 +60,34 @@ class ProvinceSelecViewController: UIViewController , UIPickerViewDelegate, UIPi
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         selectedProvince = provinces[row]
     }
+    
+    func setLoggedInCustomer() {
+        do {
+        let request = Customer.fetchRequest() as NSFetchRequest<Customer>
+        guard let email = UserDefaults.standard.string(forKey: "LoggedInEmail") else {
+            return
+        }
+        let pred = NSPredicate(format: "email = %@",email)
+        request.predicate = pred
+        let user = try managedContext.fetch(request)
+        loggedInCustomer = user[0]
+        } catch {
+            print("Error while signing in")
+        }
+        
+    }
  
 
-
+    @IBAction func selectButtonClicked(_ sender: Any) {
+        loggedInCustomer.province = selectedProvince
+        do{
+            try self.managedContext.save()
+            performSegue(withIdentifier: "ProvinceSelectToProducts", sender: nil)
+        } catch {
+            print("Error in updating data")
+        }
+    }
+    
    
 
 }

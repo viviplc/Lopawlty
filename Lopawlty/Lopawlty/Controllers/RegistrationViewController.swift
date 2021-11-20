@@ -95,7 +95,10 @@ class RegistrationViewController: UIViewController , UITextFieldDelegate {
                     customer.province = province;
                     customer.address = address;
                     try managedContext.save()
-                     print("SUCCESS!");
+                    UserDefaults.standard.set(email, forKey: "LoggedInEmail")
+                    //ProvinceSelection
+                    performSegue(withIdentifier: "showProvinceSelector", sender: nil)
+                    print("SUCCESS!");
                 } else {
                     print("Error. Email already exists.");
                 }

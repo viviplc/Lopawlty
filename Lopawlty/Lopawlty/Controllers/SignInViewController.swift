@@ -55,6 +55,8 @@ class SignInViewController: UIViewController {
             if (user.count == 1){
                 signedInCustomer = user[0]
                 print("\(signedInCustomer.name) signed in")
+                UserDefaults.standard.set(email, forKey: "LoggedInEmail")
+                performSegue(withIdentifier: "SignInToProducts", sender: nil)
             } else {
                 print("Problem signing in. Check email and password.");
             }
