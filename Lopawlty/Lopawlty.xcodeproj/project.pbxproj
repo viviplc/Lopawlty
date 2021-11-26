@@ -21,7 +21,10 @@
 		8B5F10FE2739E21D006AB198 /* LopawltyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5F10FD2739E21D006AB198 /* LopawltyTests.swift */; };
 		8B5F11092739E21D006AB198 /* LopawltyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5F11082739E21D006AB198 /* LopawltyUITests.swift */; };
 		B91557A82745E16500AA415C /* Lopawlty.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B91557A62745E16500AA415C /* Lopawlty.xcdatamodeld */; };
-		B91557AE2745E22F00AA415C /* Customer+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91557AC2745E22F00AA415C /* Customer+CoreDataClass.swift */; };
+		B9995F37275087C200C9C587 /* Customer+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9995F31275087C200C9C587 /* Customer+CoreDataClass.swift */; };
+		B9995F39275087C200C9C587 /* Cart+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9995F33275087C200C9C587 /* Cart+CoreDataClass.swift */; };
+		B9995F3B275087C200C9C587 /* Product+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9995F35275087C200C9C587 /* Product+CoreDataClass.swift */; };
+		B9995F512750899800C9C587 /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9995F502750899800C9C587 /* SampleData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,7 +65,10 @@
 		8B5F11082739E21D006AB198 /* LopawltyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LopawltyUITests.swift; sourceTree = "<group>"; };
 		8B5F110A2739E21D006AB198 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B91557A72745E16500AA415C /* Lopawlty.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Lopawlty.xcdatamodel; sourceTree = "<group>"; };
-		B91557AC2745E22F00AA415C /* Customer+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Customer+CoreDataClass.swift"; sourceTree = "<group>"; };
+		B9995F31275087C200C9C587 /* Customer+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Customer+CoreDataClass.swift"; path = "../../Customer+CoreDataClass.swift"; sourceTree = "<group>"; };
+		B9995F33275087C200C9C587 /* Cart+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cart+CoreDataClass.swift"; sourceTree = "<group>"; };
+		B9995F35275087C200C9C587 /* Product+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Product+CoreDataClass.swift"; sourceTree = "<group>"; };
+		B9995F502750899800C9C587 /* SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +132,7 @@
 		8B5F10E52739E21B006AB198 /* Lopawlty */ = {
 			isa = PBXGroup;
 			children = (
+				B9995F4F2750897400C9C587 /* Helpers */,
 				B9557AFC273DF976006A2B81 /* Models */,
 				8B5414AF273DB32200043F74 /* Controllers */,
 				8B5F10E62739E21C006AB198 /* AppDelegate.swift */,
@@ -160,9 +167,19 @@
 		B9557AFC273DF976006A2B81 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				B91557AC2745E22F00AA415C /* Customer+CoreDataClass.swift */,
+				B9995F31275087C200C9C587 /* Customer+CoreDataClass.swift */,
+				B9995F33275087C200C9C587 /* Cart+CoreDataClass.swift */,
+				B9995F35275087C200C9C587 /* Product+CoreDataClass.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		B9995F4F2750897400C9C587 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				B9995F502750899800C9C587 /* SampleData.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -298,9 +315,12 @@
 				8B5F10EB2739E21C006AB198 /* ViewController.swift in Sources */,
 				B91557A82745E16500AA415C /* Lopawlty.xcdatamodeld in Sources */,
 				8B5F10E72739E21C006AB198 /* AppDelegate.swift in Sources */,
-				B91557AE2745E22F00AA415C /* Customer+CoreDataClass.swift in Sources */,
+				B9995F37275087C200C9C587 /* Customer+CoreDataClass.swift in Sources */,
 				8B5414C4273DC1B400043F74 /* SignInViewController.swift in Sources */,
 				8B5414B7273DB69B00043F74 /* RegistrationViewController.swift in Sources */,
+				B9995F3B275087C200C9C587 /* Product+CoreDataClass.swift in Sources */,
+				B9995F512750899800C9C587 /* SampleData.swift in Sources */,
+				B9995F39275087C200C9C587 /* Cart+CoreDataClass.swift in Sources */,
 				8B5F10E92739E21C006AB198 /* SceneDelegate.swift in Sources */,
 				8B3A18A82749FA5400B6849E /* ProductCellTableViewCell.swift in Sources */,
 				8B5414BC273DB70900043F74 /* ProvinceSelecViewController.swift in Sources */,

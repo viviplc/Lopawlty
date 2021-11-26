@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="19H1419" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Cart" representedClassName="Cart" syncable="YES" codeGenerationType="category">
+        <attribute name="customerEmail" optional="YES" attributeType="String"/>
+        <relationship name="products" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Product"/>
+    </entity>
     <entity name="Customer" representedClassName="Customer" syncable="YES" codeGenerationType="category">
         <attribute name="address" optional="YES" attributeType="String"/>
         <attribute name="email" optional="YES" attributeType="String"/>
@@ -8,7 +12,17 @@
         <attribute name="petType" optional="YES" attributeType="String"/>
         <attribute name="province" optional="YES" attributeType="String"/>
     </entity>
+    <entity name="Product" representedClassName="Product" syncable="YES" codeGenerationType="category">
+        <attribute name="brand" optional="YES" attributeType="String"/>
+        <attribute name="category" optional="YES" attributeType="String"/>
+        <attribute name="imageFileName" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="price" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="productCode" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+    </entity>
     <elements>
         <element name="Customer" positionX="-54" positionY="-9" width="128" height="133"/>
+        <element name="Product" positionX="-54" positionY="36" width="128" height="133"/>
+        <element name="Cart" positionX="-45" positionY="63" width="128" height="73"/>
     </elements>
 </model>
