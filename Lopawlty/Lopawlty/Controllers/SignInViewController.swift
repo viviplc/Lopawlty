@@ -41,7 +41,7 @@ class SignInViewController: UIViewController {
     }
     
     
-    func signIn(email : String, password : String){
+    func signIn(email : String, password : String){/*
         guard let appDelegate =
             UIApplication.shared.delegate as? AppDelegate else {
             return
@@ -62,7 +62,7 @@ class SignInViewController: UIViewController {
             }
         } catch {
             print("Error while signing in")
-        }
+        }*/
         }
         
     @objc func DismissKeyboard(){

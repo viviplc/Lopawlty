@@ -7,6 +7,7 @@
 
 import UIKit
 import CoreData
+import Firebase
 
 class RegistrationViewController: UIViewController , UITextFieldDelegate {
 
@@ -21,6 +22,8 @@ class RegistrationViewController: UIViewController , UITextFieldDelegate {
         BtnCreateAccount.layer.cornerRadius = 15
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(DismissKeyboard))
         self.view.addGestureRecognizer(tap)
+        
+       
     }
     
     @IBAction func CreateAccount_Click(_ sender: Any) {
@@ -42,7 +45,7 @@ class RegistrationViewController: UIViewController , UITextFieldDelegate {
         }
         
         let petTypeIndex = SelectorPetType.selectedSegmentIndex
-        /*var petType : Pet
+        var petType : Pet
         switch petTypeIndex{
             case 0:
                 petType = Pet.dog
@@ -56,13 +59,13 @@ class RegistrationViewController: UIViewController , UITextFieldDelegate {
 
         }
         
-        let newUser = User(fullName: fullname, email: email, password: password, petType: petType);
+        let newUser = Customer(fullName: fullname, email: email, password: password, petType: petType);
          
-         register()
+        // register()
         
-        print(newUser.firebaseDictionary)
-        */
-        register(name: fullname, email: email, password: password, petType: String(petTypeIndex), province: "Toronto", address: "Waterloo 1234");
+       // print(newUser.firebaseDictionary)
+        register(newCustomer: newUser)
+        //register(name: fullname, email: email, password: password, petType: String(petTypeIndex), province: "Toronto", address: "Waterloo 1234");
                 
     }
     
@@ -72,29 +75,43 @@ class RegistrationViewController: UIViewController , UITextFieldDelegate {
     }
     
     
-    func register(name: String, email : String, password: String, petType: String, province: String, address: String) {
-        guard let appDelegate =
-            UIApplication.shared.delegate as? AppDelegate else {
-            return
-          }
-          let managedContext = appDelegate.persistentContainer.viewContext
-        
-      
-        
+    func register(newCustomer: Customer) {
+       
         do{
+            let db = Firestore.firestore()
+            db.collection("Customers").whereField("email", isEqualTo: newCustomer.email).limit(to: 1).getDocuments() { (querySnapshot, err) in
+                if let err = err {
+                    print("Error: \(err)")
+                } else {
+                    if let account = querySnapshot?.documents, !account.isEmpty {
+                        print("email already exists!!")
+                    } else {
+                        // email not found in firebase
+                        let ref = db.collection("Customers").document()
+                        let newId = ref.documentID
+                        
+                        let firebaseNewCustomerDict = newCustomer.firebaseDictionary;
+                        db.collection("Customers").document(newId).setData( firebaseNewCustomerDict){ err in
+                            if let err = err {
+                                print("error adding customer: \(err)")
+                            } else {
+                                print("saved new customer with id \(newId)")
+                                UserDefaults.standard.set(newId, forKey: "LoggedInCustomerId")
+                                //ProvinceSelection
+                                self.performSegue(withIdentifier: "showProvinceSelector", sender: nil)
+                            }
+                        }
+                    }
+                }
+                
+            }            /*
             let request = Customer.fetchRequest() as NSFetchRequest<Customer>
             let pred = NSPredicate(format: "email = %@",email)
             request.predicate = pred
             let user = try managedContext.fetch(request)
                 if (user.count == 0){
                     let customer = Customer(context: managedContext)
-                    customer.name = name;
-                    customer.email = email;
-                    customer.password = password;
-                    customer.petType = petType;
-                    customer.province = province;
-                    customer.address = address;
-                    try managedContext.save()
+                
                     UserDefaults.standard.set(email, forKey: "LoggedInEmail")
                     //ProvinceSelection
                     performSegue(withIdentifier: "showProvinceSelector", sender: nil)
@@ -102,12 +119,13 @@ class RegistrationViewController: UIViewController , UITextFieldDelegate {
                 } else {
                     print("Error. Email already exists.");
                 }
-                       
+                       */
                    } catch{
                        print("Error during saving data : \(error)")
                    }
         
     }
+ 
     
     
     @objc func DismissKeyboard(){

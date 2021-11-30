@@ -7,6 +7,7 @@
 
 import UIKit
 import CoreData
+import Firebase
 
 class ProvinceSelecViewController: UIViewController , UIPickerViewDelegate, UIPickerViewDataSource {
 
@@ -32,9 +33,9 @@ class ProvinceSelecViewController: UIViewController , UIPickerViewDelegate, UIPi
         
         provinces = ["Alberta","British Columbia", "Manitoba", "New Brunswick", "Newfoundland and Labrador","Nova Scotia","Ontario","Prince Edward Island", "Quebec", "Saskatchewan"]
         
-        setLoggedInCustomer()
+        //setLoggedInCustomer()
         
-        print("logged in customer is \(loggedInCustomer.name)")
+        //print("logged in customer is \(loggedInCustomer.name)")
     }
  
     override func didReceiveMemoryWarning() {
@@ -61,31 +62,29 @@ class ProvinceSelecViewController: UIViewController , UIPickerViewDelegate, UIPi
         selectedProvince = provinces[row]
     }
     
-    func setLoggedInCustomer() {
+    func updateProvince(provinceString : String) {
         do {
-        let request = Customer.fetchRequest() as NSFetchRequest<Customer>
-        guard let email = UserDefaults.standard.string(forKey: "LoggedInEmail") else {
+        
+        guard let customerId = UserDefaults.standard.string(forKey: "LoggedInCustomerId") else {
             return
         }
-        let pred = NSPredicate(format: "email = %@",email)
-        request.predicate = pred
-        let user = try managedContext.fetch(request)
-        loggedInCustomer = user[0]
-        } catch {
-            print("Error while signing in")
+            let db = Firestore.firestore()
+            db.collection("Customers").document(customerId).setData( ["province" : provinceString], merge: true){ err in
+                if let err = err {
+                    print("error adding customer: \(err)")
+                } else {
+                    print("updated province of user")
+                    self.performSegue(withIdentifier: "ProvinceSelectToProducts", sender: nil)
+                }
+            }        } catch {
+            print("Error while updating user")
         }
         
     }
  
 
     @IBAction func selectButtonClicked(_ sender: Any) {
-        loggedInCustomer.province = selectedProvince
-        do{
-            try self.managedContext.save()
-            performSegue(withIdentifier: "ProvinceSelectToProducts", sender: nil)
-        } catch {
-            print("Error in updating data")
-        }
+        updateProvince(provinceString: selectedProvince)
     }
     
    
