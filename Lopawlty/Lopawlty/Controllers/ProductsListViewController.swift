@@ -47,7 +47,7 @@ class ProductsListViewController: UIViewController, UISearchBarDelegate, UITable
         let prdNameLbl = self.products[indexPath.row].name
         let prdBrandLbl = self.products[indexPath.row].brand
         let prdPriceLbl = "$\(self.products[indexPath.row].price)"
-        let prdImageLbl = UIImage(named : self.products[indexPath.row].imageFileName!)
+        let prdImageLbl = UIImage(named : self.products[indexPath.row].imageFileName)
         
         cell.productName.text = prdNameLbl
         cell.productBrand.text = prdBrandLbl
