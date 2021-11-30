@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class ProductsListViewController: UIViewController, UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate{
    
@@ -25,8 +26,22 @@ class ProductsListViewController: UIViewController, UISearchBarDelegate, UITable
         productsListtable.delegate = self
         productsListtable.dataSource = self
         
-        SampleData.createSampleData()
-        products = SampleData.getProducts()
+        //SampleData.createSampleData()
+        let db = Firestore.firestore()
+        db.collection("Products")
+            .getDocuments() { (querySnapshot, err) in
+                if let err = err {
+                    print("Error getting documents: \(err)")
+                } else {
+                    for document in querySnapshot!.documents {
+                        print("product: \(document.data())")
+                        self.products.append(Product(firebaseDictionary: document.data()))
+                        
+                    }
+                    self.productsListtable.reloadData()
+                    
+                }
+        }
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {

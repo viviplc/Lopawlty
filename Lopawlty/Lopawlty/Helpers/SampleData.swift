@@ -7,7 +7,8 @@
 
 import Foundation
 import UIKit
-import CoreData
+import Firebase
+
 
 class SampleData {
     static func createSampleData() {
@@ -15,7 +16,22 @@ class SampleData {
         }
     
     static func getProducts() ->[Product] {
+        
         var products : [Product] = []
+        let db = Firestore.firestore()
+        db.collection("Products")
+            .getDocuments() { (querySnapshot, err) in
+                if let err = err {
+                    print("Error getting documents: \(err)")
+                } else {
+                    for document in querySnapshot!.documents {
+                        print("product: \(document.data())")
+                        products.append(Product(firebaseDictionary: document.data()))
+                    }
+                    
+                }
+        }
+        /*
         let productCodes = [1,2,3,4,5,6,7,8,9,10]
         
         let productsNames = ["dog food bag", "product longer name for test", "dog food bag testing testing", "Accessorie for dog", "dog wet food packx12", "food for lazy cats pckx10", "food for cats longer than others", "cats food", "cats gym", "cats toys"]
@@ -29,8 +45,9 @@ class SampleData {
         for (i, productCode) in productCodes.enumerated() {
             products.append(Product(name: productsNames[i], price: productsPrices[i], productCode: productCode, brand: productsBrands[i], category: "", imageFileName: productsImages[i]))
         }
-        
+ */
         return products
+        
     }
         
 }
