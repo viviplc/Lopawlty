@@ -7,7 +7,7 @@
 
 import UIKit
 import CoreData
-
+import Firebase
 
 class SignInViewController: UIViewController {
     
@@ -41,28 +41,21 @@ class SignInViewController: UIViewController {
     }
     
     
-    func signIn(email : String, password : String){/*
-        guard let appDelegate =
-            UIApplication.shared.delegate as? AppDelegate else {
-            return
-          }
-        let managedContext = appDelegate.persistentContainer.viewContext
-        do {
-        let request = Customer.fetchRequest() as NSFetchRequest<Customer>
-        let pred = NSPredicate(format: "email = %@ AND password = %@",email, password)
-        request.predicate = pred
-        let user = try managedContext.fetch(request)
-            if (user.count == 1){
-                signedInCustomer = user[0]
-                print("\(signedInCustomer.name) signed in")
-                UserDefaults.standard.set(email, forKey: "LoggedInEmail")
-                performSegue(withIdentifier: "SignInToProducts", sender: nil)
+    func signIn(email : String, password : String){
+        let db = Firestore.firestore()
+        db.collection("Customers").whereField("email", isEqualTo: email).whereField("password", isEqualTo: password).limit(to: 1).getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error: \(err)")
             } else {
-                print("Problem signing in. Check email and password.");
+                if let account = querySnapshot?.documents, !account.isEmpty {
+                    UserDefaults.standard.set(account[0].documentID, forKey: "LoggedInCustomerId")
+                    print("user logged in -> \(account[0].data())")
+                    self.performSegue(withIdentifier: "SignInToProducts", sender: nil)
+                } else {
+                    print("Wrong email or password.");
+                }
             }
-        } catch {
-            print("Error while signing in")
-        }*/
+        }
         }
         
     @objc func DismissKeyboard(){
