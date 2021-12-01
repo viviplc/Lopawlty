@@ -19,6 +19,8 @@ class ShoppingCartViewController: UIViewController, UITableViewDataSource, UITab
     var productsInCart : [Product] = []
     var allProducts : [Product] = []
     
+    var checkTotalItems : Int = 0
+    var checkSubTotal : Double = 0.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +39,16 @@ class ShoppingCartViewController: UIViewController, UITableViewDataSource, UITab
         
         for product in self.productsInCart {
             total += product.price * Double(product.currentSelectedAmount)
+        }
+        
+        return total
+    }
+    
+    func calculateTotalItems() -> Int {
+        var total = 0
+        
+        for product in self.productsInCart {
+            total += product.currentSelectedAmount
         }
         
         return total
@@ -202,5 +214,20 @@ class ShoppingCartViewController: UIViewController, UITableViewDataSource, UITab
         self.ShoppingCartTable.reloadData()
     }
     
-
+    
+    @IBAction func BtnCheckOutClicked(_ sender: Any) {
+        self.checkTotalItems = calculateTotalItems()
+        self.checkSubTotal = calculateTotalOrder()
+                
+        performSegue(withIdentifier: "shoppingCartToResume", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            if segue.destination is CheckOutResumeViewController {
+                let resume = segue.destination as? CheckOutResumeViewController
+                resume?.totalItems = self.checkTotalItems
+                resume?.subTotal = self.checkSubTotal
+            }
+        }
+    
 }

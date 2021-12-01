@@ -472,17 +472,14 @@
                                                     <rect key="frame" x="20" y="11" width="374" height="150"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NsY-nY-dWK">
-
-                                                            <rect key="frame" x="0.0" y="0.0" width="148" height="150"/>
-
+                                                            <rect key="frame" x="0.0" y="0.0" width="148.5" height="150"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="100" id="DPN-R4-HQd"/>
                                                                 <constraint firstAttribute="width" constant="100" id="hIB-e3-lig"/>
                                                             </constraints>
                                                         </imageView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="qul-Jp-R85">
-
-                                                            <rect key="frame" x="158" y="0.0" width="116" height="150"/>
+                                                            <rect key="frame" x="158.5" y="0.0" width="115.5" height="150"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dog Food Bag" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c1H-pa-nJU">
                                                                     <rect key="frame" x="0.0" y="0.0" width="114.5" height="60"/>
@@ -788,7 +785,7 @@
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="        Check Out" image="buyclick"/>
                                 <connections>
-                                    <segue destination="AR3-re-hnu" kind="show" id="2Lm-LJ-snT"/>
+                                    <action selector="BtnCheckOutClicked:" destination="IkN-zY-EjD" eventType="touchUpInside" id="Ikh-Gb-CbU"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -808,6 +805,7 @@
                     <connections>
                         <outlet property="BtnCheckout" destination="xeD-cc-kPL" id="mJ7-5r-N9I"/>
                         <outlet property="ShoppingCartTable" destination="oiL-0B-Sul" id="Ghr-K2-1jv"/>
+                        <segue destination="AR3-re-hnu" kind="show" identifier="shoppingCartToResume" id="ntl-7n-VLZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="End-ct-noz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1206,7 +1204,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="xIx-9e-cHs"/>
-        <segue reference="UNE-bc-xgW"/>
+        <segue reference="iJI-gP-Tvf"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="buyclick" width="44" height="44"/>

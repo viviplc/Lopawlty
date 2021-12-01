@@ -18,15 +18,15 @@ class CheckOutResumeViewController: UIViewController {
     @IBOutlet weak var LblPstRst: UILabel!
     @IBOutlet weak var LblGrandTotal: UILabel!
     
-    var totalItems = 2
-    var subTotal = 39.45
+    var totalItems = 0
+    var subTotal = 0.0
     var shipping = 5.2
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         LblTotalItems.text = "\(totalItems)"
-        LblSubTotal.text = "$ \(subTotal)"
+        LblSubTotal.text = "$ \(String(format: "%.2f", subTotal))"
         LblShipping.text = "$ \(shipping)"
         
         let priceNoTax = calculatePriceNotaxes()
