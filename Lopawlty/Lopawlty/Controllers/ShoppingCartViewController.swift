@@ -7,23 +7,34 @@
 
 import UIKit
 
-class ShoppingCartViewController: UIViewController {
-
+class ShoppingCartViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    @IBOutlet weak var BtnCheckout: UIButton!
+    
+    var productsToBuy : [Product] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        BtnCheckout.layer.cornerRadius = 10
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
     }
-    */
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        productsToBuy.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ShoppingCell", for: indexPath) as! ShoppingCartTableViewCell
+        
+        
+        
+        return cell
+    }
+    
 
 }
