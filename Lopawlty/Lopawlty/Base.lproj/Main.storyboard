@@ -472,14 +472,14 @@
                                                     <rect key="frame" x="20" y="11" width="374" height="150"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NsY-nY-dWK">
-                                                            <rect key="frame" x="0.0" y="0.0" width="145" height="150"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="147" height="150"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="80" id="DPN-R4-HQd"/>
                                                                 <constraint firstAttribute="width" constant="80" id="hIB-e3-lig"/>
                                                             </constraints>
                                                         </imageView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="qul-Jp-R85">
-                                                            <rect key="frame" x="155" y="0.0" width="119" height="150"/>
+                                                            <rect key="frame" x="157" y="0.0" width="117" height="150"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dog Food Bag" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c1H-pa-nJU">
                                                                     <rect key="frame" x="0.0" y="0.0" width="114.5" height="60"/>
@@ -513,6 +513,9 @@
                                                                             <state key="normal">
                                                                                 <imageReference key="image" image="minus.circle.fill" catalog="system" symbolScale="large"/>
                                                                             </state>
+                                                                            <connections>
+                                                                                <action selector="btnSubtractItemClicked:" destination="qqH-ND-hIH" eventType="touchUpInside" id="ZkN-9y-oxI"/>
+                                                                            </connections>
                                                                         </button>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i8m-qc-hnE">
                                                                             <rect key="frame" x="31.5" y="18" width="27" height="24"/>
@@ -526,6 +529,9 @@
                                                                             <state key="normal">
                                                                                 <imageReference key="image" image="plus.circle.fill" catalog="system" symbolScale="large"/>
                                                                             </state>
+                                                                            <connections>
+                                                                                <action selector="btnAddItemClicked:" destination="qqH-ND-hIH" eventType="touchUpInside" id="W6y-sT-3sL"/>
+                                                                            </connections>
                                                                         </button>
                                                                     </subviews>
                                                                     <constraints>
@@ -565,6 +571,9 @@
                                                             <state key="normal" title="Add to cart">
                                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="btnAddToCartClicked:" destination="qqH-ND-hIH" eventType="touchUpInside" id="LdV-8F-oyr"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                 </stackView>

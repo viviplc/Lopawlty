@@ -15,6 +15,8 @@ class Product {
     var brand : String
     var category : String
     var imageFileName : String
+    var currentSelectedAmount : Int = 1
+    var addedToCart : Bool = false
     
     init(name: String, price : Double, productCode : Int, brand: String, category : String, imageFileName : String) {
         self.name = name

@@ -31,5 +31,9 @@ class ProductCellTableViewCell: UITableViewCell {
         BtnSeeMore.layer.cornerRadius = 10
         BtnAddToCart.layer.cornerRadius = 10
     }
+    
+    func test123() {
+        
+    }
 
 }
