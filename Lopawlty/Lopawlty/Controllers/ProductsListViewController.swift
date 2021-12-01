@@ -43,24 +43,11 @@ class ProductsListViewController: UIViewController, UISearchBarDelegate, UITable
         BtnCatsFilter.layer.borderWidth = 1
         
         //SampleData.createSampleData()
-        let db = Firestore.firestore()
-        db.collection("Products")
-            .getDocuments() { (querySnapshot, err) in
-                if let err = err {
-                    print("Error getting documents: \(err)")
-                } else {
-                    for document in querySnapshot!.documents {
-                        print("product: \(document.data())")
-                        self.products.append(Product(firebaseDictionary: document.data()))
-                        
-                    }
-                    
-                    //uncomment below line when shopping cart code is done
-                    //self.updateAddedToCartFieldInProducts()
-                    
-                    self.refreshProductsNotAddedToCart()
-                }
-        }
+        //loadProductsFromFirebase()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        loadProductsFromFirebase()
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
@@ -214,5 +201,28 @@ class ProductsListViewController: UIViewController, UISearchBarDelegate, UITable
                } catch {
                    print("Error while using core data")
                }
+    }
+    
+    func loadProductsFromFirebase() {
+        var newProducts : [Product] = []
+        let db = Firestore.firestore()
+        db.collection("Products")
+            .getDocuments() { (querySnapshot, err) in
+                if let err = err {
+                    print("Error getting documents: \(err)")
+                } else {
+                    for document in querySnapshot!.documents {
+                        print("product: \(document.data())")
+                        newProducts.append(Product(firebaseDictionary: document.data()))
+                        
+                    }
+                    
+                    self.products = newProducts
+                    
+                    self.updateAddedToCartFieldInProducts()
+                    
+                    self.refreshProductsNotAddedToCart()
+                }
+        }
     }
 }
