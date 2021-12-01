@@ -14,6 +14,8 @@ class ProductCellTableViewCell: UITableViewCell {
     @IBOutlet weak var productBrand: UILabel!
     @IBOutlet weak var productPrice: UILabel!
     @IBOutlet weak var productQuantity: UILabel!
+    @IBOutlet weak var BtnSeeMore: UIButton!
+    @IBOutlet weak var BtnAddToCart: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,6 +26,10 @@ class ProductCellTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+        BtnSeeMore.layer.borderWidth = 1
+        BtnSeeMore.layer.borderColor = UIColor(red: 0, green: 122/255, blue: 255/255, alpha: 1).cgColor
+        BtnSeeMore.layer.cornerRadius = 10
+        BtnAddToCart.layer.cornerRadius = 10
     }
 
 }
