@@ -15,15 +15,28 @@ class ProductCellTableViewCell: UITableViewCell {
     @IBOutlet weak var productPrice: UILabel!
     @IBOutlet weak var productQuantity: UILabel!
     
+    @IBOutlet weak var BtnSeeMore: UIButton!
+    @IBOutlet weak var BtnAddToCart: UIButton!
+    
+    /*//var definition
+    var prdImage = ""
+    var prdName = ""
+    var prdBrand = ""
+    var prdPrice = ""
+    var prdQuantity = ""
+    var prdDescription = ""*/
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
+        BtnSeeMore.layer.borderWidth = 1
+        BtnSeeMore.layer.borderColor = UIColor(red: 0, green: 122/255, blue: 255/255, alpha: 1).cgColor
+        BtnSeeMore.layer.cornerRadius = 10
+        BtnAddToCart.layer.cornerRadius = 10        
     }
-
+    
 }
