@@ -166,12 +166,12 @@ class ProductsListViewController: UIViewController, UISearchBarDelegate, UITable
                 newProducts.append(product)
                 break
             case .cat:
-                if product.category == "cat" {
+                if product.category == "cat" || product.category == "all" {
                     newProducts.append(product)
                 }
                 break
             case .dog:
-                if product.category == "dog" {
+                if product.category == "dog" || product.category == "all"  {
                     newProducts.append(product)
                 }
                 break

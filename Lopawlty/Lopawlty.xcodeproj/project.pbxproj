@@ -31,6 +31,7 @@
 		B97062A52756D94C00B1B394 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97062A42756D94C00B1B394 /* Product.swift */; };
 		B9995F39275087C200C9C587 /* Cart+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9995F33275087C200C9C587 /* Cart+CoreDataClass.swift */; };
 		B9995F512750899800C9C587 /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9995F502750899800C9C587 /* SampleData.swift */; };
+		B9EC995D27594C2800F9D33E /* CreditCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9EC995C27594C2800F9D33E /* CreditCard.swift */; };
 		B9FB7B7F27586B7D0044F3C4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B9FB7B7E27586B7D0044F3C4 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
@@ -81,6 +82,7 @@
 		B97062A42756D94C00B1B394 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		B9995F33275087C200C9C587 /* Cart+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cart+CoreDataClass.swift"; sourceTree = "<group>"; };
 		B9995F502750899800C9C587 /* SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
+		B9EC995C27594C2800F9D33E /* CreditCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCard.swift; sourceTree = "<group>"; };
 		B9FB7B7E27586B7D0044F3C4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -190,6 +192,7 @@
 				B9995F33275087C200C9C587 /* Cart+CoreDataClass.swift */,
 				B94B68262756BA1F00835D18 /* Customer.swift */,
 				B97062A42756D94C00B1B394 /* Product.swift */,
+				B9EC995C27594C2800F9D33E /* CreditCard.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -341,6 +344,7 @@
 			files = (
 				8B5F10EB2739E21C006AB198 /* ViewController.swift in Sources */,
 				B94B68272756BA1F00835D18 /* Customer.swift in Sources */,
+				B9EC995D27594C2800F9D33E /* CreditCard.swift in Sources */,
 				B91557A82745E16500AA415C /* Lopawlty.xcdatamodeld in Sources */,
 				8B5F10E72739E21C006AB198 /* AppDelegate.swift in Sources */,
 				8B77D1A3275843A200BFA778 /* DeliveryInfoViewController.swift in Sources */,
