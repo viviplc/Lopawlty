@@ -125,6 +125,10 @@ class ProductsListViewController: UIViewController, UISearchBarDelegate, UITable
             BtnDogsFilter.layer.borderColor = UIColor(red: 0, green: 0, blue: 255/255, alpha: 1).cgColor
             BtnDogsFilter.layer.cornerRadius = 10
             BtnDogsFilter.layer.borderWidth = 5
+            
+            BtnCatsFilter.layer.borderColor = UIColor(red: 0, green: 122/255, blue: 255/255, alpha: 1).cgColor
+            BtnCatsFilter.layer.cornerRadius = 10
+            BtnCatsFilter.layer.borderWidth = 1
         }
         
         refreshFilteredProductList()
@@ -141,6 +145,10 @@ class ProductsListViewController: UIViewController, UISearchBarDelegate, UITable
             BtnCatsFilter.layer.borderColor = UIColor(red: 0, green: 0, blue: 255/255, alpha: 1).cgColor
             BtnCatsFilter.layer.cornerRadius = 10
             BtnCatsFilter.layer.borderWidth = 5
+            
+            BtnDogsFilter.layer.borderColor = UIColor(red: 0, green: 122/255, blue: 255/255, alpha: 1).cgColor
+            BtnDogsFilter.layer.cornerRadius = 10
+            BtnDogsFilter.layer.borderWidth = 1
         }
         
         refreshFilteredProductList()
