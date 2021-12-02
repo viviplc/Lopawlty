@@ -74,6 +74,7 @@ class ProductsListViewController: UIViewController, UISearchBarDelegate, UITable
             cell.productBrand.text = prdBrandLbl
             cell.productPrice.text = prdPriceLbl
             cell.productImage.image = prdImageLbl
+            cell.productQuantity.text = String(self.productsNotInCart[indexPath.row].currentSelectedAmount)
             
             cell.BtnSeeMore.tag = indexPath.row
             cell.BtnSeeMore.addTarget(self, action: #selector(ProductsListViewController.buttonTapped(_:)), for: UIControl.Event.touchUpInside)

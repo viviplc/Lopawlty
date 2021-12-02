@@ -23,7 +23,6 @@
 		8B5F11092739E21D006AB198 /* LopawltyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5F11082739E21D006AB198 /* LopawltyUITests.swift */; };
 		8B77D1862757FA7B00BFA778 /* ShoppingCartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B77D1852757FA7B00BFA778 /* ShoppingCartViewController.swift */; };
 		8B77D18B2757FABC00BFA778 /* ShoppingCartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B77D18A2757FABC00BFA778 /* ShoppingCartTableViewCell.swift */; };
-		8B77D1962758210900BFA778 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8B77D1952758210900BFA778 /* GoogleService-Info.plist */; };
 		8B77D19E275827FC00BFA778 /* CheckOutResumeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B77D19D275827FC00BFA778 /* CheckOutResumeViewController.swift */; };
 		B91557A82745E16500AA415C /* Lopawlty.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B91557A62745E16500AA415C /* Lopawlty.xcdatamodeld */; };
 		B94B68272756BA1F00835D18 /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94B68262756BA1F00835D18 /* Customer.swift */; };
@@ -31,6 +30,7 @@
 		B97062A52756D94C00B1B394 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97062A42756D94C00B1B394 /* Product.swift */; };
 		B9995F39275087C200C9C587 /* Cart+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9995F33275087C200C9C587 /* Cart+CoreDataClass.swift */; };
 		B9995F512750899800C9C587 /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9995F502750899800C9C587 /* SampleData.swift */; };
+		B9FB7B6E275842C00044F3C4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B9FB7B6D275842C00044F3C4 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,13 +73,13 @@
 		8B5F110A2739E21D006AB198 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8B77D1852757FA7B00BFA778 /* ShoppingCartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartViewController.swift; sourceTree = "<group>"; };
 		8B77D18A2757FABC00BFA778 /* ShoppingCartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartTableViewCell.swift; sourceTree = "<group>"; };
-		8B77D1952758210900BFA778 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8B77D19D275827FC00BFA778 /* CheckOutResumeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckOutResumeViewController.swift; sourceTree = "<group>"; };
 		B91557A72745E16500AA415C /* Lopawlty.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Lopawlty.xcdatamodel; sourceTree = "<group>"; };
 		B94B68262756BA1F00835D18 /* Customer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
 		B97062A42756D94C00B1B394 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		B9995F33275087C200C9C587 /* Cart+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cart+CoreDataClass.swift"; sourceTree = "<group>"; };
 		B9995F502750899800C9C587 /* SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
+		B9FB7B6D275842C00044F3C4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,7 +128,6 @@
 		8B5F10DA2739E21B006AB198 = {
 			isa = PBXGroup;
 			children = (
-				8B77D1952758210900BFA778 /* GoogleService-Info.plist */,
 				8B5F10E52739E21B006AB198 /* Lopawlty */,
 				8B5F10FC2739E21D006AB198 /* LopawltyTests */,
 				8B5F11072739E21D006AB198 /* LopawltyUITests */,
@@ -149,6 +148,7 @@
 		8B5F10E52739E21B006AB198 /* Lopawlty */ = {
 			isa = PBXGroup;
 			children = (
+				B9FB7B6D275842C00044F3C4 /* GoogleService-Info.plist */,
 				B9995F4F2750897400C9C587 /* Helpers */,
 				B9557AFC273DF976006A2B81 /* Models */,
 				8B5414AF273DB32200043F74 /* Controllers */,
@@ -309,7 +309,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B5F10F32739E21C006AB198 /* LaunchScreen.storyboard in Resources */,
-				8B77D1962758210900BFA778 /* GoogleService-Info.plist in Resources */,
+				B9FB7B6E275842C00044F3C4 /* GoogleService-Info.plist in Resources */,
 				8B5F10F02739E21C006AB198 /* Assets.xcassets in Resources */,
 				8B5F10EE2739E21C006AB198 /* Main.storyboard in Resources */,
 			);
