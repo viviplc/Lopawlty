@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B08D5E6275936BE001996E3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8B08D5E5275936BE001996E3 /* GoogleService-Info.plist */; };
 		8B1C201D27471F75009B8A6A /* ProductsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1C201C27471F75009B8A6A /* ProductsListViewController.swift */; };
 		8B3876DD2756FCC600BCBC94 /* SeeMoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3876DC2756FCC600BCBC94 /* SeeMoreViewController.swift */; };
 		8B3A18A82749FA5400B6849E /* ProductCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3A18A72749FA5400B6849E /* ProductCellTableViewCell.swift */; };
@@ -25,6 +26,8 @@
 		8B77D18B2757FABC00BFA778 /* ShoppingCartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B77D18A2757FABC00BFA778 /* ShoppingCartTableViewCell.swift */; };
 		8B77D19E275827FC00BFA778 /* CheckOutResumeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B77D19D275827FC00BFA778 /* CheckOutResumeViewController.swift */; };
 		8B77D1A3275843A200BFA778 /* DeliveryInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B77D1A2275843A200BFA778 /* DeliveryInfoViewController.swift */; };
+		8B84E2E927594ACE000D8934 /* PaymentMethodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B84E2E827594ACE000D8934 /* PaymentMethodViewController.swift */; };
+		8B84E2EF275964BF000D8934 /* MonthYearPicker in Frameworks */ = {isa = PBXBuildFile; productRef = 8B84E2EE275964BF000D8934 /* MonthYearPicker */; };
 		B91557A82745E16500AA415C /* Lopawlty.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B91557A62745E16500AA415C /* Lopawlty.xcdatamodeld */; };
 		B94B68272756BA1F00835D18 /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94B68262756BA1F00835D18 /* Customer.swift */; };
 		B94B68382756C0C600835D18 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = B94B68372756C0C600835D18 /* FirebaseFirestore */; };
@@ -55,6 +58,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8B08D5E5275936BE001996E3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8B1C201C27471F75009B8A6A /* ProductsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsListViewController.swift; sourceTree = "<group>"; };
 		8B3876DC2756FCC600BCBC94 /* SeeMoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeMoreViewController.swift; sourceTree = "<group>"; };
 		8B3A18A72749FA5400B6849E /* ProductCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCellTableViewCell.swift; sourceTree = "<group>"; };
@@ -79,6 +83,7 @@
 		8B77D18A2757FABC00BFA778 /* ShoppingCartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartTableViewCell.swift; sourceTree = "<group>"; };
 		8B77D19D275827FC00BFA778 /* CheckOutResumeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckOutResumeViewController.swift; sourceTree = "<group>"; };
 		8B77D1A2275843A200BFA778 /* DeliveryInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryInfoViewController.swift; sourceTree = "<group>"; };
+		8B84E2E827594ACE000D8934 /* PaymentMethodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethodViewController.swift; sourceTree = "<group>"; };
 		B91557A72745E16500AA415C /* Lopawlty.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Lopawlty.xcdatamodel; sourceTree = "<group>"; };
 		B94B68262756BA1F00835D18 /* Customer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
 		B97062A42756D94C00B1B394 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
@@ -95,6 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B84E2EF275964BF000D8934 /* MonthYearPicker in Frameworks */,
 				B94B68382756C0C600835D18 /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -130,6 +136,7 @@
 				8B77D18A2757FABC00BFA778 /* ShoppingCartTableViewCell.swift */,
 				8B77D19D275827FC00BFA778 /* CheckOutResumeViewController.swift */,
 				8B77D1A2275843A200BFA778 /* DeliveryInfoViewController.swift */,
+				8B84E2E827594ACE000D8934 /* PaymentMethodViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -157,7 +164,7 @@
 		8B5F10E52739E21B006AB198 /* Lopawlty */ = {
 			isa = PBXGroup;
 			children = (
-				B9FB7B7E27586B7D0044F3C4 /* GoogleService-Info.plist */,
+				8B08D5E5275936BE001996E3 /* GoogleService-Info.plist */,
 				B9995F4F2750897400C9C587 /* Helpers */,
 				B9557AFC273DF976006A2B81 /* Models */,
 				8B5414AF273DB32200043F74 /* Controllers */,
@@ -229,6 +236,7 @@
 			name = Lopawlty;
 			packageProductDependencies = (
 				B94B68372756C0C600835D18 /* FirebaseFirestore */,
+				8B84E2EE275964BF000D8934 /* MonthYearPicker */,
 			);
 			productName = Lopawlty;
 			productReference = 8B5F10E32739E21B006AB198 /* Lopawlty.app */;
@@ -303,6 +311,7 @@
 			mainGroup = 8B5F10DA2739E21B006AB198;
 			packageReferences = (
 				B94B68362756C0C600835D18 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				8B84E2ED275964BE000D8934 /* XCRemoteSwiftPackageReference "MonthYearPicker" */,
 			);
 			productRefGroup = 8B5F10E42739E21B006AB198 /* Products */;
 			projectDirPath = "";
@@ -321,7 +330,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B5F10F32739E21C006AB198 /* LaunchScreen.storyboard in Resources */,
-				B9FB7B7F27586B7D0044F3C4 /* GoogleService-Info.plist in Resources */,
+				8B08D5E6275936BE001996E3 /* GoogleService-Info.plist in Resources */,
 				8B5F10F02739E21C006AB198 /* Assets.xcassets in Resources */,
 				8B5F10EE2739E21C006AB198 /* Main.storyboard in Resources */,
 			);
@@ -352,6 +361,7 @@
 				B94B68272756BA1F00835D18 /* Customer.swift in Sources */,
 				B9EC995D27594C2800F9D33E /* CreditCard.swift in Sources */,
 				B91557A82745E16500AA415C /* Lopawlty.xcdatamodeld in Sources */,
+				8B84E2E927594ACE000D8934 /* PaymentMethodViewController.swift in Sources */,
 				8B5F10E72739E21C006AB198 /* AppDelegate.swift in Sources */,
 				8B77D1A3275843A200BFA778 /* DeliveryInfoViewController.swift in Sources */,
 				B9EC9967275956E600F9D33E /* Address.swift in Sources */,
@@ -697,6 +707,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		8B84E2ED275964BE000D8934 /* XCRemoteSwiftPackageReference "MonthYearPicker" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/alexanderedge/MonthYearPicker.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.3;
+			};
+		};
 		B94B68362756C0C600835D18 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -708,6 +726,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		8B84E2EE275964BF000D8934 /* MonthYearPicker */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8B84E2ED275964BE000D8934 /* XCRemoteSwiftPackageReference "MonthYearPicker" */;
+			productName = MonthYearPicker;
+		};
 		B94B68372756C0C600835D18 /* FirebaseFirestore */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = B94B68362756C0C600835D18 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
