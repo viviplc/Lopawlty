@@ -478,14 +478,14 @@
                                                     <rect key="frame" x="20" y="11" width="374" height="150"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NsY-nY-dWK">
-                                                            <rect key="frame" x="0.0" y="0.0" width="147" height="150"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="146" height="150"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="100" id="DPN-R4-HQd"/>
                                                                 <constraint firstAttribute="width" constant="100" id="hIB-e3-lig"/>
                                                             </constraints>
                                                         </imageView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="qul-Jp-R85">
-                                                            <rect key="frame" x="157" y="0.0" width="117" height="150"/>
+                                                            <rect key="frame" x="156" y="0.0" width="118" height="150"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dog Food Bag" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c1H-pa-nJU">
                                                                     <rect key="frame" x="0.0" y="0.0" width="114.5" height="60"/>
@@ -1537,6 +1537,9 @@
                                                     <color key="titleColor" systemColor="systemBlueColor"/>
                                                     <imageReference key="image" image="minus.circle.fill" catalog="system" symbolScale="large"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="btnSubtractCartItemClicked:" destination="TpU-9d-PMb" eventType="touchUpInside" id="uV1-BH-8E7"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XaI-vq-aae">
                                                 <rect key="frame" x="35" y="0.0" width="30" height="24"/>
@@ -1550,6 +1553,9 @@
                                                     <color key="titleColor" systemColor="systemBlueColor"/>
                                                     <imageReference key="image" image="plus.circle.fill" catalog="system" symbolScale="large"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="btnAddCartItemClicked:" destination="TpU-9d-PMb" eventType="touchUpInside" id="qqg-rJ-YlN"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -1565,6 +1571,9 @@
                                 <state key="normal" title="Add to Cart">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="btnAddToCartClicked:" destination="TpU-9d-PMb" eventType="touchUpInside" id="QRk-cs-qmm"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="fQQ-ky-N3c">
                                 <rect key="frame" x="20" y="493" width="374" height="286"/>
@@ -1632,6 +1641,7 @@
                         <outlet property="LblProductPrice" destination="fjJ-1d-5Ec" id="AHx-rG-eTv"/>
                         <outlet property="LblProductQuantity" destination="XaI-vq-aae" id="07q-rX-8jO"/>
                         <outlet property="ProductImage" destination="5gY-F3-mHt" id="879-NE-fY9"/>
+                        <outlet property="btnAddToCart" destination="NMO-Qa-GZ6" id="laQ-d8-doG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GY1-qY-Wcg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1685,7 +1695,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="yoR-OX-me4"/>
-        <segue reference="iJI-gP-Tvf"/>
+        <segue reference="UNE-bc-xgW"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="buyclick" width="44" height="44"/>

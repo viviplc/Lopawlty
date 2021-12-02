@@ -98,6 +98,8 @@ class ProductsListViewController: UIViewController, UISearchBarDelegate, UITable
             if (segue.identifier == "productListToSeeMore") {
                 if let seeMoreDestination = segue.destination as? SeeMoreViewController {
                     if let seeMoreBtn:UIButton = sender as! UIButton? {
+                        seeMoreDestination.readProductCode = self.productsNotInCartFiltered[seeMoreBtn.tag].productCode
+                        seeMoreDestination.readProductDescription =  self.productsNotInCartFiltered[seeMoreBtn.tag].description
                         let prdImage:String! = self.productsNotInCartFiltered[seeMoreBtn.tag].imageFileName
                         let prdname:String! = self.productsNotInCartFiltered[seeMoreBtn.tag].name
                         let prdBrand:String! = self.productsNotInCartFiltered[seeMoreBtn.tag].brand
@@ -107,6 +109,7 @@ class ProductsListViewController: UIViewController, UISearchBarDelegate, UITable
                             seeMoreDestination.readProductName = prdname!
                             seeMoreDestination.readProductBrand = prdBrand!
                             seeMoreDestination.readProductPrice = prdPrice!
+                            
                         }
                         
                     }

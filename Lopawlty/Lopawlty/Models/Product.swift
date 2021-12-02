@@ -15,16 +15,18 @@ class Product {
     var brand : String
     var category : String
     var imageFileName : String
+    var description : String
     var currentSelectedAmount : Int = 1
     var addedToCart : Bool = false
     
-    init(name: String, price : Double, productCode : Int, brand: String, category : String, imageFileName : String) {
+    init(name: String, price : Double, productCode : Int, brand: String, category : String, imageFileName : String, description : String) {
         self.name = name
         self.price = price
         self.productCode = productCode
         self.brand = brand
         self.category = category
         self.imageFileName = imageFileName
+        self.description = description
     }
     
  
@@ -35,8 +37,9 @@ class Product {
         let brand = firebaseDictionary["brand"] as! String? ?? ""
         let category = firebaseDictionary["category"] as! String? ?? ""
         let imageFileName = firebaseDictionary["imageFileName"] as! String? ?? ""
+        let description = firebaseDictionary["description"] as! String? ?? ""
         
-        self.init(name: name, price: price, productCode: productCode, brand: brand, category: category, imageFileName:imageFileName)
+        self.init(name: name, price: price, productCode: productCode, brand: brand, category: category, imageFileName:imageFileName, description : description)
     }
     
 }
