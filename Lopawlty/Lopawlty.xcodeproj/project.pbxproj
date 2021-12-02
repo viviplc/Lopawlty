@@ -35,6 +35,7 @@
 		B9EC9962275954D000F9D33E /* Province.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9EC9961275954D000F9D33E /* Province.swift */; };
 		B9EC9967275956E600F9D33E /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9EC9966275956E600F9D33E /* Address.swift */; };
 		B9FB7B7F27586B7D0044F3C4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B9FB7B7E27586B7D0044F3C4 /* GoogleService-Info.plist */; };
+		B9FC85D5275964B80040118E /* AddressInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FC85D4275964B80040118E /* AddressInformationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +89,7 @@
 		B9EC9961275954D000F9D33E /* Province.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Province.swift; sourceTree = "<group>"; };
 		B9EC9966275956E600F9D33E /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		B9FB7B7E27586B7D0044F3C4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B9FC85D4275964B80040118E /* AddressInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressInformationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +132,7 @@
 				8B77D18A2757FABC00BFA778 /* ShoppingCartTableViewCell.swift */,
 				8B77D19D275827FC00BFA778 /* CheckOutResumeViewController.swift */,
 				8B77D1A2275843A200BFA778 /* DeliveryInfoViewController.swift */,
+				B9FC85D4275964B80040118E /* AddressInformationViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -364,6 +367,7 @@
 				8B3A18A82749FA5400B6849E /* ProductCellTableViewCell.swift in Sources */,
 				8B77D19E275827FC00BFA778 /* CheckOutResumeViewController.swift in Sources */,
 				8B5414BC273DB70900043F74 /* ProvinceSelecViewController.swift in Sources */,
+				B9FC85D5275964B80040118E /* AddressInformationViewController.swift in Sources */,
 				8B1C201D27471F75009B8A6A /* ProductsListViewController.swift in Sources */,
 				B97062A52756D94C00B1B394 /* Product.swift in Sources */,
 				8B77D1862757FA7B00BFA778 /* ShoppingCartViewController.swift in Sources */,
