@@ -14,7 +14,7 @@ class ProvinceSelecViewController: UIViewController , UIPickerViewDelegate, UIPi
     @IBOutlet weak var picker: UIPickerView!
     @IBOutlet weak var BtnSelectProv: UIButton!
     
-    var provinces: [String] = []
+    var provinces: [Province] = []
  
     var selectedProvince : String = ""
     
@@ -31,7 +31,7 @@ class ProvinceSelecViewController: UIViewController , UIPickerViewDelegate, UIPi
         
         BtnSelectProv.layer.cornerRadius = 15
         
-        provinces = ["Alberta","British Columbia", "Manitoba", "New Brunswick", "Newfoundland and Labrador","Nova Scotia","Ontario","Prince Edward Island", "Quebec", "Saskatchewan"]
+        provinces = [Province(name: "Alberta"),Province(name: "British Columbia"), Province(name: "Manitoba"), Province(name: "New Brunswick"), Province(name: "Newfoundland and Labrador"),Province(name: "Nova Scotia"),Province(name: "Ontario"),Province(name: "Prince Edward Island"), Province(name: "Quebec"), Province(name: "Saskatchewan")]
         
         //setLoggedInCustomer()
         
@@ -55,11 +55,11 @@ class ProvinceSelecViewController: UIViewController , UIPickerViewDelegate, UIPi
     
     // The data to return fopr the row and component (column) that's being passed in
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return provinces[row]
+        return provinces[row].name
     }
  
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        selectedProvince = provinces[row]
+        selectedProvince = provinces[row].name
     }
     
     func updateProvince(provinceString : String) {

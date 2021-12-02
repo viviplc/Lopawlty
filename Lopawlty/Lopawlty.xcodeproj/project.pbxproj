@@ -32,6 +32,7 @@
 		B9995F39275087C200C9C587 /* Cart+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9995F33275087C200C9C587 /* Cart+CoreDataClass.swift */; };
 		B9995F512750899800C9C587 /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9995F502750899800C9C587 /* SampleData.swift */; };
 		B9EC995D27594C2800F9D33E /* CreditCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9EC995C27594C2800F9D33E /* CreditCard.swift */; };
+		B9EC9962275954D000F9D33E /* Province.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9EC9961275954D000F9D33E /* Province.swift */; };
 		B9FB7B7F27586B7D0044F3C4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B9FB7B7E27586B7D0044F3C4 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
@@ -83,6 +84,7 @@
 		B9995F33275087C200C9C587 /* Cart+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cart+CoreDataClass.swift"; sourceTree = "<group>"; };
 		B9995F502750899800C9C587 /* SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
 		B9EC995C27594C2800F9D33E /* CreditCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCard.swift; sourceTree = "<group>"; };
+		B9EC9961275954D000F9D33E /* Province.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Province.swift; sourceTree = "<group>"; };
 		B9FB7B7E27586B7D0044F3C4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -193,6 +195,7 @@
 				B94B68262756BA1F00835D18 /* Customer.swift */,
 				B97062A42756D94C00B1B394 /* Product.swift */,
 				B9EC995C27594C2800F9D33E /* CreditCard.swift */,
+				B9EC9961275954D000F9D33E /* Province.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -361,6 +364,7 @@
 				B97062A52756D94C00B1B394 /* Product.swift in Sources */,
 				8B77D1862757FA7B00BFA778 /* ShoppingCartViewController.swift in Sources */,
 				8B77D18B2757FABC00BFA778 /* ShoppingCartTableViewCell.swift in Sources */,
+				B9EC9962275954D000F9D33E /* Province.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
