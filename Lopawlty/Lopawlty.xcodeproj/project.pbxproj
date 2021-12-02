@@ -33,6 +33,7 @@
 		B9995F512750899800C9C587 /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9995F502750899800C9C587 /* SampleData.swift */; };
 		B9EC995D27594C2800F9D33E /* CreditCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9EC995C27594C2800F9D33E /* CreditCard.swift */; };
 		B9EC9962275954D000F9D33E /* Province.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9EC9961275954D000F9D33E /* Province.swift */; };
+		B9EC9967275956E600F9D33E /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9EC9966275956E600F9D33E /* Address.swift */; };
 		B9FB7B7F27586B7D0044F3C4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B9FB7B7E27586B7D0044F3C4 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
@@ -85,6 +86,7 @@
 		B9995F502750899800C9C587 /* SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
 		B9EC995C27594C2800F9D33E /* CreditCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCard.swift; sourceTree = "<group>"; };
 		B9EC9961275954D000F9D33E /* Province.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Province.swift; sourceTree = "<group>"; };
+		B9EC9966275956E600F9D33E /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		B9FB7B7E27586B7D0044F3C4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -196,6 +198,7 @@
 				B97062A42756D94C00B1B394 /* Product.swift */,
 				B9EC995C27594C2800F9D33E /* CreditCard.swift */,
 				B9EC9961275954D000F9D33E /* Province.swift */,
+				B9EC9966275956E600F9D33E /* Address.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -351,6 +354,7 @@
 				B91557A82745E16500AA415C /* Lopawlty.xcdatamodeld in Sources */,
 				8B5F10E72739E21C006AB198 /* AppDelegate.swift in Sources */,
 				8B77D1A3275843A200BFA778 /* DeliveryInfoViewController.swift in Sources */,
+				B9EC9967275956E600F9D33E /* Address.swift in Sources */,
 				8B5414C4273DC1B400043F74 /* SignInViewController.swift in Sources */,
 				8B5414B7273DB69B00043F74 /* RegistrationViewController.swift in Sources */,
 				B9995F512750899800C9C587 /* SampleData.swift in Sources */,
