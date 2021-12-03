@@ -28,6 +28,7 @@
 		8B77D1A3275843A200BFA778 /* DeliveryInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B77D1A2275843A200BFA778 /* DeliveryInfoViewController.swift */; };
 		8B84E2E927594ACE000D8934 /* PaymentMethodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B84E2E827594ACE000D8934 /* PaymentMethodViewController.swift */; };
 		8B84E2EF275964BF000D8934 /* MonthYearPicker in Frameworks */ = {isa = PBXBuildFile; productRef = 8B84E2EE275964BF000D8934 /* MonthYearPicker */; };
+		8BA4A3DF275A5F6100D828B8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8BA4A3DE275A5F6100D828B8 /* GoogleService-Info.plist */; };
 		B91557A82745E16500AA415C /* Lopawlty.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B91557A62745E16500AA415C /* Lopawlty.xcdatamodeld */; };
 		B9441A5D275A60840017D917 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9441A5C275A60840017D917 /* Utils.swift */; };
 		B94B68272756BA1F00835D18 /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94B68262756BA1F00835D18 /* Customer.swift */; };
@@ -42,7 +43,6 @@
 		B9FC85E527599CAA0040118E /* Sale.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FC85E427599CAA0040118E /* Sale.swift */; };
 		B9FC85EA27599D590040118E /* Payment.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FC85E927599D590040118E /* Payment.swift */; };
 		B9FC85EF27599E7D0040118E /* Delivery.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FC85EE27599E7D0040118E /* Delivery.swift */; };
-		B9FC85FA2759C5D70040118E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B9FC85F92759C5D70040118E /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +89,7 @@
 		8B77D19D275827FC00BFA778 /* CheckOutResumeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckOutResumeViewController.swift; sourceTree = "<group>"; };
 		8B77D1A2275843A200BFA778 /* DeliveryInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryInfoViewController.swift; sourceTree = "<group>"; };
 		8B84E2E827594ACE000D8934 /* PaymentMethodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethodViewController.swift; sourceTree = "<group>"; };
+		8BA4A3DE275A5F6100D828B8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B91557A72745E16500AA415C /* Lopawlty.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Lopawlty.xcdatamodel; sourceTree = "<group>"; };
 		B9441A5C275A60840017D917 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		B94B68262756BA1F00835D18 /* Customer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
@@ -102,7 +103,6 @@
 		B9FC85E427599CAA0040118E /* Sale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sale.swift; sourceTree = "<group>"; };
 		B9FC85E927599D590040118E /* Payment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Payment.swift; sourceTree = "<group>"; };
 		B9FC85EE27599E7D0040118E /* Delivery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delivery.swift; sourceTree = "<group>"; };
-		B9FC85F92759C5D70040118E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,7 +176,7 @@
 		8B5F10E52739E21B006AB198 /* Lopawlty */ = {
 			isa = PBXGroup;
 			children = (
-				B9FC85F92759C5D70040118E /* GoogleService-Info.plist */,
+				8BA4A3DE275A5F6100D828B8 /* GoogleService-Info.plist */,
 				B9995F4F2750897400C9C587 /* Helpers */,
 				B9557AFC273DF976006A2B81 /* Models */,
 				8B5414AF273DB32200043F74 /* Controllers */,
@@ -346,7 +346,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B5F10F32739E21C006AB198 /* LaunchScreen.storyboard in Resources */,
-				B9FC85FA2759C5D70040118E /* GoogleService-Info.plist in Resources */,
+				8BA4A3DF275A5F6100D828B8 /* GoogleService-Info.plist in Resources */,
 				8B5F10F02739E21C006AB198 /* Assets.xcassets in Resources */,
 				8B5F10EE2739E21C006AB198 /* Main.storyboard in Resources */,
 			);

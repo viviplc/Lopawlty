@@ -43,15 +43,22 @@ class ProductsListViewController: UIViewController, UISearchBarDelegate, UITable
         productsListtable.delegate = self
         productsListtable.dataSource = self
         
-        BtnDogsFilter.layer.borderColor = UIColor(red: 0, green: 122/255, blue: 255/255, alpha: 1).cgColor
-        BtnDogsFilter.layer.cornerRadius = 10
-        BtnDogsFilter.layer.borderWidth = 1
-        BtnCatsFilter.layer.borderColor = UIColor(red: 0, green: 122/255, blue: 255/255, alpha: 1).cgColor
-        BtnCatsFilter.layer.cornerRadius = 10
-        BtnCatsFilter.layer.borderWidth = 1
+        setStyles()
+        
         
         //SampleData.createSampleData()
         //loadProductsFromFirebase()
+    }
+    
+    func setStyles() {
+        BtnDogsFilter.layer.borderColor = UIColor(red: 0, green: 122/255, blue: 255/255, alpha: 1).cgColor
+        BtnDogsFilter.layer.cornerRadius = 10
+        BtnDogsFilter.layer.borderWidth = 1
+        BtnDogsFilter.layer.backgroundColor = UIColor(red: 204/255, green: 228/255, blue: 1, alpha: 1).cgColor
+        BtnCatsFilter.layer.borderColor = UIColor(red: 0, green: 122/255, blue: 255/255, alpha: 1).cgColor
+        BtnCatsFilter.layer.cornerRadius = 10
+        BtnCatsFilter.layer.borderWidth = 1
+        BtnCatsFilter.layer.backgroundColor = UIColor(red: 204/255, green: 228/255, blue: 1, alpha: 1).cgColor
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -118,42 +125,31 @@ class ProductsListViewController: UIViewController, UISearchBarDelegate, UITable
         }
     
     @IBAction func btnDogFilterClicked(_ sender: Any) {
+        setStyles()
         if(currentProductFilter == .dog) {
             currentProductFilter = .all
-            BtnDogsFilter.layer.borderColor = UIColor(red: 0, green: 122/255, blue: 255/255, alpha: 1).cgColor
-            BtnDogsFilter.layer.cornerRadius = 10
-            BtnDogsFilter.layer.borderWidth = 1
         } else {
             currentProductFilter = .dog
-            BtnDogsFilter.layer.borderColor = UIColor(red: 0, green: 0, blue: 255/255, alpha: 1).cgColor
+            BtnDogsFilter.layer.borderColor = UIColor(red: 0, green: 122/255, blue: 255/255, alpha: 1).cgColor
             BtnDogsFilter.layer.cornerRadius = 10
-            BtnDogsFilter.layer.borderWidth = 5
-            
-            BtnCatsFilter.layer.borderColor = UIColor(red: 0, green: 122/255, blue: 255/255, alpha: 1).cgColor
-            BtnCatsFilter.layer.cornerRadius = 10
-            BtnCatsFilter.layer.borderWidth = 1
+            BtnDogsFilter.layer.borderWidth = 3
+            BtnDogsFilter.layer.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1).cgColor
         }
         
         refreshFilteredProductList()
     }
     
     @IBAction func btnCatFilterClicked(_ sender: Any) {
+        setStyles()
         if(currentProductFilter == .cat) {
             currentProductFilter = .all
-            BtnCatsFilter.layer.borderColor = UIColor(red: 0, green: 122/255, blue: 255/255, alpha: 1).cgColor
-            BtnCatsFilter.layer.cornerRadius = 10
-            BtnCatsFilter.layer.borderWidth = 1
         } else {
             currentProductFilter = .cat
-            BtnCatsFilter.layer.borderColor = UIColor(red: 0, green: 0, blue: 255/255, alpha: 1).cgColor
+            BtnCatsFilter.layer.borderColor = UIColor(red: 0, green: 122/255, blue: 255/255, alpha: 1).cgColor
             BtnCatsFilter.layer.cornerRadius = 10
-            BtnCatsFilter.layer.borderWidth = 5
-            
-            BtnDogsFilter.layer.borderColor = UIColor(red: 0, green: 122/255, blue: 255/255, alpha: 1).cgColor
-            BtnDogsFilter.layer.cornerRadius = 10
-            BtnDogsFilter.layer.borderWidth = 1
+            BtnCatsFilter.layer.borderWidth = 3
+            BtnCatsFilter.layer.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1).cgColor
         }
-        
         refreshFilteredProductList()
     }
     
