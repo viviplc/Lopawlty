@@ -11,39 +11,35 @@ import MapKit
 class AddressInformationViewController: UIViewController {
 
     @IBOutlet weak var mapView: MKMapView!
-    @IBOutlet weak var TxtStreetNumber: UITextField!
-    @IBOutlet weak var TxtStreetName: UITextField!
-    @IBOutlet weak var TxtComplementaryInfo: UITextField!
-    @IBOutlet weak var TxtPostalCode: UITextField!
-    @IBOutlet weak var BtnCreateAccount: UIButton!
-    @IBOutlet weak var StackViewFormInputsContainer: UIStackView!
-    @IBOutlet weak var StackViewStreetFormInput: UIStackView!
     
-    @IBOutlet weak var StackViewFullFormContainer: UIStackView!
+    @IBOutlet weak var BtnCreateAccount: UIButton!
+    
+    @IBOutlet weak var LblAddressNum: UITextField!
+    @IBOutlet weak var LblStreetName: UITextField!
+    @IBOutlet weak var LblComplementary: UITextField!
+    @IBOutlet weak var LblPostal: UITextField!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        BtnCreateAccount.layer.cornerRadius = 15
-        StackViewStreetFormInput.setCustomSpacing(5.0, after: StackViewStreetFormInput.subviews[0])
-        StackViewFormInputsContainer.spacing = 5
-        StackViewFullFormContainer.spacing = 15
+        
+        setStyles()
+        
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(DismissKeyboard))
         self.view.addGestureRecognizer(tap)        // Do any additional setup after loading the view.
     }
     
-
+    func setStyles(){
+        BtnCreateAccount.layer.cornerRadius = 15
+        LblAddressNum.attributedPlaceholder = NSAttributedString(string: "123", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+        LblStreetName.attributedPlaceholder = NSAttributedString(string: "Street Name", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+        LblComplementary.attributedPlaceholder = NSAttributedString(string: "Building, House, Unit", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+        LblPostal.attributedPlaceholder = NSAttributedString(string: "XXX XXX", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+    }
+    
     @IBAction func btnCreateAccountClicked(_ sender: Any) {
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    
     
     @objc func DismissKeyboard(){
     //Causes the view to resign from the status of first responder.

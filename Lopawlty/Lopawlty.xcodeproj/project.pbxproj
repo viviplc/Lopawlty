@@ -14,6 +14,7 @@
 		8B5414BC273DB70900043F74 /* ProvinceSelecViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5414BB273DB70900043F74 /* ProvinceSelecViewController.swift */; };
 		8B5414C4273DC1B400043F74 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5414C3273DC1B400043F74 /* SignInViewController.swift */; };
 		8B5973322759818B0064527D /* OrderConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5973312759818B0064527D /* OrderConfirmationViewController.swift */; };
+		8B5973432759A5EB0064527D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8B5973422759A5EB0064527D /* GoogleService-Info.plist */; };
 		8B5F10E72739E21C006AB198 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5F10E62739E21C006AB198 /* AppDelegate.swift */; };
 		8B5F10E92739E21C006AB198 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5F10E82739E21C006AB198 /* SceneDelegate.swift */; };
 		8B5F10EB2739E21C006AB198 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5F10EA2739E21C006AB198 /* ViewController.swift */; };
@@ -38,7 +39,6 @@
 		B9EC9962275954D000F9D33E /* Province.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9EC9961275954D000F9D33E /* Province.swift */; };
 		B9EC9967275956E600F9D33E /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9EC9966275956E600F9D33E /* Address.swift */; };
 		B9FC85D5275964B80040118E /* AddressInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FC85D4275964B80040118E /* AddressInformationViewController.swift */; };
-		B9FC85E02759881C0040118E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B9FC85DF2759881C0040118E /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +66,7 @@
 		8B5414BB273DB70900043F74 /* ProvinceSelecViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProvinceSelecViewController.swift; sourceTree = "<group>"; };
 		8B5414C3273DC1B400043F74 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		8B5973312759818B0064527D /* OrderConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderConfirmationViewController.swift; sourceTree = "<group>"; };
+		8B5973422759A5EB0064527D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8B5F10E32739E21B006AB198 /* Lopawlty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lopawlty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B5F10E62739E21C006AB198 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8B5F10E82739E21C006AB198 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -94,7 +95,6 @@
 		B9EC9961275954D000F9D33E /* Province.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Province.swift; sourceTree = "<group>"; };
 		B9EC9966275956E600F9D33E /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		B9FC85D4275964B80040118E /* AddressInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressInformationViewController.swift; sourceTree = "<group>"; };
-		B9FC85DF2759881C0040118E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,7 +168,7 @@
 		8B5F10E52739E21B006AB198 /* Lopawlty */ = {
 			isa = PBXGroup;
 			children = (
-				B9FC85DF2759881C0040118E /* GoogleService-Info.plist */,
+				8B5973422759A5EB0064527D /* GoogleService-Info.plist */,
 				B9995F4F2750897400C9C587 /* Helpers */,
 				B9557AFC273DF976006A2B81 /* Models */,
 				8B5414AF273DB32200043F74 /* Controllers */,
@@ -334,7 +334,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B5F10F32739E21C006AB198 /* LaunchScreen.storyboard in Resources */,
-				B9FC85E02759881C0040118E /* GoogleService-Info.plist in Resources */,
+				8B5973432759A5EB0064527D /* GoogleService-Info.plist in Resources */,
 				8B5F10F02739E21C006AB198 /* Assets.xcassets in Resources */,
 				8B5F10EE2739E21C006AB198 /* Main.storyboard in Resources */,
 			);
