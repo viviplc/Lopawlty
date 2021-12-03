@@ -45,7 +45,7 @@ class Utils {
         }
     }
     
-    static func validateTextFieldWithMin(txtLabel : UITextField, min : Int) -> Bool {
+    static func validateTextFieldWithMinLen(txtLabel : UITextField, min : Int) -> Bool {
         if validateTextField(txtLabel: txtLabel) {
             return txtLabel.text!.count >= min
         } else {
@@ -53,7 +53,7 @@ class Utils {
         }
     }
     
-    static func validateTextFieldWithMax(txtLabel : UITextField, max : Int) -> Bool {
+    static func validateTextFieldWithMaxLen(txtLabel : UITextField, max : Int) -> Bool {
         if validateTextField(txtLabel: txtLabel) {
             return txtLabel.text!.count <= max
         } else {
@@ -61,7 +61,7 @@ class Utils {
         }
     }
     
-    static func validateTextFieldWithMinMax(txtLabel : UITextField, min : Int, max : Int) -> Bool {
+    static func validateTextFieldWithMinMaxLen(txtLabel : UITextField, min : Int, max : Int) -> Bool {
         if validateTextField(txtLabel: txtLabel) {
             return txtLabel.text!.count >= min && txtLabel.text!.count <= max
         } else {
@@ -71,6 +71,25 @@ class Utils {
     
     static func deleteUserDefaultField(key : String) {
         UserDefaults.standard.removeObject(forKey: key)
+    }
+    
+    static func alert(message: String, viewController : UIViewController) {
+        //below code for alert taken from https://stackoverflow.com/a/24022696
+        let alert = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+            switch action.style{
+                case .default:
+                print("default")
+                
+                case .cancel:
+                print("cancel")
+                
+                case .destructive:
+                print("destructive")
+                
+            }
+        }))
+        viewController.present(alert, animated: true, completion: nil)
     }
     
     //emptyCoreDataEntity function was taken from https://stackoverflow.com/questions/28780862/use-functions-from-other-files-in-swift-xcode
