@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Firebase
 
 class Sale {
     var productCodes : [Int]
@@ -68,7 +69,42 @@ class Sale {
         self.delivery = delivery
     }
     
+    func getIndexByProductCode(productCodes: [Int],productCode : Int) -> Int{
+        for (index,code) in productCodes.enumerated() {
+            if productCode == code {
+                return index
+            }
+        }
+        return -1
+    }
+    
+    func getProducts(callback: @escaping (_ products : [Product]) -> Void) {
+        let db = Firestore.firestore()
+        var products : [Product] = []
+        
+        db.collection("Products")
+            .whereField("productCode", in: self.productCodes)
+            .getDocuments() { (querySnapshot, err) in
+                if let err = err {
+                    print("Error getting documents: \(err)")
+                } else {
+                    for document in querySnapshot!.documents {
+                        let product = Product(firebaseDictionary: document.data())
+                        
+                        let productQuantityIndex = self.productCodes.firstIndex(of: product.productCode)
+                        
+                        product.addedToCart = true
+                        product.currentSelectedAmount = self.productQuantities[productQuantityIndex!]
+                        
+                        products.append(product)
+                    }
+                    callback(products)
+                }
+        }
+    }
+    
     var firebaseDictionary : [String: Any] {
         return ["productCodes" : productCodes, "productQuantities" : productQuantities , "totalItems" : totalItems, "customerId" : customerId]
     }
+
 }
