@@ -8,6 +8,7 @@
 import UIKit
 import MapKit
 import Firebase
+import CoreLocation
 
 class AddressInformationViewController: UIViewController {
 
@@ -71,6 +72,42 @@ class AddressInformationViewController: UIViewController {
         let address = Address(street: street, complementaryInfo: complementaryInfo, postalCode: postalCode)
         return address
     }
+    
+    @IBAction func PostalCodeRead(_ sender: UITextField) {
+        var postalCode = LblPostal.text
+        var city : String = ""
+        if(postalCode?.count == 6){
+            postalCode = validatePostalCode(postalCode: postalCode!)
+            let geocoder = CLGeocoder()
+            geocoder.geocodeAddressString((postalCode)!) {(placemarks, error) -> Void in
+                if let placemark = placemarks?[0] {
+                    if placemark.postalCode == postalCode{
+                        let annotation = MKPlacemark(placemark: (placemarks?.first!)!)
+                        self.mapView.addAnnotation(annotation)
+                        let latDelta:CLLocationDegrees = 0.01
+                        let lonDelta:CLLocationDegrees = 0.01
+                        let span = MKCoordinateSpan(latitudeDelta: latDelta, longitudeDelta: lonDelta)
+                        let region = MKCoordinateRegion(center: (placemark.location?.coordinate) as! CLLocationCoordinate2D, span: span)
+                        self.mapView.setRegion(region, animated: true)
+                    }
+                    else{
+                        print("Please enter valid zipcode")
+                    }
+                }
+            }
+        }
+       
+    }
+    
+    func validatePostalCode(postalCode: String) -> String {
+        var postal : String = postalCode.uppercased()
+        var postalComp = Array(postal)
+        postalComp.insert(" ", at: 3)
+        postal = String(postalComp)
+        LblPostal.text = postal
+        return postal
+    }
+    
     
     
     @objc func DismissKeyboard(){
