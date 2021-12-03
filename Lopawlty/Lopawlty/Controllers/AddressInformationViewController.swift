@@ -40,18 +40,49 @@ class AddressInformationViewController: UIViewController {
         LblPostal.attributedPlaceholder = NSAttributedString(string: "XXX XXX", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
     }
     
+    func validateAddressDetails() -> Bool {
+        var validated = true
+        var errorMessage = ""
+        if(!Utils.validateTextFieldWithMinLen(txtLabel: LblAddressNum, min: 3)) {
+            validated = false
+            errorMessage += "Error with address info number (min length 3). "
+        }
+        
+        if(!Utils.validateTextFieldWithMinLen(txtLabel: LblStreetName, min: 3)) {
+            validated = false
+            errorMessage += "Error with street name (min length 3). "
+        }
+        
+        if(!Utils.validateTextField(txtLabel: LblComplementary)) {
+            validated = false
+            errorMessage += "Please fill in Complementary Info. "
+        }
+        
+        if(!Utils.validateTextField(txtLabel: LblComplementary)) {
+            validated = false
+            errorMessage += "Please fill in Postal Code "
+        }
+        
+        if(!validated) {
+            Utils.alert(message: errorMessage, viewController: self)
+        }
+        
+        return validated
+    }
     
     @IBAction func btnContinueClicked(_ sender: Any) {
         //addressToConfirmation
-        let newAddress = createAddress()
-        let db = Firestore.firestore()
-        let firebaseNewAddressDict = newAddress.firebaseDictionary;
-        db.collection("Sales").document(saleId).setData( ["address" : firebaseNewAddressDict], merge: true){ err in
-            if let err = err {
-                print("error adding address: \(err)")
-            } else {
-                print("updated address of sale \(self.saleId)")
-                self.performSegue(withIdentifier: "addressToConfirmation", sender: self)
+        if(validateAddressDetails()) {
+            let newAddress = createAddress()
+            let db = Firestore.firestore()
+            let firebaseNewAddressDict = newAddress.firebaseDictionary;
+            db.collection("Sales").document(saleId).setData( ["address" : firebaseNewAddressDict], merge: true){ err in
+                if let err = err {
+                    print("error adding address: \(err)")
+                } else {
+                    print("updated address of sale \(self.saleId)")
+                    self.performSegue(withIdentifier: "addressToConfirmation", sender: self)
+                }
             }
         }
         

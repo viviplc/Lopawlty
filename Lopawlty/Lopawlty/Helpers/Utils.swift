@@ -88,7 +88,7 @@ class Utils {
     
     static func alert(message: String, viewController : UIViewController) {
         //below code for alert taken from https://stackoverflow.com/a/24022696
-        let alert = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
+        let alert = UIAlertController(title: "Invalid Form", message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
             switch action.style{
                 case .default:
