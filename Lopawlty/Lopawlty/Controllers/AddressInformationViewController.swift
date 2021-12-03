@@ -65,9 +65,9 @@ class AddressInformationViewController: UIViewController {
     
     
     func createAddress() -> Address {
-        let street = "Test Street"
-        let complementaryInfo = "Test Info, 123"
-        let postalCode = "N2J GI7"
+        let street = LblStreetName.text!
+        let complementaryInfo = LblComplementary.text!
+        let postalCode = LblPostal.text!
         let address = Address(street: street, complementaryInfo: complementaryInfo, postalCode: postalCode)
         return address
     }
