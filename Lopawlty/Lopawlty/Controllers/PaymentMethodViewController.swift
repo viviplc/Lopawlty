@@ -38,7 +38,7 @@ class PaymentMethodViewController: UIViewController, UITextFieldDelegate {
         alertController.view.addSubview(picker)
         let selectAction = UIAlertAction(title: "Ok", style: .default, handler: { [self] _ in
             let dateSelected = picker.date
-            print("Selected Date: \(dateSelected)")
+            //print("Selected Date: \(dateSelected)")
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "MM"
             let monthSel = dateFormatter.string(from: dateSelected)

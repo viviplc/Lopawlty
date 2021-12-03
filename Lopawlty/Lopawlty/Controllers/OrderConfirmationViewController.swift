@@ -15,6 +15,7 @@ class OrderConfirmationViewController: UIViewController {
     @IBOutlet weak var BtnSeeItems: UIButton!
     @IBOutlet weak var BtnPaymentMethod: UIButton!
     @IBOutlet weak var BtnDate: UIButton!
+    @IBOutlet weak var BtnPlaceOrder: UIButton!
     
     @IBOutlet weak var LblSubtotal: UILabel!
     @IBOutlet weak var LblFeesTaxes: UILabel!
@@ -97,6 +98,7 @@ class OrderConfirmationViewController: UIViewController {
         LblTimeInterval.layer.borderColor = UIColor(red: 0, green: 122/255, blue: 255/255, alpha: 1).cgColor
         ShippingViewInfo.layer.borderWidth = 2
         ShippingViewInfo.layer.borderColor = UIColor(red: 204/255, green: 228/255, blue: 255/255, alpha: 1).cgColor
+        BtnPlaceOrder.layer.cornerRadius = 15
     }
     
     func loadSaleInfoFromFirebase() {
@@ -116,4 +118,27 @@ class OrderConfirmationViewController: UIViewController {
         }
         
     }
+    
+    @IBAction func BtnPlaceOrderClick(_ sender: Any) {
+        let confirmationImg = UIImage(named: "confirmation")
+        
+               
+        let imageView = UIImageView(frame: CGRect(x:40 ,y: 60, width: 200, height: 200))
+        imageView.image = confirmationImg
+        
+        let alert = UIAlertController(title: "Thanks for shopping with us! \n\n\n\n\n\n\n\n\n\n",message: nil, preferredStyle: .alert)
+        
+        alert.view.addSubview(imageView)
+        
+        let placeAction = UIAlertAction(title: "Place it", style: .default, handler: { [self] _ in
+            print("Place it selected")
+        })
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alert.addAction(placeAction)
+        alert.addAction(cancelAction)
+        present(alert, animated: true)
+        
+    }
+    
 }
