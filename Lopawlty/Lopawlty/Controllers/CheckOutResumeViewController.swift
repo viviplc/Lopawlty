@@ -18,6 +18,7 @@ class CheckOutResumeViewController: UIViewController {
     @IBOutlet weak var LblGstHst: UILabel!
     @IBOutlet weak var LblPstRst: UILabel!
     @IBOutlet weak var LblGrandTotal: UILabel!
+    @IBOutlet weak var BtnContinue: UIButton!
     
     var totalItems = 0
     var subTotal = 0.0
@@ -26,6 +27,8 @@ class CheckOutResumeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        BtnContinue.layer.cornerRadius = 15
 
         LblTotalItems.text = "\(totalItems)"
         LblSubTotal.text = "$ \(String(format: "%.2f", subTotal))"

@@ -38,6 +38,8 @@ class DeliveryInfoViewController: UIViewController {
     @IBOutlet weak var Btn1PM: UIButton!
     @IBOutlet weak var Btn3PM: UIButton!
     
+    @IBOutlet weak var BtnContinue: UIButton!
+    
     var saleId = ""
     var selectableDayStrings : [[String : String]] = []
     var selectedDayIndex = -1
@@ -45,7 +47,7 @@ class DeliveryInfoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        BtnContinue.layer.cornerRadius = 15
         setDatesButtonsInfo()
         setHoursButtonsStyles()
     
