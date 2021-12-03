@@ -19,6 +19,8 @@ class PaymentMethodViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var TxtCVV: UITextField!
     
     var saleId = ""
+    var selectedMonth = ""
+    var selectedYear = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +46,10 @@ class PaymentMethodViewController: UIViewController, UITextFieldDelegate {
             let monthSel = dateFormatter.string(from: dateSelected)
             dateFormatter.dateFormat = "yy"
             let yearSel = dateFormatter.string(from: dateSelected)
+            
+            self.selectedMonth = monthSel
+            self.selectedYear = yearSel
+            
             BtnMonth.setTitleColor(UIColor(red: 0, green: 0, blue: 0, alpha: 1), for: .normal)
             BtnMonth.setTitle(monthSel,for: .normal)
             LblYear.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
@@ -63,19 +69,54 @@ class PaymentMethodViewController: UIViewController, UITextFieldDelegate {
         present(alertController, animated: true)
     }
     
-    
+    func validateCreditCardDetails() -> Bool {
+        var validated = true
+        var errorMessage = ""
+        if(!Utils.validateTextFieldWithMinLen(txtLabel: TxtCardHolderName, min: 5)) {
+            validated = false
+            errorMessage += "Error with Card Holder Name (min length 5). "
+        }
+        
+        if(!Utils.validateTextFieldWithMinLen(txtLabel: TxtEmail, min: 5)) {
+            validated = false
+            errorMessage += "Error with Email (min length 5). "
+        }
+        
+        if(!Utils.validateTextFieldWithExactLength(txtLabel: TxtCreditCardNumber, len: 16) || !Utils.validateTextFieldAsNumeric(txtLabel: TxtCreditCardNumber)) {
+            validated = false
+            errorMessage += "Error with Credit Card Number (16 digits exactly). "
+        }
+        
+        if(selectedMonth.count == 0 || selectedYear.count == 0) {
+            validated = false
+            errorMessage += "Please select an expiration date. "
+        }
+        
+        if(!Utils.validateTextFieldWithExactLength(txtLabel: TxtCVV, len: 3) || !Utils.validateTextFieldAsNumeric(txtLabel: TxtCVV)) {
+            validated = false
+            errorMessage += "Error with CVV number (3 digits exactly). "
+        }
+        
+        if(!validated) {
+            Utils.alert(message: errorMessage, viewController: self)
+        }
+        
+        return validated
+    }
     
     @IBAction func btnContinueClicked(_ sender: Any) {
         //creditCardToAddress
-        let newCreditCard = createCreditCard()
-        let db = Firestore.firestore()
-        let firebaseNewCreditCardDict = newCreditCard.firebaseDictionary;
-        db.collection("Sales").document(saleId).setData( ["creditCard" : firebaseNewCreditCardDict], merge: true){ err in
-            if let err = err {
-                print("error adding creditcard: \(err)")
-            } else {
-                print("updated credit card of sale \(self.saleId)")
-                self.performSegue(withIdentifier: "creditCardToAddress", sender: self)
+        if(validateCreditCardDetails()) {
+            let newCreditCard = createCreditCard()
+            let db = Firestore.firestore()
+            let firebaseNewCreditCardDict = newCreditCard.firebaseDictionary;
+            db.collection("Sales").document(saleId).setData( ["creditCard" : firebaseNewCreditCardDict], merge: true){ err in
+                if let err = err {
+                    print("error adding creditcard: \(err)")
+                } else {
+                    print("updated credit card of sale \(self.saleId)")
+                    self.performSegue(withIdentifier: "creditCardToAddress", sender: self)
+                }
             }
         }
     }

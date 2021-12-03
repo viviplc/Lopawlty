@@ -69,6 +69,19 @@ class Utils {
         }
     }
     
+    static func validateTextFieldAsNumeric(txtLabel : UITextField) -> Bool {
+        //below code to check if text is number taken from https://stackoverflow.com/a/60470348
+        let numbersSet = CharacterSet(charactersIn: "0123456789")
+
+        let textCharacterSet = CharacterSet(charactersIn: txtLabel.text!)
+
+        if textCharacterSet.isSubset(of: numbersSet) {
+            return true
+        } else {
+            return false
+        }
+    }
+    
     static func deleteUserDefaultField(key : String) {
         UserDefaults.standard.removeObject(forKey: key)
     }
