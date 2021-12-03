@@ -12,11 +12,12 @@ class OrderConfirmationViewController: UIViewController {
 
     
     @IBOutlet weak var LblTotalItems: UILabel!
-    @IBOutlet weak var BtnSeeItems: UIButton!
+    
     @IBOutlet weak var BtnPaymentMethod: UIButton!
     @IBOutlet weak var BtnDate: UIButton!
     @IBOutlet weak var BtnPlaceOrder: UIButton!
     
+    @IBOutlet weak var BtnSeeItems: UIButton!
     @IBOutlet weak var LblSubtotal: UILabel!
     @IBOutlet weak var LblFeesTaxes: UILabel!
     @IBOutlet weak var LblGrandTotal: UILabel!
@@ -32,6 +33,7 @@ class OrderConfirmationViewController: UIViewController {
     
     var saleId = ""
     var sale : Sale = Sale()
+    var products : [Product] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -85,7 +87,7 @@ class OrderConfirmationViewController: UIViewController {
     }
     
     func setButtonsStyles() {
-        BtnSeeItems.layer.borderWidth = 1
+        BtnSeeItems.layer.borderWidth = 1 
         BtnSeeItems.layer.borderColor = UIColor(red: 0, green: 122/255, blue: 255/255, alpha: 1).cgColor
         BtnSeeItems.layer.cornerRadius = 15
         BtnPaymentMethod.layer.borderWidth = 1
@@ -110,6 +112,9 @@ class OrderConfirmationViewController: UIViewController {
             if let document = document, document.exists {
                 let data = document.data()
                 self.sale = Sale(firebaseDictionary: data!)
+                self.sale.getProducts() { (products) in
+                    self.products = products
+                }
                 print("successfully got all models from db")
                 self.setOrderInfo()
             } else {
@@ -140,5 +145,19 @@ class OrderConfirmationViewController: UIViewController {
         present(alert, animated: true)
         
     }
+    
+    
+    @IBAction func btnSeeItemsClicked(_ sender: Any) {
+        //CheckoutConfirmationToSeeMore
+        self.performSegue(withIdentifier: "CheckoutConfirmationToSeeMore", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            if segue.destination is OrderItemsViewController {
+                let resume = segue.destination as? OrderItemsViewController
+                resume?.orderItems = self.products
+            }
+        }
+    
     
 }
