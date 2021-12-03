@@ -10,7 +10,6 @@ import UIKit
 class OrderItemsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
         
     @IBOutlet weak var orderItemsTable: UITableView!
-    @IBOutlet weak var BtnConfirm: UIButton!
     
 
     var orderItems : [Product] = SampleData.getProducts()
@@ -19,9 +18,6 @@ class OrderItemsViewController: UIViewController, UITableViewDataSource, UITable
         super.viewDidLoad()
 
         orderItemsTable.delegate = self
-        orderItemsTable.dataSource = self
-        
-        BtnConfirm.layer.cornerRadius = 10
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {

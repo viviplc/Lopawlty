@@ -30,12 +30,12 @@
 		8B84E2EF275964BF000D8934 /* MonthYearPicker in Frameworks */ = {isa = PBXBuildFile; productRef = 8B84E2EE275964BF000D8934 /* MonthYearPicker */; };
 		8BC55813275AA54F00D670EA /* OrderItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC55812275AA54F00D670EA /* OrderItemsViewController.swift */; };
 		8BC55818275AA56900D670EA /* OderItemCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC55817275AA56900D670EA /* OderItemCellTableViewCell.swift */; };
+		8BC55823275AC3B100D670EA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8BC55822275AC3B100D670EA /* GoogleService-Info.plist */; };
 		B91557A82745E16500AA415C /* Lopawlty.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B91557A62745E16500AA415C /* Lopawlty.xcdatamodeld */; };
 		B9441A5D275A60840017D917 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9441A5C275A60840017D917 /* Utils.swift */; };
 		B94B68272756BA1F00835D18 /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94B68262756BA1F00835D18 /* Customer.swift */; };
 		B94B68382756C0C600835D18 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = B94B68372756C0C600835D18 /* FirebaseFirestore */; };
 		B97062A52756D94C00B1B394 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97062A42756D94C00B1B394 /* Product.swift */; };
-		B9833483275AB7170086F32F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B9833482275AB7170086F32F /* GoogleService-Info.plist */; };
 		B9995F39275087C200C9C587 /* Cart+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9995F33275087C200C9C587 /* Cart+CoreDataClass.swift */; };
 		B9995F512750899800C9C587 /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9995F502750899800C9C587 /* SampleData.swift */; };
 		B9EC995D27594C2800F9D33E /* CreditCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9EC995C27594C2800F9D33E /* CreditCard.swift */; };
@@ -93,11 +93,11 @@
 		8B84E2E827594ACE000D8934 /* PaymentMethodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethodViewController.swift; sourceTree = "<group>"; };
 		8BC55812275AA54F00D670EA /* OrderItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderItemsViewController.swift; sourceTree = "<group>"; };
 		8BC55817275AA56900D670EA /* OderItemCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OderItemCellTableViewCell.swift; sourceTree = "<group>"; };
+		8BC55822275AC3B100D670EA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B91557A72745E16500AA415C /* Lopawlty.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Lopawlty.xcdatamodel; sourceTree = "<group>"; };
 		B9441A5C275A60840017D917 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		B94B68262756BA1F00835D18 /* Customer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
 		B97062A42756D94C00B1B394 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
-		B9833482275AB7170086F32F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B9995F33275087C200C9C587 /* Cart+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cart+CoreDataClass.swift"; sourceTree = "<group>"; };
 		B9995F502750899800C9C587 /* SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
 		B9EC995C27594C2800F9D33E /* CreditCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCard.swift; sourceTree = "<group>"; };
@@ -182,7 +182,7 @@
 		8B5F10E52739E21B006AB198 /* Lopawlty */ = {
 			isa = PBXGroup;
 			children = (
-				B9833482275AB7170086F32F /* GoogleService-Info.plist */,
+				8BC55822275AC3B100D670EA /* GoogleService-Info.plist */,
 				B9995F4F2750897400C9C587 /* Helpers */,
 				B9557AFC273DF976006A2B81 /* Models */,
 				8B5414AF273DB32200043F74 /* Controllers */,
@@ -352,7 +352,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B5F10F32739E21C006AB198 /* LaunchScreen.storyboard in Resources */,
-				B9833483275AB7170086F32F /* GoogleService-Info.plist in Resources */,
+				8BC55823275AC3B100D670EA /* GoogleService-Info.plist in Resources */,
 				8B5F10F02739E21C006AB198 /* Assets.xcassets in Resources */,
 				8B5F10EE2739E21C006AB198 /* Main.storyboard in Resources */,
 			);
