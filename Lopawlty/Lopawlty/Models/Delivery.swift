@@ -8,15 +8,32 @@
 import Foundation
 
 class Delivery {
-    var deliveryDateTime:String
-    var saleId : String
+    var deliveryDayName:String
+    var deliveryDayNumber:String
+    var deliveryMonth:String
+    var deliveryTimeRange:String
     
-    init(deliveryDateTime:String, saleId : String) {
-        self.deliveryDateTime = deliveryDateTime
-        self.saleId = saleId
+    init(deliveryDayName:String, deliveryDayNumber:String, deliveryMonth:String, deliveryTimeRange:String) {
+        self.deliveryDayName = deliveryDayName
+        self.deliveryDayNumber = deliveryDayNumber
+        self.deliveryMonth = deliveryMonth
+        self.deliveryTimeRange = deliveryTimeRange
     }
     
     convenience init() {
-        self.init(deliveryDateTime:"", saleId:"")
+        self.init(deliveryDayName:"", deliveryDayNumber:"", deliveryMonth:"", deliveryTimeRange:"")
+    }
+    
+    convenience init(firebaseDictionary : [String: Any]) {
+        let deliveryDayName = firebaseDictionary["deliveryDayName"] as! String? ?? ""
+        let deliveryDayNumber = firebaseDictionary["deliveryDayNumber"] as! String? ?? ""
+        let deliveryMonth = firebaseDictionary["deliveryMonth"] as! String? ?? ""
+        let deliveryTimeRange = firebaseDictionary["deliveryTimeRange"] as! String? ?? ""
+        
+        self.init(deliveryDayName : deliveryDayName, deliveryDayNumber : deliveryDayNumber, deliveryMonth : deliveryMonth, deliveryTimeRange : deliveryTimeRange)
+    }
+    
+    var firebaseDictionary : [String: Any] {
+        return ["deliveryDayName" : deliveryDayName, "deliveryDayNumber" : deliveryDayNumber , "deliveryMonth" : deliveryMonth, "deliveryTimeRange" : deliveryTimeRange]
     }
 }

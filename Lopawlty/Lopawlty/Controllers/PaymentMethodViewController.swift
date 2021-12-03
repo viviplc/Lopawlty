@@ -7,11 +7,18 @@
 
 import UIKit
 import MonthYearPicker
+import Firebase
 
 class PaymentMethodViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var BtnMonth: UIButton!
     @IBOutlet weak var LblYear: UITextField!
+    @IBOutlet weak var TxtCardHolderName: UITextField!
+    @IBOutlet weak var TxtEmail: UITextField!
+    @IBOutlet weak var TxtCreditCardNumber: UITextField!
+    @IBOutlet weak var TxtCVV: UITextField!
+    
+    var saleId = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,6 +62,43 @@ class PaymentMethodViewController: UIViewController, UITextFieldDelegate {
         alertController.addAction(okAction)
         present(alertController, animated: true)
     }
+    
+    
+    
+    @IBAction func btnContinueClicked(_ sender: Any) {
+        //creditCardToAddress
+        let newCreditCard = createCreditCard()
+        let db = Firestore.firestore()
+        let firebaseNewCreditCardDict = newCreditCard.firebaseDictionary;
+        db.collection("Sales").document(saleId).setData( ["creditCard" : firebaseNewCreditCardDict], merge: true){ err in
+            if let err = err {
+                print("error adding creditcard: \(err)")
+            } else {
+                print("updated credit card of sale \(self.saleId)")
+                self.performSegue(withIdentifier: "creditCardToAddress", sender: self)
+            }
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            if segue.destination is AddressInformationViewController {
+                let resume = segue.destination as? AddressInformationViewController
+                resume?.saleId = self.saleId
+            }
+        }
+    
+    
+    func createCreditCard() -> CreditCard {
+        let cardHolderName = TxtCardHolderName.text!
+        let email = TxtEmail.text!
+        let creditCardNumber = TxtCreditCardNumber.text!
+        let expirationDate = "PLACEHOLDER"
+        let cvv = Int(TxtCVV.text!)!
+        let newCreditCard = CreditCard(cardHolderName: cardHolderName, email: email, creditCardNumber: creditCardNumber, expirationDate: expirationDate, cvv: cvv)
+        return newCreditCard
+    }
+    
+    
     
     @objc func DismissKeyboard(){
     //Causes the view to resign from the status of first responder.

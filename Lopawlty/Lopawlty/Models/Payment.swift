@@ -22,8 +22,18 @@ class Payment {
         self.init(subTotal: 0.0, taxes : 0.0, totalCost : 0.0)
     }
     
+    convenience init(firebaseDictionary : [String: Any]) {
+        let subTotal = firebaseDictionary["subTotal"] as! Double? ?? 0.0
+        let taxes = firebaseDictionary["taxes"] as! Double? ?? 0.0
+        let totalCost = firebaseDictionary["totalCost"] as! Double? ?? 0.0
+        
+        self.init(subTotal : subTotal, taxes : taxes, totalCost : totalCost)
+    }
+    
     var firebaseDictionary : [String: Any] {
         return ["subTotal" : subTotal, "taxes" : taxes , "totalCost" : totalCost]
     }
+    
+    
     
 }

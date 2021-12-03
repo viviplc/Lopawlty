@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class DeliveryInfoViewController: UIViewController {
 
@@ -38,6 +39,9 @@ class DeliveryInfoViewController: UIViewController {
     @IBOutlet weak var Btn3PM: UIButton!
     
     var saleId = ""
+    var selectableDayStrings : [[String : String]] = []
+    var selectedDayIndex = -1
+    var selectedDeliveryTimeRange:String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,6 +67,8 @@ class DeliveryInfoViewController: UIViewController {
             let dayNumString = dateFormatter.string(from: nextDay)
             dateFormatter.dateFormat = "MMM"
             let monthString = dateFormatter.string(from: nextDay)
+    
+            selectableDayStrings.append(["deliveryDayName" : dayWeekString, "deliveryDayNumber" : dayNumString, "deliveryMonth" : monthString])
             
             switch index {
             case 1:
@@ -108,6 +114,7 @@ class DeliveryInfoViewController: UIViewController {
         Day1View.layer.backgroundColor = UIColor(red: 1, green:1, blue: 1, alpha: 1).cgColor
         Day1Btn.layer.borderWidth = 3
         Day1Btn.layer.borderColor = UIColor(red: 0, green: 122/255, blue: 255/255, alpha: 1).cgColor
+        selectedDayIndex = 0
     }
     
     @IBAction func BtnDay2Click(_ sender: Any) {
@@ -115,6 +122,7 @@ class DeliveryInfoViewController: UIViewController {
         Day2View.layer.backgroundColor = UIColor(red: 1, green:1, blue: 1, alpha: 1).cgColor
         Day2Btn.layer.borderWidth = 3
         Day2Btn.layer.borderColor = UIColor(red: 0, green: 122/255, blue: 255/255, alpha: 1).cgColor
+        selectedDayIndex = 1
     }
     
     @IBAction func BtnDay3Click(_ sender: Any) {
@@ -122,6 +130,7 @@ class DeliveryInfoViewController: UIViewController {
         Day3View.layer.backgroundColor = UIColor(red: 1, green:1, blue: 1, alpha: 1).cgColor
         Day3Btn.layer.borderWidth = 3
         Day3Btn.layer.borderColor = UIColor(red: 0, green: 122/255, blue: 255/255, alpha: 1).cgColor
+        selectedDayIndex = 2
     }
     
     @IBAction func BtnDay4Click(_ sender: Any) {
@@ -129,6 +138,7 @@ class DeliveryInfoViewController: UIViewController {
         Day4View.layer.backgroundColor = UIColor(red: 1, green:1, blue: 1, alpha: 1).cgColor
         Day4Btn.layer.borderWidth = 3
         Day4Btn.layer.borderColor = UIColor(red: 0, green: 122/255, blue: 255/255, alpha: 1).cgColor
+        selectedDayIndex = 3
     }
     
     func resetDayButtons() {
@@ -145,21 +155,25 @@ class DeliveryInfoViewController: UIViewController {
     @IBAction func Btn9AmClick(_ sender: Any) {
         resetHourButtons()
         Btn9AM.layer.borderWidth = 3
+        selectedDeliveryTimeRange = "9:00 AM - 11:00 AM"
     }
     
     @IBAction func Btn11AmClick(_ sender: Any) {
         resetHourButtons()
         Btn11AM.layer.borderWidth = 3
+        selectedDeliveryTimeRange = "11:00 AM - 1:00 PM"
     }
     
     @IBAction func Btn1PmClick(_ sender: Any) {
         resetHourButtons()
         Btn1PM.layer.borderWidth = 3
+        selectedDeliveryTimeRange = "1:00 PM - 3:00 PM"
     }
     
     @IBAction func Btn3PmClick(_ sender: Any) {
         resetHourButtons()
         Btn3PM.layer.borderWidth = 3
+        selectedDeliveryTimeRange = "3:00 PM - 5:00 PM"
     }
     
     func resetHourButtons() {
@@ -167,6 +181,39 @@ class DeliveryInfoViewController: UIViewController {
         Btn11AM.layer.borderWidth = 1
         Btn1PM.layer.borderWidth = 1
         Btn3PM.layer.borderWidth = 1
+    }
+    
+    
+    @IBAction func btnContinueClicked(_ sender: Any) {
+        //deliveryToCreditCard
+        let newDelivery = createDelivery()
+        let db = Firestore.firestore()
+        let firebaseNewDeliveryDict = newDelivery.firebaseDictionary;
+        db.collection("Sales").document(saleId).setData( ["delivery" : firebaseNewDeliveryDict], merge: true){ err in
+            if let err = err {
+                print("error adding delivery: \(err)")
+            } else {
+                print("updated delivery of sale \(self.saleId)")
+                self.performSegue(withIdentifier: "deliveryToCreditCard", sender: self)
+            }
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            if segue.destination is PaymentMethodViewController {
+                let resume = segue.destination as? PaymentMethodViewController
+                resume?.saleId = self.saleId
+            }
+        }
+    
+    func createDelivery() -> Delivery {
+        //deliveryToCreditCard
+        let selectedDeliveryDate = selectableDayStrings[selectedDayIndex]
+        let deliveryDayName = selectedDeliveryDate["deliveryDayName"]!
+        let deliveryDayNumber = selectedDeliveryDate["deliveryDayNumber"]!
+        let deliveryMonth = selectedDeliveryDate["deliveryMonth"]!
+        let newDelivery = Delivery(deliveryDayName: deliveryDayName, deliveryDayNumber: deliveryDayNumber, deliveryMonth: deliveryMonth, deliveryTimeRange: selectedDeliveryTimeRange)
+        return newDelivery
     }
     
 }

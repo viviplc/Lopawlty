@@ -1490,7 +1490,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="s4d-pc-DKg" kind="show" id="3SC-8i-kyl"/>
+                                    <action selector="btnContinueClicked:" destination="uaf-7G-TRp" eventType="touchUpInside" id="bie-tW-b2g"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1540,6 +1540,7 @@
                         <outlet property="Day4DayWeek" destination="o14-L7-B0c" id="8TU-BU-yYS"/>
                         <outlet property="Day4Month" destination="l3q-zO-3W8" id="d9A-yg-4KR"/>
                         <outlet property="Day4View" destination="WCV-UR-3Y2" id="wdZ-WN-UX2"/>
+                        <segue destination="s4d-pc-DKg" kind="show" identifier="deliveryToCreditCard" id="zG9-0m-s3E"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2fH-t0-hUp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1718,7 +1719,7 @@
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="CreateAccount_Click:" destination="QFc-hl-HNx" eventType="touchUpInside" id="eLd-K3-Lti"/>
+                                                    <action selector="btnContinueClicked:" destination="s4d-pc-DKg" eventType="touchUpInside" id="4Wg-ti-uIn"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -1759,7 +1760,11 @@
                     <connections>
                         <outlet property="BtnMonth" destination="teT-WZ-xqi" id="HzN-Rd-9RZ"/>
                         <outlet property="LblYear" destination="skW-XQ-WIx" id="Gh5-6G-V7o"/>
-                        <segue destination="QOg-vv-84L" kind="show" id="hZC-Df-ggj"/>
+                        <outlet property="TxtCVV" destination="iYG-vM-Jt4" id="fnA-Do-esb"/>
+                        <outlet property="TxtCardHolderName" destination="vGj-Ot-FcP" id="76U-YS-sx8"/>
+                        <outlet property="TxtCreditCardNumber" destination="pZv-pE-ON3" id="WfG-yq-W2X"/>
+                        <outlet property="TxtEmail" destination="2wB-CU-Wge" id="GD4-Am-U7w"/>
+                        <segue destination="QOg-vv-84L" kind="show" identifier="creditCardToAddress" id="rLV-xc-W2Y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xG2-am-GXC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -2378,6 +2383,7 @@
                                 </state>
                                 <connections>
                                     <action selector="CreateAccount_Click:" destination="QFc-hl-HNx" eventType="touchUpInside" id="Twl-SA-Nfy"/>
+                                    <action selector="btnContinueClicked:" destination="QOg-vv-84L" eventType="touchUpInside" id="Vme-XP-uOW"/>
                                     <action selector="btnCreateAccountClicked:" destination="QOg-vv-84L" eventType="touchUpInside" id="uHl-N2-FD2"/>
                                 </connections>
                             </button>
@@ -2400,13 +2406,12 @@
                     </view>
                     <navigationItem key="navigationItem" title="Address Information" id="roh-1i-TkC"/>
                     <connections>
-                        <outlet property="BtnCreateAccount" destination="GHo-VN-oe1" id="54m-rg-mKL"/>
                         <outlet property="LblAddressNum" destination="AAz-4c-vH7" id="8aV-iX-ml7"/>
                         <outlet property="LblComplementary" destination="Dj5-W9-cZ0" id="pdr-3d-D5S"/>
                         <outlet property="LblPostal" destination="1yE-So-aFV" id="vSJ-nk-iT6"/>
                         <outlet property="LblStreetName" destination="Mn4-wE-Mxh" id="GP8-W2-X1q"/>
                         <outlet property="mapView" destination="n2L-Ga-Idm" id="Grq-vJ-zd8"/>
-                        <segue destination="u25-Nn-d0X" kind="show" id="6sS-62-qsR"/>
+                        <segue destination="u25-Nn-d0X" kind="show" identifier="addressToConfirmation" id="F17-OU-Jdp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hcM-V2-CXf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

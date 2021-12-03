@@ -20,6 +20,11 @@ class AddressInformationViewController: UIViewController {
     @IBOutlet weak var LblPostal: UITextField!
     
     
+    
+    
+    
+    var saleId = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -37,7 +42,15 @@ class AddressInformationViewController: UIViewController {
         LblPostal.attributedPlaceholder = NSAttributedString(string: "XXX XXX", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
     }
     
-    @IBAction func btnCreateAccountClicked(_ sender: Any) {
+    
+    @IBAction func btnContinueClicked(_ sender: Any) {
+        //addressToConfirmation
+        
+    }
+    
+    func createAddress() -> Address {
+        let street =
+        //let address = Address(street: street, complementaryInfo: complementaryInfo, postalCode: postalCode)
     }
     
     
