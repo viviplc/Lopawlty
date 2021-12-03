@@ -11,13 +11,13 @@ class Address {
     var street: String
     var complementaryInfo : String
     var postalCode : String
-    var customerId : String
+    var saleId : String
    
-    init(street: String, complementaryInfo : String, postalCode : String, customerId: String) {
+    init(street: String, complementaryInfo : String, postalCode : String, saleId: String) {
         self.street = street
         self.complementaryInfo = complementaryInfo
         self.postalCode = postalCode
-        self.customerId = customerId
+        self.saleId = saleId
     }
     
 
@@ -25,13 +25,13 @@ class Address {
         let street = firebaseDictionary["street"] as! String? ?? ""
         let complementaryInfo = firebaseDictionary["complementaryInfo"] as! String? ?? ""
         let postalCode = firebaseDictionary["postalCode"] as! String? ?? ""
-        let customerId = firebaseDictionary["customerId"] as! String? ?? ""
+        let saleId = firebaseDictionary["saleId"] as! String? ?? ""
         
-        self.init(street: street, complementaryInfo : complementaryInfo, postalCode : postalCode, customerId: customerId)
+        self.init(street: street, complementaryInfo : complementaryInfo, postalCode : postalCode, saleId: saleId)
     }
     
     var firebaseDictionary : [String: Any] {
-        return ["street" : street, "complementaryInfo" : complementaryInfo, "postalCode" : postalCode, "customerId": customerId]
+        return ["street" : street, "complementaryInfo" : complementaryInfo, "postalCode" : postalCode, "saleId": saleId]
     }
     
 }

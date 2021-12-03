@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QOg-vv-84L">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hkg-J2-g9x">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -963,7 +963,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="uaf-7G-TRp" kind="show" id="cFy-Op-lv2"/>
+                                    <action selector="btnContinueClicked:" destination="AR3-re-hnu" eventType="touchUpInside" id="4PR-E0-CR3"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1007,6 +1007,7 @@
                         <outlet property="LblShipping" destination="17o-4U-UWp" id="P6r-4q-TBm"/>
                         <outlet property="LblSubTotal" destination="jHS-C7-biZ" id="Nk0-b6-OQF"/>
                         <outlet property="LblTotalItems" destination="L8G-iZ-2fh" id="Ss4-K1-hR9"/>
+                        <segue destination="uaf-7G-TRp" kind="show" identifier="checkoutToDelivery" id="LBf-Lc-BFq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JyB-H2-XgZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -2061,6 +2062,11 @@
                                                                 </connections>
                                                             </button>
                                                         </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="trailing" secondItem="GHo-VN-oe1" secondAttribute="trailing" constant="50" id="Tkl-ay-N4C"/>
+                                                            <constraint firstAttribute="bottom" secondItem="GHo-VN-oe1" secondAttribute="bottom" constant="10" id="VL1-mj-Lgn"/>
+                                                            <constraint firstItem="GHo-VN-oe1" firstAttribute="leading" secondItem="j6m-6N-8iH" secondAttribute="leading" constant="50" id="n6X-C3-98R"/>
+                                                        </constraints>
                                                     </stackView>
                                                 </subviews>
                                                 <constraints>
@@ -2068,6 +2074,7 @@
                                                     <constraint firstItem="Hqt-3k-Sac" firstAttribute="leading" secondItem="yb1-VQ-Snf" secondAttribute="leading" id="ZGl-6V-Ami"/>
                                                     <constraint firstItem="Hqt-3k-Sac" firstAttribute="top" secondItem="yb1-VQ-Snf" secondAttribute="top" id="jiD-cB-Di2"/>
                                                     <constraint firstAttribute="trailing" secondItem="Hqt-3k-Sac" secondAttribute="trailing" id="lCA-eA-PCk"/>
+                                                    <constraint firstAttribute="bottom" secondItem="j6m-6N-8iH" secondAttribute="bottom" id="ykY-7F-ek8"/>
                                                 </constraints>
                                             </stackView>
                                         </subviews>

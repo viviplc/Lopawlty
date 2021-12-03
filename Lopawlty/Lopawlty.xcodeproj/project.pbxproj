@@ -38,6 +38,9 @@
 		B9EC9967275956E600F9D33E /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9EC9966275956E600F9D33E /* Address.swift */; };
 		B9FC85D5275964B80040118E /* AddressInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FC85D4275964B80040118E /* AddressInformationViewController.swift */; };
 		B9FC85E02759881C0040118E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B9FC85DF2759881C0040118E /* GoogleService-Info.plist */; };
+		B9FC85E527599CAA0040118E /* Sale.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FC85E427599CAA0040118E /* Sale.swift */; };
+		B9FC85EA27599D590040118E /* Payment.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FC85E927599D590040118E /* Payment.swift */; };
+		B9FC85EF27599E7D0040118E /* Delivery.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FC85EE27599E7D0040118E /* Delivery.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +96,9 @@
 		B9EC9966275956E600F9D33E /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		B9FC85D4275964B80040118E /* AddressInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressInformationViewController.swift; sourceTree = "<group>"; };
 		B9FC85DF2759881C0040118E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B9FC85E427599CAA0040118E /* Sale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sale.swift; sourceTree = "<group>"; };
+		B9FC85E927599D590040118E /* Payment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Payment.swift; sourceTree = "<group>"; };
+		B9FC85EE27599E7D0040118E /* Delivery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delivery.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,6 +213,9 @@
 				B9EC995C27594C2800F9D33E /* CreditCard.swift */,
 				B9EC9961275954D000F9D33E /* Province.swift */,
 				B9EC9966275956E600F9D33E /* Address.swift */,
+				B9FC85E427599CAA0040118E /* Sale.swift */,
+				B9FC85E927599D590040118E /* Payment.swift */,
+				B9FC85EE27599E7D0040118E /* Delivery.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -368,6 +377,7 @@
 				B9EC9967275956E600F9D33E /* Address.swift in Sources */,
 				8B5414C4273DC1B400043F74 /* SignInViewController.swift in Sources */,
 				8B5414B7273DB69B00043F74 /* RegistrationViewController.swift in Sources */,
+				B9FC85E527599CAA0040118E /* Sale.swift in Sources */,
 				B9995F512750899800C9C587 /* SampleData.swift in Sources */,
 				8B3876DD2756FCC600BCBC94 /* SeeMoreViewController.swift in Sources */,
 				B9995F39275087C200C9C587 /* Cart+CoreDataClass.swift in Sources */,
@@ -376,11 +386,13 @@
 				8B77D19E275827FC00BFA778 /* CheckOutResumeViewController.swift in Sources */,
 				8B5414BC273DB70900043F74 /* ProvinceSelecViewController.swift in Sources */,
 				B9FC85D5275964B80040118E /* AddressInformationViewController.swift in Sources */,
+				B9FC85EA27599D590040118E /* Payment.swift in Sources */,
 				8B1C201D27471F75009B8A6A /* ProductsListViewController.swift in Sources */,
 				B97062A52756D94C00B1B394 /* Product.swift in Sources */,
 				8B77D1862757FA7B00BFA778 /* ShoppingCartViewController.swift in Sources */,
 				8B77D18B2757FABC00BFA778 /* ShoppingCartTableViewCell.swift in Sources */,
 				B9EC9962275954D000F9D33E /* Province.swift in Sources */,
+				B9FC85EF27599E7D0040118E /* Delivery.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -37,6 +37,8 @@ class DeliveryInfoViewController: UIViewController {
     @IBOutlet weak var Btn1PM: UIButton!
     @IBOutlet weak var Btn3PM: UIButton!
     
+    var saleId = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

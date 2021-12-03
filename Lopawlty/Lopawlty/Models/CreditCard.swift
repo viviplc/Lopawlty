@@ -14,13 +14,16 @@ class CreditCard {
     var expirationDate : String
     var cvv : Int
    
-    
     init(cardHolderName: String, email : String, creditCardNumber : String, expirationDate: String, cvv : Int) {
         self.cardHolderName = cardHolderName
         self.email = email
         self.creditCardNumber = creditCardNumber
         self.expirationDate = expirationDate
         self.cvv = cvv
+    }
+    
+    convenience init() {
+        self.init(cardHolderName: "", email : "", creditCardNumber : "", expirationDate: "", cvv : 0)
     }
     
 
