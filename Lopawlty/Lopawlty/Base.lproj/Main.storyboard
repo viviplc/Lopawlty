@@ -2056,6 +2056,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
+                                    <action selector="BtnPlaceOrderClick:" destination="u25-Nn-d0X" eventType="touchUpInside" id="vhY-pZ-dD0"/>
                                     <action selector="CreateAccount_Click:" destination="QFc-hl-HNx" eventType="touchUpInside" id="b3H-K7-GJX"/>
                                 </connections>
                             </button>
@@ -2084,6 +2085,7 @@
                     <connections>
                         <outlet property="BtnDate" destination="8rt-Is-QDm" id="FJp-dx-2Bt"/>
                         <outlet property="BtnPaymentMethod" destination="HEh-OD-gwP" id="DhR-zS-WQe"/>
+                        <outlet property="BtnPlaceOrder" destination="oT5-NO-HOD" id="D4h-f1-CBN"/>
                         <outlet property="BtnSeeItems" destination="0R3-zH-8DU" id="HoM-y1-bFw"/>
                         <outlet property="LblAddress" destination="dD9-Eu-V1O" id="2EO-tR-COU"/>
                         <outlet property="LblCityPostal" destination="xYo-vp-nbY" id="BNs-3I-U97"/>
