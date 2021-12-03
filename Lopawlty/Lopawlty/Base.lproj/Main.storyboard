@@ -2598,7 +2598,7 @@
         <scene sceneID="nFd-1m-kLJ">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="hkg-J2-g9x" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" selectedImage="house" catalog="system" id="FmQ-e7-4Vm"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" selectedImage="house" id="FmQ-e7-4Vm"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="BhW-Mp-jvm"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
