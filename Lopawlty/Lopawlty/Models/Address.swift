@@ -27,6 +27,10 @@ class Address {
         self.init(street: street, complementaryInfo : complementaryInfo, postalCode : postalCode)
     }
     
+    convenience init() {
+        self.init(street: "", complementaryInfo : "", postalCode : "")
+    }
+    
     var firebaseDictionary : [String: Any] {
         return ["street" : street, "complementaryInfo" : complementaryInfo, "postalCode" : postalCode]
     }

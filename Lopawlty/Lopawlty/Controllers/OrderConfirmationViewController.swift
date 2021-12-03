@@ -6,9 +6,12 @@
 //
 
 import UIKit
+import Firebase
 
 class OrderConfirmationViewController: UIViewController {
 
+    
+    @IBOutlet weak var LblTotalItems: UILabel!
     @IBOutlet weak var BtnSeeItems: UIButton!
     @IBOutlet weak var BtnPaymentMethod: UIButton!
     @IBOutlet weak var BtnDate: UIButton!
@@ -26,14 +29,46 @@ class OrderConfirmationViewController: UIViewController {
     
     @IBOutlet weak var ShippingViewInfo: UIView!
     
+    var saleId = ""
+    var sale : Sale = Sale()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setButtonsStyles()
-        infoTest()
-
+        //infoTest()
+        
+        loadSaleInfoFromFirebase()
+        
         
     }
+    
+    func setOrderInfo() {
+        let subTotal = sale.payment.subTotal
+        let subTotalText = String(format: "%.2f",subTotal)
+        LblSubtotal.text = "$ \(subTotalText)"
+        
+        let taxes = sale.payment.taxes
+        let taxesText = String(format: "%.2f",taxes)
+        LblFeesTaxes.text = "$ \(taxesText)"
+        
+        let total = sale.payment.totalCost
+        let totalText = String(format: "%.2f",total)
+        LblGrandTotal.text = "$ \(totalText)"
+        
+        LblDayWeek.text = sale.delivery.deliveryDayName
+        LblDayNum.text = sale.delivery.deliveryDayNumber
+        LblMonth.text = sale.delivery.deliveryMonth
+        
+        LblTimeInterval.text = sale.delivery.deliveryTimeRange
+        
+        LblAddress.text = sale.address.street
+        LblComplementary.text = sale.address.complementaryInfo
+        LblCityPostal.text = sale.address.postalCode
+        
+        LblTotalItems.text = String(sale.totalItems)
+    }
+    
     
     func infoTest() {
         LblSubtotal.text = "$ 25.36"
@@ -64,7 +99,21 @@ class OrderConfirmationViewController: UIViewController {
         ShippingViewInfo.layer.borderColor = UIColor(red: 204/255, green: 228/255, blue: 255/255, alpha: 1).cgColor
     }
     
+    func loadSaleInfoFromFirebase() {
+        let db = Firestore.firestore()
+        
+        let docRef = db.collection("Sales").document(saleId)
 
-    
-
+        docRef.getDocument { (document, error) in
+            if let document = document, document.exists {
+                let data = document.data()
+                self.sale = Sale(firebaseDictionary: data!)
+                print("successfully got all models from db")
+                self.setOrderInfo()
+            } else {
+                print("Document does not exist")
+            }
+        }
+        
+    }
 }

@@ -2095,6 +2095,7 @@
                         <outlet property="LblMonth" destination="zfd-XY-1c6" id="bCR-S9-hLw"/>
                         <outlet property="LblSubtotal" destination="2Hx-Xo-E4Y" id="ugk-Ea-1pr"/>
                         <outlet property="LblTimeInterval" destination="kfo-BA-Fuc" id="jMd-Py-iyA"/>
+                        <outlet property="LblTotalItems" destination="EKS-Ps-HUv" id="FKn-gU-KXW"/>
                         <outlet property="ShippingViewInfo" destination="ddZ-uE-EuU" id="Lxe-wx-30y"/>
                     </connections>
                 </viewController>
@@ -2382,9 +2383,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="CreateAccount_Click:" destination="QFc-hl-HNx" eventType="touchUpInside" id="Twl-SA-Nfy"/>
                                     <action selector="btnContinueClicked:" destination="QOg-vv-84L" eventType="touchUpInside" id="Vme-XP-uOW"/>
-                                    <action selector="btnCreateAccountClicked:" destination="QOg-vv-84L" eventType="touchUpInside" id="uHl-N2-FD2"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -2406,6 +2405,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Address Information" id="roh-1i-TkC"/>
                     <connections>
+                        <outlet property="BtnContinue" destination="GHo-VN-oe1" id="a9g-0b-eZf"/>
                         <outlet property="LblAddressNum" destination="AAz-4c-vH7" id="8aV-iX-ml7"/>
                         <outlet property="LblComplementary" destination="Dj5-W9-cZ0" id="pdr-3d-D5S"/>
                         <outlet property="LblPostal" destination="1yE-So-aFV" id="vSJ-nk-iT6"/>

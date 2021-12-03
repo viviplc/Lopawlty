@@ -7,21 +7,18 @@
 
 import UIKit
 import MapKit
+import Firebase
 
 class AddressInformationViewController: UIViewController {
 
     @IBOutlet weak var mapView: MKMapView!
     
-    @IBOutlet weak var BtnCreateAccount: UIButton!
+    @IBOutlet weak var BtnContinue: UIButton!
     
     @IBOutlet weak var LblAddressNum: UITextField!
     @IBOutlet weak var LblStreetName: UITextField!
     @IBOutlet weak var LblComplementary: UITextField!
     @IBOutlet weak var LblPostal: UITextField!
-    
-    
-    
-    
     
     var saleId = ""
     
@@ -35,7 +32,7 @@ class AddressInformationViewController: UIViewController {
     }
     
     func setStyles(){
-        BtnCreateAccount.layer.cornerRadius = 15
+        BtnContinue.layer.cornerRadius = 15
         LblAddressNum.attributedPlaceholder = NSAttributedString(string: "123", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
         LblStreetName.attributedPlaceholder = NSAttributedString(string: "Street Name", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
         LblComplementary.attributedPlaceholder = NSAttributedString(string: "Building, House, Unit", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
@@ -45,12 +42,34 @@ class AddressInformationViewController: UIViewController {
     
     @IBAction func btnContinueClicked(_ sender: Any) {
         //addressToConfirmation
+        let newAddress = createAddress()
+        let db = Firestore.firestore()
+        let firebaseNewAddressDict = newAddress.firebaseDictionary;
+        db.collection("Sales").document(saleId).setData( ["address" : firebaseNewAddressDict], merge: true){ err in
+            if let err = err {
+                print("error adding address: \(err)")
+            } else {
+                print("updated address of sale \(self.saleId)")
+                self.performSegue(withIdentifier: "addressToConfirmation", sender: self)
+            }
+        }
         
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            if segue.destination is OrderConfirmationViewController {
+                let resume = segue.destination as? OrderConfirmationViewController
+                resume?.saleId = self.saleId
+            }
+        }
+    
+    
     func createAddress() -> Address {
-        let street =
-        //let address = Address(street: street, complementaryInfo: complementaryInfo, postalCode: postalCode)
+        let street = "Test Street"
+        let complementaryInfo = "Test Info, 123"
+        let postalCode = "N2J GI7"
+        let address = Address(street: street, complementaryInfo: complementaryInfo, postalCode: postalCode)
+        return address
     }
     
     
