@@ -13,6 +13,7 @@
 		8B5414B7273DB69B00043F74 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5414B6273DB69B00043F74 /* RegistrationViewController.swift */; };
 		8B5414BC273DB70900043F74 /* ProvinceSelecViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5414BB273DB70900043F74 /* ProvinceSelecViewController.swift */; };
 		8B5414C4273DC1B400043F74 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5414C3273DC1B400043F74 /* SignInViewController.swift */; };
+		8B5973322759818B0064527D /* OrderConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5973312759818B0064527D /* OrderConfirmationViewController.swift */; };
 		8B5F10E72739E21C006AB198 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5F10E62739E21C006AB198 /* AppDelegate.swift */; };
 		8B5F10E92739E21C006AB198 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5F10E82739E21C006AB198 /* SceneDelegate.swift */; };
 		8B5F10EB2739E21C006AB198 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5F10EA2739E21C006AB198 /* ViewController.swift */; };
@@ -64,6 +65,7 @@
 		8B5414B6273DB69B00043F74 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		8B5414BB273DB70900043F74 /* ProvinceSelecViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProvinceSelecViewController.swift; sourceTree = "<group>"; };
 		8B5414C3273DC1B400043F74 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		8B5973312759818B0064527D /* OrderConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderConfirmationViewController.swift; sourceTree = "<group>"; };
 		8B5F10E32739E21B006AB198 /* Lopawlty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lopawlty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B5F10E62739E21C006AB198 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8B5F10E82739E21C006AB198 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 				8B77D1A2275843A200BFA778 /* DeliveryInfoViewController.swift */,
 				B9FC85D4275964B80040118E /* AddressInformationViewController.swift */,
 				8B84E2E827594ACE000D8934 /* PaymentMethodViewController.swift */,
+				8B5973312759818B0064527D /* OrderConfirmationViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -379,6 +382,7 @@
 				8B1C201D27471F75009B8A6A /* ProductsListViewController.swift in Sources */,
 				B97062A52756D94C00B1B394 /* Product.swift in Sources */,
 				8B77D1862757FA7B00BFA778 /* ShoppingCartViewController.swift in Sources */,
+				8B5973322759818B0064527D /* OrderConfirmationViewController.swift in Sources */,
 				8B77D18B2757FABC00BFA778 /* ShoppingCartTableViewCell.swift in Sources */,
 				B9EC9962275954D000F9D33E /* Province.swift in Sources */,
 			);
