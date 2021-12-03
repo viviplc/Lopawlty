@@ -125,4 +125,5 @@ class Utils {
             print("Deleted all data in \(entity) error : \(error) \(error.userInfo)")
         }
     }
+    
 }

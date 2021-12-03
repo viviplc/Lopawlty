@@ -50,6 +50,7 @@ class SignInViewController: UIViewController {
     @IBAction func signInButtonClicked(_ sender: Any) {
         
         if(validateSignIn()) {
+            BtnSignIn.isEnabled = false
             let email = TxtEmail.text!
             let password = TxtPassword.text!
             signIn(email: email, password: password)
@@ -62,6 +63,8 @@ class SignInViewController: UIViewController {
     func signIn(email : String, password : String){
         let db = Firestore.firestore()
         db.collection("Customers").whereField("email", isEqualTo: email).whereField("password", isEqualTo: password).limit(to: 1).getDocuments() { (querySnapshot, err) in
+            
+            self.BtnSignIn.isEnabled = true
             if let err = err {
                 print("Error: \(err)")
             } else {
@@ -70,7 +73,7 @@ class SignInViewController: UIViewController {
                     print("user logged in -> \(account[0].data())")
                     self.performSegue(withIdentifier: "SignInToProducts", sender: nil)
                 } else {
-                    print("Wrong email or password.");
+                    Utils.alert(message: "Wrong email or password.", viewController: self)
                 }
             }
         }
