@@ -183,18 +183,39 @@ class DeliveryInfoViewController: UIViewController {
         Btn3PM.layer.borderWidth = 1
     }
     
+    func validateDeliveryInfoSelected() -> Bool {
+        var validated = true
+        var errorMessage = ""
+        if(selectedDayIndex < 0) {
+            validated = false
+            errorMessage += "Please choose a suitable date. "
+        }
+        
+        if(selectedDeliveryTimeRange.count == 0) {
+            validated = false
+            errorMessage += "Please choose a time range. "
+        }
+        
+        if(!validated) {
+            Utils.alert(message: errorMessage, viewController: self)
+        }
+        
+        return validated
+    }
     
     @IBAction func btnContinueClicked(_ sender: Any) {
         //deliveryToCreditCard
-        let newDelivery = createDelivery()
-        let db = Firestore.firestore()
-        let firebaseNewDeliveryDict = newDelivery.firebaseDictionary;
-        db.collection("Sales").document(saleId).setData( ["delivery" : firebaseNewDeliveryDict], merge: true){ err in
-            if let err = err {
-                print("error adding delivery: \(err)")
-            } else {
-                print("updated delivery of sale \(self.saleId)")
-                self.performSegue(withIdentifier: "deliveryToCreditCard", sender: self)
+        if(validateDeliveryInfoSelected()) {
+            let newDelivery = createDelivery()
+            let db = Firestore.firestore()
+            let firebaseNewDeliveryDict = newDelivery.firebaseDictionary;
+            db.collection("Sales").document(saleId).setData( ["delivery" : firebaseNewDeliveryDict], merge: true){ err in
+                if let err = err {
+                    print("error adding delivery: \(err)")
+                } else {
+                    print("updated delivery of sale \(self.saleId)")
+                    self.performSegue(withIdentifier: "deliveryToCreditCard", sender: self)
+                }
             }
         }
     }

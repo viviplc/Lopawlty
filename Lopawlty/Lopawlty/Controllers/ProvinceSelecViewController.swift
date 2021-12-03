@@ -82,9 +82,14 @@ class ProvinceSelecViewController: UIViewController , UIPickerViewDelegate, UIPi
         
     }
  
-
+    
     @IBAction func selectButtonClicked(_ sender: Any) {
-        updateProvince(provinceString: selectedProvince)
+        if(selectedProvince.count > 0) {
+            updateProvince(provinceString: selectedProvince)
+        } else {
+            Utils.alert(message: "Please select a province", viewController: self)
+        }
+        
     }
     
    
