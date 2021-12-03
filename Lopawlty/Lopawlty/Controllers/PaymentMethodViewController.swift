@@ -17,6 +17,7 @@ class PaymentMethodViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var TxtEmail: UITextField!
     @IBOutlet weak var TxtCreditCardNumber: UITextField!
     @IBOutlet weak var TxtCVV: UITextField!
+    @IBOutlet weak var BtnContinue: UIButton!
     
     var saleId = ""
     var selectedMonth = ""
@@ -24,6 +25,7 @@ class PaymentMethodViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        BtnContinue.layer.cornerRadius = 15
 
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(DismissKeyboard))
         self.view.addGestureRecognizer(tap)
