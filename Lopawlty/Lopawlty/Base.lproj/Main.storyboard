@@ -2580,7 +2580,9 @@
         <scene sceneID="nFd-1m-kLJ">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="hkg-J2-g9x" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" selectedImage="house" id="FmQ-e7-4Vm"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="home" selectedImage="home" id="FmQ-e7-4Vm">
+                        <color key="badgeColor" systemColor="systemBlueColor"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="BhW-Mp-jvm"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
@@ -2617,13 +2619,14 @@
                     <connections>
                         <segue destination="hkg-J2-g9x" kind="relationship" relationship="viewControllers" id="gQ8-AD-3cg"/>
                         <segue destination="fBJ-Vt-nbz" kind="relationship" relationship="viewControllers" id="c8W-U9-ooZ"/>
+                        <segue destination="K7D-dW-HTI" kind="relationship" relationship="viewControllers" id="wSa-TR-20G"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yDV-1U-uOJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2796" y="824"/>
+            <point key="canvasLocation" x="2488" y="928"/>
         </scene>
-        <!--Item-->
+        <!--Orders-->
         <scene sceneID="AmQ-0V-x1J">
             <objects>
                 <viewController id="fBJ-Vt-nbz" sceneMemberID="viewController">
@@ -2633,11 +2636,52 @@
                         <viewLayoutGuide key="safeArea" id="s4P-uZ-fdZ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="cAS-8p-mTa"/>
+                    <tabBarItem key="tabBarItem" title="Orders" image="orders" selectedImage="orders" id="cAS-8p-mTa"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fmw-xD-cqL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3880" y="1183"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="dQj-w8-FmV">
+            <objects>
+                <viewController id="K7D-dW-HTI" customClass="ProfileViewController" customModule="Lopawlty" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Fqm-3X-MK1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5oo-gk-0iP">
+                                <rect key="frame" x="50" y="74" width="314" height="70"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="is4-7T-SvU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="    Log Out" image="logout">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="CreateAccount_Click:" destination="QFc-hl-HNx" eventType="touchUpInside" id="3Qs-fs-BKp"/>
+                                    <action selector="signInButtonClicked:" destination="nso-f7-jkJ" eventType="touchUpInside" id="S3J-0R-EUP"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Ftq-dL-hQK"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="5oo-gk-0iP" firstAttribute="leading" secondItem="Ftq-dL-hQK" secondAttribute="leading" constant="50" id="0QE-h3-lG3"/>
+                            <constraint firstItem="Ftq-dL-hQK" firstAttribute="trailing" secondItem="5oo-gk-0iP" secondAttribute="trailing" constant="50" id="2Ax-Zf-pIJ"/>
+                            <constraint firstItem="5oo-gk-0iP" firstAttribute="top" secondItem="Ftq-dL-hQK" secondAttribute="top" constant="30" id="Rrn-Zr-koV"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Profile" image="profile" selectedImage="profile" id="Kqo-Tt-Jvd"/>
+                    <connections>
+                        <outlet property="BtnLogOut" destination="5oo-gk-0iP" id="hho-K5-Eoe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QLM-RU-f8U" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3061" y="1773"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
@@ -2655,11 +2699,14 @@
         <image name="chevron.right" catalog="system" width="96" height="128"/>
         <image name="creditcard" width="57" height="56"/>
         <image name="dog" width="44" height="44"/>
-        <image name="house" catalog="system" width="128" height="106"/>
+        <image name="home" width="34" height="34"/>
         <image name="info.circle.fill" catalog="system" width="128" height="121"/>
         <image name="logo" width="281" height="281"/>
+        <image name="logout" width="25" height="19"/>
         <image name="minus.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="orders" width="34" height="34"/>
         <image name="plus.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="profile" width="34" height="34"/>
         <image name="trash" width="77" height="32"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -26,6 +26,7 @@
 		8B77D18B2757FABC00BFA778 /* ShoppingCartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B77D18A2757FABC00BFA778 /* ShoppingCartTableViewCell.swift */; };
 		8B77D19E275827FC00BFA778 /* CheckOutResumeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B77D19D275827FC00BFA778 /* CheckOutResumeViewController.swift */; };
 		8B77D1A3275843A200BFA778 /* DeliveryInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B77D1A2275843A200BFA778 /* DeliveryInfoViewController.swift */; };
+		8B7CE21D275ACD8B0008B244 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7CE21C275ACD8B0008B244 /* ProfileViewController.swift */; };
 		8B84E2E927594ACE000D8934 /* PaymentMethodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B84E2E827594ACE000D8934 /* PaymentMethodViewController.swift */; };
 		8B84E2EF275964BF000D8934 /* MonthYearPicker in Frameworks */ = {isa = PBXBuildFile; productRef = 8B84E2EE275964BF000D8934 /* MonthYearPicker */; };
 		8BC55813275AA54F00D670EA /* OrderItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC55812275AA54F00D670EA /* OrderItemsViewController.swift */; };
@@ -90,6 +91,7 @@
 		8B77D18A2757FABC00BFA778 /* ShoppingCartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartTableViewCell.swift; sourceTree = "<group>"; };
 		8B77D19D275827FC00BFA778 /* CheckOutResumeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckOutResumeViewController.swift; sourceTree = "<group>"; };
 		8B77D1A2275843A200BFA778 /* DeliveryInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryInfoViewController.swift; sourceTree = "<group>"; };
+		8B7CE21C275ACD8B0008B244 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		8B84E2E827594ACE000D8934 /* PaymentMethodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethodViewController.swift; sourceTree = "<group>"; };
 		8BC55812275AA54F00D670EA /* OrderItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderItemsViewController.swift; sourceTree = "<group>"; };
 		8BC55817275AA56900D670EA /* OderItemCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OderItemCellTableViewCell.swift; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 				8B5973312759818B0064527D /* OrderConfirmationViewController.swift */,
 				8BC55812275AA54F00D670EA /* OrderItemsViewController.swift */,
 				8BC55817275AA56900D670EA /* OderItemCellTableViewCell.swift */,
+				8B7CE21C275ACD8B0008B244 /* ProfileViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -391,6 +394,7 @@
 				B9EC9967275956E600F9D33E /* Address.swift in Sources */,
 				8B5414C4273DC1B400043F74 /* SignInViewController.swift in Sources */,
 				8B5414B7273DB69B00043F74 /* RegistrationViewController.swift in Sources */,
+				8B7CE21D275ACD8B0008B244 /* ProfileViewController.swift in Sources */,
 				B9FC85E527599CAA0040118E /* Sale.swift in Sources */,
 				B9995F512750899800C9C587 /* SampleData.swift in Sources */,
 				8B3876DD2756FCC600BCBC94 /* SeeMoreViewController.swift in Sources */,
