@@ -2701,7 +2701,7 @@
                     <connections>
                         <segue destination="QHy-Z8-dZl" kind="relationship" relationship="viewControllers" id="4dN-gC-rfv"/>
                         <segue destination="hkg-J2-g9x" kind="relationship" relationship="viewControllers" id="chX-de-Xx9"/>
-                        <segue destination="K7D-dW-HTI" kind="relationship" relationship="viewControllers" id="GLk-Ex-zTC"/>
+                        <segue destination="DQE-3N-dVd" kind="relationship" relationship="viewControllers" id="pgx-xs-Xet"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yDV-1U-uOJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -2717,7 +2717,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="Lqd-AO-1Ra">
-                                <rect key="frame" x="57" y="25" width="300" height="137.5"/>
+                                <rect key="frame" x="57" y="81" width="300" height="137.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8PA-66-QXY">
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="32.5"/>
@@ -2752,7 +2752,7 @@
                             <constraint firstItem="Lqd-AO-1Ra" firstAttribute="centerX" secondItem="Fqm-3X-MK1" secondAttribute="centerX" id="thb-Kc-BKy"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Profile" image="profile" selectedImage="profile" id="Kqo-Tt-Jvd"/>
+                    <navigationItem key="navigationItem" title="Profile" id="c4p-i7-yBh"/>
                     <connections>
                         <outlet property="BtnLogOut" destination="5oo-gk-0iP" id="hho-K5-Eoe"/>
                         <outlet property="LblName" destination="8PA-66-QXY" id="Gpd-Ua-9Iv"/>
@@ -2761,7 +2761,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QLM-RU-f8U" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2487" y="1710"/>
+            <point key="canvasLocation" x="3297.1014492753625" y="2554.6875"/>
         </scene>
         <!--Orders-->
         <scene sceneID="qd3-p7-lOG">
@@ -3002,6 +3002,31 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jmv-R5-Qt1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3898.5507246376815" y="1202.6785714285713"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="4Kf-bY-f1d">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DQE-3N-dVd" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Profile" image="profile" selectedImage="profile" id="Kqo-Tt-Jvd"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="kKn-jI-ADA"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="biD-pM-2UF">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" systemColor="systemBlueColor"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="K7D-dW-HTI" kind="relationship" relationship="rootViewController" id="ekj-BM-Asc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lEW-nF-F5C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2723" y="1786"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
