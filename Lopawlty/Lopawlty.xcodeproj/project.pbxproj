@@ -27,6 +27,9 @@
 		8B77D19E275827FC00BFA778 /* CheckOutResumeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B77D19D275827FC00BFA778 /* CheckOutResumeViewController.swift */; };
 		8B77D1A3275843A200BFA778 /* DeliveryInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B77D1A2275843A200BFA778 /* DeliveryInfoViewController.swift */; };
 		8B7CE21D275ACD8B0008B244 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7CE21C275ACD8B0008B244 /* ProfileViewController.swift */; };
+		8B7CE228275AE4310008B244 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8B7CE227275AE4310008B244 /* GoogleService-Info.plist */; };
+		8B7CE22D275AF12F0008B244 /* OrderHistoricListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7CE22C275AF12F0008B244 /* OrderHistoricListViewController.swift */; };
+		8B7CE232275AF15C0008B244 /* OrderHistoricCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7CE231275AF15C0008B244 /* OrderHistoricCellTableViewCell.swift */; };
 		8B84E2E927594ACE000D8934 /* PaymentMethodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B84E2E827594ACE000D8934 /* PaymentMethodViewController.swift */; };
 		8B84E2EF275964BF000D8934 /* MonthYearPicker in Frameworks */ = {isa = PBXBuildFile; productRef = 8B84E2EE275964BF000D8934 /* MonthYearPicker */; };
 		8BC55813275AA54F00D670EA /* OrderItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC55812275AA54F00D670EA /* OrderItemsViewController.swift */; };
@@ -93,6 +96,9 @@
 		8B77D19D275827FC00BFA778 /* CheckOutResumeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckOutResumeViewController.swift; sourceTree = "<group>"; };
 		8B77D1A2275843A200BFA778 /* DeliveryInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryInfoViewController.swift; sourceTree = "<group>"; };
 		8B7CE21C275ACD8B0008B244 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		8B7CE227275AE4310008B244 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8B7CE22C275AF12F0008B244 /* OrderHistoricListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHistoricListViewController.swift; sourceTree = "<group>"; };
+		8B7CE231275AF15C0008B244 /* OrderHistoricCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHistoricCellTableViewCell.swift; sourceTree = "<group>"; };
 		8B84E2E827594ACE000D8934 /* PaymentMethodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethodViewController.swift; sourceTree = "<group>"; };
 		8BC55812275AA54F00D670EA /* OrderItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderItemsViewController.swift; sourceTree = "<group>"; };
 		8BC55817275AA56900D670EA /* OderItemCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OderItemCellTableViewCell.swift; sourceTree = "<group>"; };
@@ -161,6 +167,8 @@
 				8BC55817275AA56900D670EA /* OderItemCellTableViewCell.swift */,
 				8B7CE21C275ACD8B0008B244 /* ProfileViewController.swift */,
 				B9833495275AE8540086F32F /* UnauthenticatedNavigationController.swift */,
+				8B7CE22C275AF12F0008B244 /* OrderHistoricListViewController.swift */,
+				8B7CE231275AF15C0008B244 /* OrderHistoricCellTableViewCell.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -188,7 +196,7 @@
 		8B5F10E52739E21B006AB198 /* Lopawlty */ = {
 			isa = PBXGroup;
 			children = (
-				B9833490275ACFB40086F32F /* GoogleService-Info.plist */,
+				8B7CE227275AE4310008B244 /* GoogleService-Info.plist */,
 				B9995F4F2750897400C9C587 /* Helpers */,
 				B9557AFC273DF976006A2B81 /* Models */,
 				8B5414AF273DB32200043F74 /* Controllers */,
@@ -358,7 +366,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B5F10F32739E21C006AB198 /* LaunchScreen.storyboard in Resources */,
-				B9833491275ACFB40086F32F /* GoogleService-Info.plist in Resources */,
+				8B7CE228275AE4310008B244 /* GoogleService-Info.plist in Resources */,
 				8B5F10F02739E21C006AB198 /* Assets.xcassets in Resources */,
 				8B5F10EE2739E21C006AB198 /* Main.storyboard in Resources */,
 			);
@@ -405,6 +413,7 @@
 				8B5F10E92739E21C006AB198 /* SceneDelegate.swift in Sources */,
 				8B3A18A82749FA5400B6849E /* ProductCellTableViewCell.swift in Sources */,
 				8B77D19E275827FC00BFA778 /* CheckOutResumeViewController.swift in Sources */,
+				8B7CE232275AF15C0008B244 /* OrderHistoricCellTableViewCell.swift in Sources */,
 				8B5414BC273DB70900043F74 /* ProvinceSelecViewController.swift in Sources */,
 				B9FC85D5275964B80040118E /* AddressInformationViewController.swift in Sources */,
 				B9FC85EA27599D590040118E /* Payment.swift in Sources */,
@@ -413,6 +422,7 @@
 				8BC55818275AA56900D670EA /* OderItemCellTableViewCell.swift in Sources */,
 				8B77D1862757FA7B00BFA778 /* ShoppingCartViewController.swift in Sources */,
 				8B5973322759818B0064527D /* OrderConfirmationViewController.swift in Sources */,
+				8B7CE22D275AF12F0008B244 /* OrderHistoricListViewController.swift in Sources */,
 				8B77D18B2757FABC00BFA778 /* ShoppingCartTableViewCell.swift in Sources */,
 				B9EC9962275954D000F9D33E /* Province.swift in Sources */,
 				B9833496275AE8540086F32F /* UnauthenticatedNavigationController.swift in Sources */,

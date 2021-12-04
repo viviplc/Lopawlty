@@ -13,7 +13,7 @@ enum ProductFilter : String {
     case dog, cat, all
 }
 
-class ProductsListViewController: UIViewController, UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate{
+class ProductsListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
    
     @IBOutlet weak var productsListtable: UITableView!
     @IBOutlet weak var BtnDogsFilter: UIButton!
@@ -36,8 +36,6 @@ class ProductsListViewController: UIViewController, UISearchBarDelegate, UITable
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationItem.searchController = searchController
-        searchController.searchBar.delegate = self
         view.backgroundColor = .white
         
         productsListtable.delegate = self
@@ -64,11 +62,7 @@ class ProductsListViewController: UIViewController, UISearchBarDelegate, UITable
     override func viewWillAppear(_ animated: Bool) {
         loadProductsFromFirebase()
     }
-    
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        print(searchText)
-    }
-    
+      
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
