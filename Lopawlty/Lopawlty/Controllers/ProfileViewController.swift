@@ -32,8 +32,8 @@ class ProfileViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-            if segue.destination is UINavigationController {
-                let resume = segue.destination as? UINavigationController
+            if segue.destination is UnauthenticatedNavigationController {
+                let resume = segue.destination as? UnauthenticatedNavigationController
                 resume?.modalPresentationStyle = .fullScreen
             }
         }

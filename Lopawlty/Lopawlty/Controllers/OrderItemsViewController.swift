@@ -18,6 +18,8 @@ class OrderItemsViewController: UIViewController, UITableViewDataSource, UITable
         super.viewDidLoad()
 
         orderItemsTable.delegate = self
+        orderItemsTable.dataSource = self
+        orderItemsTable.reloadData()
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -35,7 +37,6 @@ class OrderItemsViewController: UIViewController, UITableViewDataSource, UITable
         let prdPriceLbl = "$ \(self.orderItems[indexPath.row].price)"
         let prdImageLbl = UIImage(named: self.orderItems[indexPath.row].imageFileName)
         let prdQuatityLbl = "\(self.orderItems[indexPath.row].currentSelectedAmount)"
-        
         cell.LblProductName.text = prdNameLbl
         cell.LblProductBrand.text = prdBrandLbl
         cell.LblProductPrice.text = prdPriceLbl

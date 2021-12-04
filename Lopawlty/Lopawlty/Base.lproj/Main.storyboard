@@ -477,14 +477,14 @@
                                                     <rect key="frame" x="20" y="11" width="374" height="150"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NsY-nY-dWK">
-                                                            <rect key="frame" x="0.0" y="0.0" width="145.5" height="150"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="145" height="150"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="100" id="DPN-R4-HQd"/>
                                                                 <constraint firstAttribute="width" constant="100" id="hIB-e3-lig"/>
                                                             </constraints>
                                                         </imageView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="qul-Jp-R85">
-                                                            <rect key="frame" x="155.5" y="0.0" width="118.5" height="150"/>
+                                                            <rect key="frame" x="155" y="0.0" width="119" height="150"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dog Food Bag" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c1H-pa-nJU">
                                                                     <rect key="frame" x="0.0" y="0.0" width="114.5" height="60"/>
@@ -2637,7 +2637,7 @@
         <!--Item-->
         <scene sceneID="uiF-GD-5TK">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="9pZ-XH-lk6" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="9pZ-XH-lk6" customClass="UnauthenticatedNavigationController" customModule="Lopawlty" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="s40-jK-sGo"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="w5s-Pt-goJ"/>
@@ -2779,6 +2779,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="8lr-mv-3z6"/>
         <segue reference="IGW-mV-nrN"/>
         <segue reference="iJI-gP-Tvf"/>
     </inferredMetricsTieBreakers>

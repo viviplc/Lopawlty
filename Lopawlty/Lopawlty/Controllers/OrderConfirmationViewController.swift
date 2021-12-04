@@ -114,6 +114,7 @@ class OrderConfirmationViewController: UIViewController {
                 self.sale = Sale(firebaseDictionary: data!)
                 self.sale.getProducts() { (products) in
                     self.products = products
+                    print("PRODUCT 1 NAME -> \(self.products[0].name)")
                 }
                 print("successfully got all models from db")
                 self.setOrderInfo()
