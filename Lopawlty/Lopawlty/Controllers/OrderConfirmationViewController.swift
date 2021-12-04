@@ -114,7 +114,6 @@ class OrderConfirmationViewController: UIViewController {
                 self.sale = Sale(firebaseDictionary: data!)
                 self.sale.getProducts() { (products) in
                     self.products = products
-                    print("PRODUCT 1 NAME -> \(self.products[0].name)")
                 }
                 print("successfully got all models from db")
                 self.setOrderInfo()
@@ -138,12 +137,26 @@ class OrderConfirmationViewController: UIViewController {
         
         let placeAction = UIAlertAction(title: "Place it", style: .default, handler: { [self] _ in
             print("Place it selected")
+            self.placeOrder();
         })
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         alert.addAction(placeAction)
         alert.addAction(cancelAction)
         present(alert, animated: true)
+        
+    }
+    
+    func placeOrder() {
+        let db = Firestore.firestore()
+        db.collection("Sales").document(self.saleId).setData( ["status" : "complete"], merge: true){ err in
+            if let err = err {
+                print("error adding status: \(err)")
+            } else {
+                print("updated status of sale \(self.saleId)")
+                Utils.emptyCartInCoreData()
+            }
+        }
         
     }
     

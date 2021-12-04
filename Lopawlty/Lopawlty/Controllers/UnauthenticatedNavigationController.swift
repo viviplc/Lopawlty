@@ -11,7 +11,11 @@ class UnauthenticatedNavigationController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        if(Utils.isUserLoggedIn()) {
+            //UnauthenticatedNavToTabBar
+            self.performSegue(withIdentifier: "UnauthenticatedNavToTabBar", sender: self)
+        }
         // Do any additional setup after loading the view.
     }
     

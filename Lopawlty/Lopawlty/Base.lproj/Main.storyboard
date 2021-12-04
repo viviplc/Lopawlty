@@ -14,15 +14,15 @@
             <objects>
                 <viewController id="n8y-d9-4Gx" customClass="ViewController" customModule="Lopawlty" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EtI-XZ-WJb">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="tG3-I6-D6B">
-                                <rect key="frame" x="80" y="94" width="254" height="281"/>
+                                <rect key="frame" x="80" y="50" width="254" height="281"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Gqk-kB-IIr">
-                                <rect key="frame" x="50" y="632" width="314" height="170"/>
+                                <rect key="frame" x="50" y="578" width="314" height="170"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="40c-fi-wh8">
                                         <rect key="frame" x="0.0" y="0.0" width="314" height="70"/>
@@ -52,7 +52,7 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LOPAWLTY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yek-fl-G8s">
-                                <rect key="frame" x="110.5" y="569" width="193" height="43"/>
+                                <rect key="frame" x="110.5" y="515" width="193" height="43"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="36"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -88,11 +88,11 @@
             <objects>
                 <viewController id="QFc-hl-HNx" customClass="RegistrationViewController" customModule="Lopawlty" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ols-Xz-MzF">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zkp-JI-GeE">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RVL-HV-uys">
                                         <rect key="frame" x="0.0" y="0.0" width="396" height="719"/>
@@ -258,17 +258,17 @@
             <objects>
                 <viewController id="nso-f7-jkJ" customClass="SignInViewController" customModule="Lopawlty" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0PA-Y9-RNU">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome back, Sign In and enjoy!" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="stK-or-4S1">
-                                <rect key="frame" x="30" y="108" width="354" height="93.5"/>
+                                <rect key="frame" x="30" y="76" width="354" height="93.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="39"/>
                                 <color key="textColor" systemColor="systemBlueColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="P6e-XZ-RRh">
-                                <rect key="frame" x="30" y="271.5" width="354" height="224"/>
+                                <rect key="frame" x="30" y="239.5" width="354" height="224"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="dol-84-IPo">
                                         <rect key="frame" x="0.0" y="0.0" width="354" height="99"/>
@@ -313,7 +313,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Adf-X3-Ts6">
-                                <rect key="frame" x="50" y="752" width="314" height="70"/>
+                                <rect key="frame" x="50" y="698" width="314" height="70"/>
                                 <color key="backgroundColor" systemColor="systemBlueColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="Xpj-JG-4u8"/>
@@ -362,17 +362,17 @@
             <objects>
                 <viewController storyboardIdentifier="provinceSelection" id="12W-nY-Hwv" customClass="ProvinceSelecViewController" customModule="Lopawlty" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1KO-fg-FwF">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose a province" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MF5-kV-Dod">
-                                <rect key="frame" x="30" y="64" width="354" height="42"/>
+                                <rect key="frame" x="30" y="20" width="354" height="42"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
                                 <color key="textColor" systemColor="systemBlueColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="8W1-IV-JDE">
-                                <rect key="frame" x="20" y="340" width="374" height="216"/>
+                                <rect key="frame" x="20" y="313" width="374" height="216"/>
                                 <subviews>
                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bxI-KC-1qP">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="216"/>
@@ -383,7 +383,7 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ev-Qd-VfT">
-                                <rect key="frame" x="50" y="737" width="314" height="85"/>
+                                <rect key="frame" x="50" y="683" width="314" height="85"/>
                                 <color key="backgroundColor" systemColor="systemBlueColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="70" id="VmW-W2-h01"/>
@@ -428,7 +428,7 @@
             <objects>
                 <viewController id="qqH-ND-hIH" customClass="ProductsListViewController" customModule="Lopawlty" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MwW-GF-Ymk">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="786"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="hQT-UZ-oKf" userLabel="Filters Stack View">
@@ -463,7 +463,7 @@
                                 </subviews>
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eGZ-36-1Bz">
-                                <rect key="frame" x="0.0" y="110" width="414" height="605"/>
+                                <rect key="frame" x="0.0" y="110" width="414" height="637"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ProductCell" rowHeight="220" id="eok-HZ-0tr" customClass="ProductCellTableViewCell" customModule="Lopawlty" customModuleProvider="target">
@@ -622,7 +622,7 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="olV-hg-AMa"/>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="eKj-Hx-0eH">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="eXp-ST-dFI">
-                                <rect key="frame" x="247" y="6" width="147" height="32"/>
+                                <rect key="frame" x="247" y="12" width="147" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="cart"/>
                                 <connections>
@@ -647,11 +647,11 @@
             <objects>
                 <viewController id="IkN-zY-EjD" customClass="ShoppingCartViewController" customModule="Lopawlty" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LEA-jq-Yyf">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="786"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oiL-0B-Sul">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="635"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="667"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ShoppingCell" rowHeight="214" id="UTd-F2-tsu" customClass="ShoppingCartTableViewCell" customModule="Lopawlty" customModuleProvider="target">
@@ -782,7 +782,7 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xeD-cc-kPL">
-                                <rect key="frame" x="50" y="645" width="314" height="70"/>
+                                <rect key="frame" x="50" y="677" width="314" height="70"/>
                                 <color key="backgroundColor" systemColor="systemBlueColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="K4j-gO-aoZ"/>
@@ -822,7 +822,7 @@
             <objects>
                 <viewController id="AR3-re-hnu" customClass="CheckOutResumeViewController" customModule="Lopawlty" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Gza-VT-bV1">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="786"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="check1" translatesAutoresizingMaskIntoConstraints="NO" id="S6w-1V-IaY">
@@ -951,7 +951,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Pd-5g-3Rg">
-                                <rect key="frame" x="50" y="645" width="314" height="70"/>
+                                <rect key="frame" x="50" y="677" width="314" height="70"/>
                                 <color key="backgroundColor" systemColor="systemBlueColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="DjL-Y1-g3I"/>
@@ -1018,7 +1018,7 @@
             <objects>
                 <viewController id="uaf-7G-TRp" customClass="DeliveryInfoViewController" customModule="Lopawlty" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EzO-EY-eG9">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="786"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="check2" translatesAutoresizingMaskIntoConstraints="NO" id="VeR-0J-sOx">
@@ -1028,7 +1028,7 @@
                                 </constraints>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mfd-7s-eLD">
-                                <rect key="frame" x="0.0" y="61" width="414" height="664"/>
+                                <rect key="frame" x="0.0" y="61" width="414" height="696"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u1d-jg-S9r">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="662.5"/>
@@ -1578,7 +1578,7 @@
             <objects>
                 <viewController id="s4d-pc-DKg" customClass="PaymentMethodViewController" customModule="Lopawlty" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9La-pf-XI7">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="786"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="check3" translatesAutoresizingMaskIntoConstraints="NO" id="JMo-0W-iqh">
@@ -1588,7 +1588,7 @@
                                 </constraints>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SVE-I0-C5c">
-                                <rect key="frame" x="0.0" y="71" width="414" height="654"/>
+                                <rect key="frame" x="0.0" y="71" width="414" height="686"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jaB-gG-sDf">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="695"/>
@@ -1802,11 +1802,11 @@
             <objects>
                 <viewController id="u25-Nn-d0X" customClass="OrderConfirmationViewController" customModule="Lopawlty" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3Cu-zW-SOu">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="786"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hEU-lV-wAY">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="757"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pIF-0n-QUR">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="644.5"/>
@@ -2166,7 +2166,7 @@
             <objects>
                 <viewController id="TpU-9d-PMb" customClass="SeeMoreViewController" customModule="Lopawlty" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PeG-6U-jsr">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="786"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5gY-F3-mHt">
@@ -2253,7 +2253,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="fQQ-ky-N3c">
-                                <rect key="frame" x="20" y="493" width="374" height="237"/>
+                                <rect key="frame" x="20" y="493" width="374" height="269"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LNC-E7-kkC">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="30"/>
@@ -2265,7 +2265,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product Description" lineBreakMode="tailTruncation" numberOfLines="30" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nbW-ef-bP5">
-                                        <rect key="frame" x="0.0" y="30" width="374" height="207"/>
+                                        <rect key="frame" x="0.0" y="30" width="374" height="239"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -2302,7 +2302,7 @@
                     <navigationItem key="navigationItem" title="See more" id="6xm-sy-Jr3">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="2Tm-TY-sHm">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="cwq-Ic-lby">
-                                <rect key="frame" x="247" y="6" width="147" height="32"/>
+                                <rect key="frame" x="247" y="12" width="147" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="cart"/>
                                 <connections>
@@ -2330,11 +2330,11 @@
             <objects>
                 <viewController id="H7i-GD-7Kv" customClass="OrderItemsViewController" customModule="Lopawlty" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IEs-Y7-hXt">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="786"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FEO-Bs-fzp">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="757"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="OrderItemCell" rowHeight="214" id="tbb-3e-Lpg" customClass="OderItemCellTableViewCell" customModule="Lopawlty" customModuleProvider="target">
@@ -2460,7 +2460,7 @@
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="QOg-vv-84L" customClass="AddressInformationViewController" customModule="Lopawlty" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="u8n-hX-kqG">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="786"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="check4" translatesAutoresizingMaskIntoConstraints="NO" id="yIM-Eq-eKN">
@@ -2477,7 +2477,7 @@
                                 </constraints>
                             </mapView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="byE-Iq-x8D">
-                                <rect key="frame" x="0.0" y="226" width="414" height="499"/>
+                                <rect key="frame" x="0.0" y="226" width="414" height="531"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UlG-P5-fOL">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="437"/>
@@ -2642,13 +2642,15 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="w5s-Pt-goJ"/>
                     <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="MWy-oF-J84">
+                        <rect key="frame" x="0.0" y="-54" width="0.0" height="0.0"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" systemColor="systemBlueColor"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
                         <segue destination="n8y-d9-4Gx" kind="relationship" relationship="rootViewController" id="8lr-mv-3z6"/>
+                        <segue destination="FzD-9L-SRh" kind="show" identifier="UnauthenticatedNavToTabBar" id="oLy-S5-vVx"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zxB-an-0PT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -2666,7 +2668,7 @@
                     <navigationItem key="navigationItem" id="BhW-Mp-jvm"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="ReJ-79-nUK">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" systemColor="systemBlueColor"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2711,7 +2713,7 @@
             <objects>
                 <viewController id="fBJ-Vt-nbz" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="F3o-hD-sUj">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="s4P-uZ-fdZ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -2727,11 +2729,11 @@
             <objects>
                 <viewController id="K7D-dW-HTI" customClass="ProfileViewController" customModule="Lopawlty" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Fqm-3X-MK1">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="Lqd-AO-1Ra">
-                                <rect key="frame" x="57" y="69" width="300" height="137.5"/>
+                                <rect key="frame" x="57" y="25" width="300" height="137.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8PA-66-QXY">
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="32.5"/>
@@ -2779,8 +2781,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="8lr-mv-3z6"/>
-        <segue reference="IGW-mV-nrN"/>
+        <segue reference="oLy-S5-vVx"/>
         <segue reference="iJI-gP-Tvf"/>
     </inferredMetricsTieBreakers>
     <resources>

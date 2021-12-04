@@ -12,7 +12,7 @@ import CoreData
 class Utils {
     
     static func isUserLoggedIn() -> Bool {
-        if UserDefaults.standard.object(forKey: "LoggedInEmail") != nil {
+        if UserDefaults.standard.object(forKey: "LoggedInCustomerId") != nil {
             return true
         } else {
             return false
