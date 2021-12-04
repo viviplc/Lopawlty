@@ -32,6 +32,10 @@ class ShoppingCartViewController: UIViewController, UITableViewDataSource, UITab
         ShoppingCartTable.delegate = self
         ShoppingCartTable.dataSource = self
         
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         loadProductsFromFirebase()
     }
     

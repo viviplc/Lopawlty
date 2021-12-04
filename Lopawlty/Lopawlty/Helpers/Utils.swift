@@ -20,12 +20,43 @@ class Utils {
     }
     
     static func logoutUser() {
-        emptyCoreDataEntity(entity: "Cart")
+        emptyCartInCoreData()
         deleteUserDefaultField(key: "LoggedInCustomerId")
     }
     
     static func emptyCartInCoreData() {
-        emptyCoreDataEntity(entity: "Cart")
+        //code taken from https://www.advancedswift.com/batch-delete-everything-core-data-swift/ to batch delete core data
+        var persistentContainer = (UIApplication.shared.delegate as! AppDelegate).persistentContainer
+        
+        // Get a reference to a NSPersistentStoreCoordinator
+        let storeContainer =
+            persistentContainer.persistentStoreCoordinator
+
+        // Delete each existing persistent store
+        for store in storeContainer.persistentStores {
+            do {
+            try storeContainer.destroyPersistentStore(
+                at: store.url!,
+                ofType: store.type,
+                options: nil
+            )
+            } catch {
+                print("error")
+            }
+        }
+
+        // Re-create the persistent container
+        persistentContainer = NSPersistentContainer(
+            name: "Lopawlty" // the name of
+            // a .xcdatamodeld file
+        )
+
+        // Calling loadPersistentStores will re-create the
+        // persistent stores
+        persistentContainer.loadPersistentStores {
+            (store, error) in
+            // Handle errors
+        }
     }
     
     static func validateTextField(txtLabel : UITextField) -> Bool {
