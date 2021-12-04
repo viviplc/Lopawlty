@@ -37,13 +37,10 @@ class OrderConfirmationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setButtonsStyles()
-        //infoTest()
-        
+    }
+    override func viewWillAppear(_ animated: Bool) {
         loadSaleInfoFromFirebase()
-        
-        
     }
     
     func setOrderInfo() {
@@ -155,6 +152,7 @@ class OrderConfirmationViewController: UIViewController {
             } else {
                 print("updated status of sale \(self.saleId)")
                 Utils.emptyCartInCoreData()
+                self.tabBarController?.selectedIndex = 0
             }
         }
         

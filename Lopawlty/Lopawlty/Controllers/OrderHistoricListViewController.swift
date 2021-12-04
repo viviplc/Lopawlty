@@ -6,49 +6,30 @@
 //
 
 import UIKit
+import Firebase
 
-class Order{
-    var dayWeek = ""
-    var dayNum = ""
-    var month = ""
-    var timeInter = ""
-    var status = ""
-    var totalItems = ""
-    var grandTotal = ""
-    
-    init(dayWeek:String, dayNum:String, month:String, timeInter: String, status:String, totalItems:String, grandTotal: String){
-        self.dayWeek = dayWeek
-        self.dayNum = dayNum
-        self.month = month
-        self.timeInter = timeInter
-        self.status = status
-        self.totalItems = totalItems
-        self.grandTotal = grandTotal
-    }
-}
 
 class OrderHistoricListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
     
     @IBOutlet weak var ordersTable: UITableView!
     
-
-    var orders:[Order] = []
-    let order1:Order = Order(dayWeek:"Monday", dayNum:"5", month:"Nov", timeInter: "11:00 AM - 1:00 PM", status:"In progress", totalItems:"2", grandTotal: "$ 356.76")
-    let order2:Order = Order(dayWeek:"Wednesday", dayNum:"5", month:"Nov", timeInter: "11:00 AM - 1:00 PM", status:"In progress", totalItems:"2", grandTotal: "$ 23435.76")
-    
+    var orders:[Sale] = []
+    var selectedOrderProducts:[Product] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        orders.append(order1)
-        orders.append(order2)
-        
-        print(orders)
         
         ordersTable.delegate = self
         ordersTable.dataSource = self
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        getLoggedInUserOrders() { (orders) in
+            self.orders = orders
+            self.ordersTable.reloadData()
+        }
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -62,13 +43,13 @@ class OrderHistoricListViewController: UIViewController, UITableViewDataSource, 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "orderItemCell", for: indexPath) as! OrderHistoricCellTableViewCell
         print(self.orders)
-        let dayWeek = self.orders[indexPath.row].dayWeek
-        let dayNum = self.orders[indexPath.row].dayNum
-        let month = self.orders[indexPath.row].month
-        let timeInter = self.orders[indexPath.row].timeInter
-        let status = self.orders[indexPath.row].status
-        let totalItems = self.orders[indexPath.row].totalItems
-        let grandTotal = self.orders[indexPath.row].grandTotal
+        let dayWeek = self.orders[indexPath.row].delivery.deliveryDayName
+        let dayNum = self.orders[indexPath.row].delivery.deliveryDayNumber
+        let month = self.orders[indexPath.row].delivery.deliveryMonth
+        let timeInter = self.orders[indexPath.row].delivery.deliveryTimeRange
+        let status = "In progress"
+        let totalItems = String(self.orders[indexPath.row].totalItems)
+        let grandTotal = String(format: "%.2f", self.orders[indexPath.row].payment.totalCost)
         
         cell.LblDayWeek.text = dayWeek
         cell.LblDayNum.text = dayNum
@@ -76,13 +57,57 @@ class OrderHistoricListViewController: UIViewController, UITableViewDataSource, 
         cell.LblTimeInterval.text = timeInter
         cell.LblOrderStatus.text = status
         cell.LblTotalItems.text = totalItems
-        cell.LblGrandTotal.text = grandTotal
+        cell.LblGrandTotal.text = "$\(grandTotal)"
         cell.BtnSeeItems.tag = indexPath.row
         
         /*
         cell.BtnSeeMore.addTarget(self, action: #selector(ProductsListViewController.buttonTapped(_:)), for: UIControl.Event.touchUpInside)
         */
         return cell
+    }
+    
+    
+    
+    @IBAction func btnSeeItemsClicked(_ sender: UIButton) {
+        //OrdersToOrderItems
+        let buttonPosition = sender.convert(CGPoint(), to: ordersTable)
+        let index = ordersTable.indexPathForRow(at: buttonPosition)
+        let selectedSale = orders[index!.row]
+        selectedSale.getProducts() { products in
+            self.selectedOrderProducts = products
+            self.performSegue(withIdentifier: "OrdersToOrderItems", sender: self)
+        }
+    }
+    
+
+override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.destination is OrderItemsViewController {
+            let resume = segue.destination as? OrderItemsViewController
+            resume?.orderItems = self.selectedOrderProducts
+        }
+    }
+    
+    func getLoggedInUserOrders(callback: @escaping (_ order : [Sale]) -> Void) {
+        let loggedInUserId : String = UserDefaults.standard.object(forKey: "LoggedInCustomerId")! as! String
+         //just get the sales separately and get products only when seguing
+        let db = Firestore.firestore()
+        var orders : [Sale]  = []
+        db.collection("Sales")
+            .whereField("customerId", isEqualTo: loggedInUserId)
+            .whereField("status", isEqualTo: "complete")
+            .getDocuments() { (querySnapshot, err) in
+                if let err = err {
+                    print("Error getting documents: \(err)")
+                } else {
+                    for document in querySnapshot!.documents {
+                        print("product: \(document.data())")
+                        orders.append(Sale(firebaseDictionary: document.data()))
+                        
+                    }
+                    
+                    callback(orders)
+                }
+        }
     }
 
     
