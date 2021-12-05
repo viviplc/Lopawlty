@@ -15,6 +15,7 @@ import CoreData
 
 class Utils {
     
+    //function that returns if a user is logged into app or not
     static func isUserLoggedIn() -> Bool {
         if UserDefaults.standard.object(forKey: "LoggedInCustomerId") != nil {
             return true
@@ -23,11 +24,13 @@ class Utils {
         }
     }
     
+    //function to logout user from the app
     static func logoutUser() {
         emptyCartInCoreData()
         deleteUserDefaultField(key: "LoggedInCustomerId")
     }
     
+    //function to empty cart data model in core data
     static func emptyCartInCoreData() {
         //code taken from https://www.advancedswift.com/batch-delete-everything-core-data-swift/ to batch delete core data
         var persistentContainer = (UIApplication.shared.delegate as! AppDelegate).persistentContainer
@@ -63,6 +66,7 @@ class Utils {
         }
     }
     
+    //function to validate a text field
     static func validateTextField(txtLabel : UITextField) -> Bool {
         if let text = txtLabel.text, !text.isEmpty
         {
@@ -72,6 +76,7 @@ class Utils {
         }
     }
     
+    //function to validate a text field to check if it exactly equal to specified legnth
     static func validateTextFieldWithExactLength(txtLabel : UITextField, len : Int) -> Bool {
         if validateTextField(txtLabel: txtLabel) {
             return txtLabel.text!.count == len
@@ -80,6 +85,7 @@ class Utils {
         }
     }
     
+    //function to validate a text field to check if it greater than a specified legnth
     static func validateTextFieldWithMinLen(txtLabel : UITextField, min : Int) -> Bool {
         if validateTextField(txtLabel: txtLabel) {
             return txtLabel.text!.count >= min
@@ -88,6 +94,7 @@ class Utils {
         }
     }
     
+    //function to validate a text field to check if it less than a specified legnth
     static func validateTextFieldWithMaxLen(txtLabel : UITextField, max : Int) -> Bool {
         if validateTextField(txtLabel: txtLabel) {
             return txtLabel.text!.count <= max
@@ -96,6 +103,7 @@ class Utils {
         }
     }
     
+    //function to validate a text field to check if it greater than and less a specified legnth
     static func validateTextFieldWithMinMaxLen(txtLabel : UITextField, min : Int, max : Int) -> Bool {
         if validateTextField(txtLabel: txtLabel) {
             return txtLabel.text!.count >= min && txtLabel.text!.count <= max
@@ -104,6 +112,7 @@ class Utils {
         }
     }
     
+    //function to validate a text field to check if it is a number
     static func validateTextFieldAsNumeric(txtLabel : UITextField) -> Bool {
         //below code to check if text is number taken from https://stackoverflow.com/a/60470348
         let numbersSet = CharacterSet(charactersIn: "0123456789")
@@ -117,10 +126,12 @@ class Utils {
         }
     }
     
+    //function to delete a user default by key
     static func deleteUserDefaultField(key : String) {
         UserDefaults.standard.removeObject(forKey: key)
     }
     
+    //function to simplify presenting an alert to the user
     static func alert(message: String, viewController : UIViewController) {
         //below code for alert taken from https://stackoverflow.com/a/24022696
         let alert = UIAlertController(title: "Invalid Form", message: message, preferredStyle: .alert)
@@ -142,6 +153,7 @@ class Utils {
     
     //emptyCoreDataEntity function was taken from https://stackoverflow.com/questions/28780862/use-functions-from-other-files-in-swift-xcode
     
+    //function to empty core data
     static func emptyCoreDataEntity(entity: String)
     {
         let managedContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext

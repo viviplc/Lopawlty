@@ -75,6 +75,7 @@ class PaymentMethodViewController: UIViewController, UITextFieldDelegate {
         present(alertController, animated: true)
     }
     
+    //Worked on by Dunumalage Romeno Fernando - function that validates info in the form on the view and present the errors if there are any in a UIAlertView
     func validateCreditCardDetails() -> Bool {
         var validated = true
         var errorMessage = ""

@@ -28,6 +28,7 @@ class Delivery {
         self.init(deliveryDayName:"", deliveryDayNumber:"", deliveryMonth:"", deliveryTimeRange:"")
     }
     
+    //a convenience constructor that takes a firebase dictionary. This is used when we have a firebase object of data and want to convert it to this class
     convenience init(firebaseDictionary : [String: Any]) {
         let deliveryDayName = firebaseDictionary["deliveryDayName"] as! String? ?? ""
         let deliveryDayNumber = firebaseDictionary["deliveryDayNumber"] as! String? ?? ""
@@ -37,6 +38,7 @@ class Delivery {
         self.init(deliveryDayName : deliveryDayName, deliveryDayNumber : deliveryDayNumber, deliveryMonth : deliveryMonth, deliveryTimeRange : deliveryTimeRange)
     }
     
+    //function that takes the current instance of the class and gives out a dictionary in the [String: Any] format the firebase uses
     var firebaseDictionary : [String: Any] {
         return ["deliveryDayName" : deliveryDayName, "deliveryDayNumber" : deliveryDayNumber , "deliveryMonth" : deliveryMonth, "deliveryTimeRange" : deliveryTimeRange]
     }

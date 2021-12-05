@@ -44,6 +44,7 @@ class AddressInformationViewController: UIViewController {
         LblPostal.attributedPlaceholder = NSAttributedString(string: "XXX XXX", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
     }
     
+    //Worked on by Dunumalage Romeno Fernando - function that validates info in the form on the view and present the errors if there are any in a UIAlertView
     func validateAddressDetails() -> Bool {
         var validated = true
         var errorMessage = ""
@@ -133,6 +134,7 @@ class AddressInformationViewController: UIViewController {
         }
        
     }
+    
     
     func validatePostalCode(postalCode: String) -> String {
         var postal : String = postalCode.uppercased()

@@ -15,6 +15,7 @@ import Firebase
 
 class SampleData {
     
+    //function that gives a sample list of Product objects for testing purposes
     static func getProducts() ->[Product] {
         var products : [Product] = []
         let productCodes = [1,2,3,4,5,6,7,8,9,10]

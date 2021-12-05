@@ -31,6 +31,7 @@ class RegistrationViewController: UIViewController , UITextFieldDelegate {
        
     }
     
+    //function that validates info in the form on the view and present the errors if there are any in a UIAlertView
     func validateSignUpDetails() -> Bool {
         var validated = true
         var errorMessage = ""

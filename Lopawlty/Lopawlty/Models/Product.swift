@@ -32,7 +32,7 @@ class Product {
         self.description = description
     }
     
- 
+    //a convenience constructor that takes a firebase dictionary. This is used when we have a firebase object of data and want to convert it to this class
     convenience init(firebaseDictionary : [String: Any]) {
         let name = firebaseDictionary["name"] as! String? ?? ""
         let price = firebaseDictionary["price"] as! Double? ?? 0.0

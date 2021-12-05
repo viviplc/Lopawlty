@@ -22,7 +22,7 @@ class Address {
         self.postalCode = postalCode
     }
     
-
+    //a convenience constructor that takes a firebase dictionary. This is used when we have a firebase object of data and want to convert it to this class
     convenience init(firebaseDictionary : [String: Any]) {
         let street = firebaseDictionary["street"] as! String? ?? ""
         let complementaryInfo = firebaseDictionary["complementaryInfo"] as! String? ?? ""
@@ -35,6 +35,7 @@ class Address {
         self.init(street: "", complementaryInfo : "", postalCode : "")
     }
     
+    //function that takes the current instance of the class and gives out a dictionary in the [String: Any] format the firebase uses
     var firebaseDictionary : [String: Any] {
         return ["street" : street, "complementaryInfo" : complementaryInfo, "postalCode" : postalCode]
     }

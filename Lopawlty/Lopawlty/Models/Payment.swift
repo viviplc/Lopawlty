@@ -25,6 +25,7 @@ class Payment {
         self.init(subTotal: 0.0, taxes : 0.0, totalCost : 0.0)
     }
     
+    //a convenience constructor that takes a firebase dictionary. This is used when we have a firebase object of data and want to convert it to this class
     convenience init(firebaseDictionary : [String: Any]) {
         let subTotal = firebaseDictionary["subTotal"] as! Double? ?? 0.0
         let taxes = firebaseDictionary["taxes"] as! Double? ?? 0.0
@@ -33,6 +34,7 @@ class Payment {
         self.init(subTotal : subTotal, taxes : taxes, totalCost : totalCost)
     }
     
+    //function that takes the current instance of the class and gives out a dictionary in the [String: Any] format the firebase uses
     var firebaseDictionary : [String: Any] {
         return ["subTotal" : subTotal, "taxes" : taxes , "totalCost" : totalCost]
     }

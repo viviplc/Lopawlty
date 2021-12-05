@@ -47,7 +47,7 @@ class OrderConfirmationViewController: UIViewController {
         loadSaleInfoFromFirebase()
     }
     
-    func setOrderInfo() {
+        func setOrderInfo() {
         let subTotal = sale.payment.subTotal
         let subTotalText = String(format: "%.2f",subTotal)
         LblSubtotal.text = "$ \(subTotalText)"

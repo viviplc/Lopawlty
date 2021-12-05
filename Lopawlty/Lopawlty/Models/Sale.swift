@@ -39,6 +39,7 @@ class Sale {
         self.init(productCodes : productCodes, productQuantities : productQuantities, customerId : "", totalItems : 0)
     }
     
+    //a convenience constructor that takes a firebase dictionary. This is used when we have a firebase object of data and want to convert it to this Sale class. We have to turn each sub collection in firebase into Delivery, Payment, CreditCard and Address fields which uses the convinience init of those classes respectively.
     convenience init(firebaseDictionary : [String: Any]) {
         let emptyProductCodes : [Int] = []
         let emptyProductQuantities : [Int] = []
@@ -73,6 +74,7 @@ class Sale {
         self.delivery = delivery
     }
     
+    //get index by product code
     func getIndexByProductCode(productCodes: [Int],productCode : Int) -> Int{
         for (index,code) in productCodes.enumerated() {
             if productCode == code {
@@ -82,6 +84,7 @@ class Sale {
         return -1
     }
     
+    //function that will use the productCode and productQuantity fields and get the data from Firebase and return an array of Product objects. It has a call back function as a parameter which can be used as a closure when the function is called
     func getProducts(callback: @escaping (_ products : [Product]) -> Void) {
         let db = Firestore.firestore()
         var products : [Product] = []
@@ -107,6 +110,7 @@ class Sale {
         }
     }
     
+    //function that takes the current instance of the class and gives out a dictionary in the [String: Any] format the firebase uses
     var firebaseDictionary : [String: Any] {
         return ["productCodes" : productCodes, "productQuantities" : productQuantities , "totalItems" : totalItems, "customerId" : customerId]
     }

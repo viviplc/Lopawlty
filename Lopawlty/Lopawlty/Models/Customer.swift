@@ -37,6 +37,7 @@ class Customer {
         self.init(fullName : "", email : "", password: "", petType: Pet.dog)
     }
     
+    //a convenience constructor that takes a firebase dictionary. This is used when we have a firebase object of data and want to convert it to this class
     convenience init(firebaseDictionary : [String: Any]) {
         let fullName = firebaseDictionary["fullName"] as! String? ?? ""
         let email = firebaseDictionary["email"] as! String? ?? ""
