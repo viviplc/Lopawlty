@@ -2,8 +2,12 @@
 //  ShoppingCartTableViewCell.swift
 //  Lopawlty
 //
-//  Created by user193926 on 12/1/21.
+//  Created by Viviana Leyva on 12/1/21.
 //
+
+/*
+ This class is the table view cell for the shopping cart product list view. It has the buttons and information relating to an individual product in the list.
+ **/
 
 import UIKit
 

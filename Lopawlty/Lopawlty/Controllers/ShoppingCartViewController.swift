@@ -2,8 +2,12 @@
 //  ShoppingCartViewController.swift
 //  Lopawlty
 //
-//  Created by user193926 on 12/1/21.
+//  Created by Viviana Leyva on 12/1/21.
 //
+
+/*
+ This class is the controller for the shopping cart product list view. It has the buttons and information relating to an individual product in the list. It also gives the user the option to checkout their shopping cart.
+ **/
 
 import UIKit
 import Firebase
@@ -21,6 +25,7 @@ class ShoppingCartViewController: UIViewController, UITableViewDataSource, UITab
     
     var checkTotalItems : Int = 0
     var checkSubTotal : Double = 0.0
+    var newSaleId : String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +36,37 @@ class ShoppingCartViewController: UIViewController, UITableViewDataSource, UITab
         ShoppingCartTable.delegate = self
         ShoppingCartTable.dataSource = self
         
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         loadProductsFromFirebase()
+    }
+    
+    func createSale() -> Sale {
+        let customerId = UserDefaults.standard.object(forKey: "LoggedInCustomerId")
+        let totalItems = calculateTotalItems()
+        let productCodes = getProductCodeArray()
+        let productQuantities = getProductQuantities()
+        let sale = Sale(productCodes: productCodes, productQuantities: productQuantities, customerId: customerId as! String, totalItems: totalItems)
+        
+        return sale
+    }
+    
+    func getProductCodeArray() -> [Int] {
+        var productCodes : [Int] = []
+        for product in productsInCart {
+            productCodes.append(product.productCode)
+        }
+        return productCodes
+    }
+    
+    func getProductQuantities() -> [Int] {
+        var productCodes : [Int] = []
+        for product in productsInCart {
+            productCodes.append(product.currentSelectedAmount)
+        }
+        return productCodes
     }
     
     func calculateTotalOrder() -> Double {
@@ -218,8 +253,10 @@ class ShoppingCartViewController: UIViewController, UITableViewDataSource, UITab
     @IBAction func BtnCheckOutClicked(_ sender: Any) {
         self.checkTotalItems = calculateTotalItems()
         self.checkSubTotal = calculateTotalOrder()
-                
-        performSegue(withIdentifier: "shoppingCartToResume", sender: self)
+        let newSale : Sale = createSale()
+        
+        saveSaleToFirebase(newSale: newSale)
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -227,7 +264,25 @@ class ShoppingCartViewController: UIViewController, UITableViewDataSource, UITab
                 let resume = segue.destination as? CheckOutResumeViewController
                 resume?.totalItems = self.checkTotalItems
                 resume?.subTotal = self.checkSubTotal
+                resume?.saleId = self.newSaleId
             }
         }
+    
+    func saveSaleToFirebase(newSale : Sale) {
+        let db = Firestore.firestore()
+        let ref = db.collection("Sales").document()
+        let newId = ref.documentID
+        
+        let firebaseNewSaleDict = newSale.firebaseDictionary;
+        db.collection("Sales").document(newId).setData( firebaseNewSaleDict){ err in
+            if let err = err {
+                print("error adding new sale: \(err)")
+            } else {
+                self.newSaleId = newId
+                print("saved new sale with id \(newId)")
+                self.performSegue(withIdentifier: "shoppingCartToResume", sender: self)
+            }
+        }
+    }
     
 }

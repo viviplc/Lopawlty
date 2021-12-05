@@ -2,8 +2,12 @@
 //  ProvinceSelecViewController.swift
 //  Lopawlty
 //
-//  Created by user193926 on 11/11/21.
+//  Created by Dunumalage Romeno Fernando on 11/11/21.
 //
+
+/*
+ This class is the view controller for the province selector view, which uses a UIPickerView and includes validation and integration to firebase to store data in the database (firestore)
+ **/
 
 import UIKit
 import CoreData
@@ -14,7 +18,7 @@ class ProvinceSelecViewController: UIViewController , UIPickerViewDelegate, UIPi
     @IBOutlet weak var picker: UIPickerView!
     @IBOutlet weak var BtnSelectProv: UIButton!
     
-    var provinces: [String] = []
+    var provinces: [Province] = []
  
     var selectedProvince : String = ""
     
@@ -31,7 +35,7 @@ class ProvinceSelecViewController: UIViewController , UIPickerViewDelegate, UIPi
         
         BtnSelectProv.layer.cornerRadius = 15
         
-        provinces = ["Alberta","British Columbia", "Manitoba", "New Brunswick", "Newfoundland and Labrador","Nova Scotia","Ontario","Prince Edward Island", "Quebec", "Saskatchewan"]
+        provinces = [Province(name: "Alberta"),Province(name: "British Columbia"), Province(name: "Manitoba"), Province(name: "New Brunswick"), Province(name: "Newfoundland and Labrador"),Province(name: "Nova Scotia"),Province(name: "Ontario"),Province(name: "Prince Edward Island"), Province(name: "Quebec"), Province(name: "Saskatchewan")]
         
         //setLoggedInCustomer()
         
@@ -55,11 +59,11 @@ class ProvinceSelecViewController: UIViewController , UIPickerViewDelegate, UIPi
     
     // The data to return fopr the row and component (column) that's being passed in
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return provinces[row]
+        return provinces[row].name
     }
  
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        selectedProvince = provinces[row]
+        selectedProvince = provinces[row].name
     }
     
     func updateProvince(provinceString : String) {
@@ -82,9 +86,14 @@ class ProvinceSelecViewController: UIViewController , UIPickerViewDelegate, UIPi
         
     }
  
-
+    
     @IBAction func selectButtonClicked(_ sender: Any) {
-        updateProvince(provinceString: selectedProvince)
+        if(selectedProvince.count > 0) {
+            updateProvince(provinceString: selectedProvince)
+        } else {
+            Utils.alert(message: "Please select a province", viewController: self)
+        }
+        
     }
     
    

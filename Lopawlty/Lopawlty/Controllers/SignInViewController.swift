@@ -2,8 +2,12 @@
 //  SignInViewController.swift
 //  Lopawlty
 //
-//  Created by user193926 on 11/11/21.
+//  Created by Dunumalage Romeno Fernando on 11/11/21.
 //
+
+/*
+ This class is the view controller for the sign in view, which includes validation and integration to firebase to store data in the database (firestore)
+ **/
 
 import UIKit
 import CoreData
@@ -28,22 +32,44 @@ class SignInViewController: UIViewController {
         
     }
     
+    //function that validates info in the form on the view and present the errors if there are any in a UIAlertView
+    func validateSignIn() -> Bool {
+        var validated = true
+        var errorMessage = ""
+        if(!Utils.validateTextFieldWithMinLen(txtLabel: TxtEmail, min: 5)) {
+            validated = false
+            errorMessage += "Error with Email (min length 5). "
+        }
+        if(!Utils.validateTextFieldWithMinMaxLen(txtLabel: TxtPassword, min: 5, max: 15)) {
+            validated = false
+            errorMessage += "Error with Password (length 5-15). "
+        }
+        
+        if(!validated) {
+            Utils.alert(message: errorMessage, viewController: self)
+        }
+        
+        return validated
+    }
+    
     @IBAction func signInButtonClicked(_ sender: Any) {
-        guard let email = TxtEmail.text else {
-            print("Error with email")
-            return
+        
+        if(validateSignIn()) {
+            BtnSignIn.isEnabled = false
+            let email = TxtEmail.text!
+            let password = TxtPassword.text!
+            signIn(email: email, password: password)
         }
-        guard let password = TxtPassword.text else {
-            print("Error with password")
-            return
-        }
-        signIn(email: email, password: password)
+        
+        
     }
     
     
     func signIn(email : String, password : String){
         let db = Firestore.firestore()
         db.collection("Customers").whereField("email", isEqualTo: email).whereField("password", isEqualTo: password).limit(to: 1).getDocuments() { (querySnapshot, err) in
+            
+            self.BtnSignIn.isEnabled = true
             if let err = err {
                 print("Error: \(err)")
             } else {
@@ -52,7 +78,7 @@ class SignInViewController: UIViewController {
                     print("user logged in -> \(account[0].data())")
                     self.performSegue(withIdentifier: "SignInToProducts", sender: nil)
                 } else {
-                    print("Wrong email or password.");
+                    Utils.alert(message: "Wrong email or password.", viewController: self)
                 }
             }
         }

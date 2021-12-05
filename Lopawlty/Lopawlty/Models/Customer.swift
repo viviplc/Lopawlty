@@ -2,8 +2,12 @@
 //  Customer.swift
 //  Lopawlty
 //
-//  Created by user194247 on 11/30/21.
+//  Created by Dunumalage Romeno Fernando on 11/30/21.
 //
+
+/**
+ This class is the model for a Customer which is a single user of our app. It provides the functionality to initialize using a Firebase Collection Dictionary, to get get customer data.
+ */
 
 import Foundation
 import Firebase
@@ -13,7 +17,6 @@ enum Pet : String {
 }
 
 class Customer {
-    //test push from Romeno
     var id : String
     var fullName : String
     var email : String
@@ -34,6 +37,7 @@ class Customer {
         self.init(fullName : "", email : "", password: "", petType: Pet.dog)
     }
     
+    //a convenience constructor that takes a firebase dictionary. This is used when we have a firebase object of data and want to convert it to this class
     convenience init(firebaseDictionary : [String: Any]) {
         let fullName = firebaseDictionary["fullName"] as! String? ?? ""
         let email = firebaseDictionary["email"] as! String? ?? ""

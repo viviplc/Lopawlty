@@ -2,8 +2,12 @@
 //  ProductsListViewController.swift
 //  Lopawlty
 //
-//  Created by user193926 on 11/18/21.
+//  Created by Viviana Leyva on 11/18/21.
 //
+
+/*
+ This class is the view controller for the product list view, which includes validation and integration to firebase to store data in the database (firestore). It uses a table view and a table view cell.
+ **/
 
 import UIKit
 import Firebase
@@ -13,7 +17,7 @@ enum ProductFilter : String {
     case dog, cat, all
 }
 
-class ProductsListViewController: UIViewController, UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate{
+class ProductsListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
    
     @IBOutlet weak var productsListtable: UITableView!
     @IBOutlet weak var BtnDogsFilter: UIButton!
@@ -36,32 +40,33 @@ class ProductsListViewController: UIViewController, UISearchBarDelegate, UITable
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationItem.searchController = searchController
-        searchController.searchBar.delegate = self
         view.backgroundColor = .white
         
         productsListtable.delegate = self
         productsListtable.dataSource = self
         
-        BtnDogsFilter.layer.borderColor = UIColor(red: 0, green: 122/255, blue: 255/255, alpha: 1).cgColor
-        BtnDogsFilter.layer.cornerRadius = 10
-        BtnDogsFilter.layer.borderWidth = 1
-        BtnCatsFilter.layer.borderColor = UIColor(red: 0, green: 122/255, blue: 255/255, alpha: 1).cgColor
-        BtnCatsFilter.layer.cornerRadius = 10
-        BtnCatsFilter.layer.borderWidth = 1
+        setStyles()
+        
         
         //SampleData.createSampleData()
         //loadProductsFromFirebase()
     }
     
+    func setStyles() {
+        BtnDogsFilter.layer.borderColor = UIColor(red: 0, green: 122/255, blue: 255/255, alpha: 1).cgColor
+        BtnDogsFilter.layer.cornerRadius = 10
+        BtnDogsFilter.layer.borderWidth = 1
+        BtnDogsFilter.layer.backgroundColor = UIColor(red: 204/255, green: 228/255, blue: 1, alpha: 1).cgColor
+        BtnCatsFilter.layer.borderColor = UIColor(red: 0, green: 122/255, blue: 255/255, alpha: 1).cgColor
+        BtnCatsFilter.layer.cornerRadius = 10
+        BtnCatsFilter.layer.borderWidth = 1
+        BtnCatsFilter.layer.backgroundColor = UIColor(red: 204/255, green: 228/255, blue: 1, alpha: 1).cgColor
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         loadProductsFromFirebase()
     }
-    
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        print(searchText)
-    }
-    
+      
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -98,6 +103,8 @@ class ProductsListViewController: UIViewController, UISearchBarDelegate, UITable
             if (segue.identifier == "productListToSeeMore") {
                 if let seeMoreDestination = segue.destination as? SeeMoreViewController {
                     if let seeMoreBtn:UIButton = sender as! UIButton? {
+                        seeMoreDestination.readProductCode = self.productsNotInCartFiltered[seeMoreBtn.tag].productCode
+                        seeMoreDestination.readProductDescription =  self.productsNotInCartFiltered[seeMoreBtn.tag].description
                         let prdImage:String! = self.productsNotInCartFiltered[seeMoreBtn.tag].imageFileName
                         let prdname:String! = self.productsNotInCartFiltered[seeMoreBtn.tag].name
                         let prdBrand:String! = self.productsNotInCartFiltered[seeMoreBtn.tag].brand
@@ -107,6 +114,7 @@ class ProductsListViewController: UIViewController, UISearchBarDelegate, UITable
                             seeMoreDestination.readProductName = prdname!
                             seeMoreDestination.readProductBrand = prdBrand!
                             seeMoreDestination.readProductPrice = prdPrice!
+                            
                         }
                         
                     }
@@ -115,42 +123,31 @@ class ProductsListViewController: UIViewController, UISearchBarDelegate, UITable
         }
     
     @IBAction func btnDogFilterClicked(_ sender: Any) {
+        setStyles()
         if(currentProductFilter == .dog) {
             currentProductFilter = .all
-            BtnDogsFilter.layer.borderColor = UIColor(red: 0, green: 122/255, blue: 255/255, alpha: 1).cgColor
-            BtnDogsFilter.layer.cornerRadius = 10
-            BtnDogsFilter.layer.borderWidth = 1
         } else {
             currentProductFilter = .dog
-            BtnDogsFilter.layer.borderColor = UIColor(red: 0, green: 0, blue: 255/255, alpha: 1).cgColor
+            BtnDogsFilter.layer.borderColor = UIColor(red: 0, green: 122/255, blue: 255/255, alpha: 1).cgColor
             BtnDogsFilter.layer.cornerRadius = 10
-            BtnDogsFilter.layer.borderWidth = 5
-            
-            BtnCatsFilter.layer.borderColor = UIColor(red: 0, green: 122/255, blue: 255/255, alpha: 1).cgColor
-            BtnCatsFilter.layer.cornerRadius = 10
-            BtnCatsFilter.layer.borderWidth = 1
+            BtnDogsFilter.layer.borderWidth = 3
+            BtnDogsFilter.layer.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1).cgColor
         }
         
         refreshFilteredProductList()
     }
     
     @IBAction func btnCatFilterClicked(_ sender: Any) {
+        setStyles()
         if(currentProductFilter == .cat) {
             currentProductFilter = .all
-            BtnCatsFilter.layer.borderColor = UIColor(red: 0, green: 122/255, blue: 255/255, alpha: 1).cgColor
-            BtnCatsFilter.layer.cornerRadius = 10
-            BtnCatsFilter.layer.borderWidth = 1
         } else {
             currentProductFilter = .cat
-            BtnCatsFilter.layer.borderColor = UIColor(red: 0, green: 0, blue: 255/255, alpha: 1).cgColor
+            BtnCatsFilter.layer.borderColor = UIColor(red: 0, green: 122/255, blue: 255/255, alpha: 1).cgColor
             BtnCatsFilter.layer.cornerRadius = 10
-            BtnCatsFilter.layer.borderWidth = 5
-            
-            BtnDogsFilter.layer.borderColor = UIColor(red: 0, green: 122/255, blue: 255/255, alpha: 1).cgColor
-            BtnDogsFilter.layer.cornerRadius = 10
-            BtnDogsFilter.layer.borderWidth = 1
+            BtnCatsFilter.layer.borderWidth = 3
+            BtnCatsFilter.layer.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1).cgColor
         }
-        
         refreshFilteredProductList()
     }
     
@@ -163,12 +160,12 @@ class ProductsListViewController: UIViewController, UISearchBarDelegate, UITable
                 newProducts.append(product)
                 break
             case .cat:
-                if product.category == "cat" {
+                if product.category == "cat" || product.category == "all" {
                     newProducts.append(product)
                 }
                 break
             case .dog:
-                if product.category == "dog" {
+                if product.category == "dog" || product.category == "all"  {
                     newProducts.append(product)
                 }
                 break
