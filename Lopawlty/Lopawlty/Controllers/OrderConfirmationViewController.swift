@@ -2,8 +2,12 @@
 //  OrderConfirmationViewController.swift
 //  Lopawlty
 //
-//  Created by user193926 on 12/2/21.
+//  Created by Viviana Leyva on 12/2/21.
 //
+
+/*
+ This class is the controller for the order confirmation view. It is the view with the summary of the sale as well as a way for the user to see the products they are about to buy.
+ **/
 
 import UIKit
 import Firebase

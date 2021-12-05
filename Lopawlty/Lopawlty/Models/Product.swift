@@ -2,9 +2,12 @@
 //  Product.swift
 //  Lopawlty
 //
-//  Created by user194247 on 11/30/21.
+//  Created by Dunumalage Romeno Fernando on 11/30/21.
 //
 
+/**
+ This class is the model for a Product which is a single product in our app. It provides the functionality to initialize using a Firebase Collection Dictionary, to get get product data. It also has fields such as current selected amount in cart in addition to the product fields.
+ */
 import Foundation
 
 class Product {

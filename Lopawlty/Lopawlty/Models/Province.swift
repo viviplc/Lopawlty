@@ -2,8 +2,12 @@
 //  Province.swift
 //  Lopawlty
 //
-//  Created by user194247 on 12/2/21.
+//  Created by Dunumalage Romeno Fernando on 11/30/21.
 //
+
+/**
+ This class is the model for the Province. It has the name field for the province.
+ */
 
 import Foundation
 

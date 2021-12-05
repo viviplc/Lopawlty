@@ -3,8 +3,12 @@
 //  SeeMoreViewController.swift
 //  Lopawlty
 //
-//  Created by user193926 on 11/30/21.
+//  Created by Viviana Leyva on 11/30/21.
 //
+
+/*
+ This class is the detail view for a single product. 
+ **/
 
 import UIKit
 import CoreData

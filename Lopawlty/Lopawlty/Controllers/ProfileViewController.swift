@@ -2,8 +2,12 @@
 //  ProfileViewController.swift
 //  Lopawlty
 //
-//  Created by user193926 on 12/3/21.
+//  Created by Viviana Leyva on 12/3/21.
 //
+
+/*
+ This class is the controller for the profile information view. It is integrated to firebase to get information about the profile. The main use of this view is the logout view to logout the user out of the app.
+ **/
 
 import UIKit
 import Firebase

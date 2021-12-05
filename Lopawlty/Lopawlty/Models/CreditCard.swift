@@ -2,9 +2,12 @@
 //  CreditCard.swift
 //  Lopawlty
 //
-//  Created by user194247 on 12/2/21.
+//  Created by Viviana Leyva on 12/2/21.
 //
 
+/**
+ This class is the model for a CreditCard which is a single credit card attached to a Sale object. It provides the functionality to initialize using a Firebase Collection Dictionary, as well as convert from a CreditCard object to a Firebase collection dictionary.
+ */
 import Foundation
 
 class CreditCard {

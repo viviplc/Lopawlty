@@ -2,8 +2,12 @@
 //  PaymentMethodViewController.swift
 //  Lopawlty
 //
-//  Created by user193926 on 12/2/21.
+//  Created by Viviana Leyva on 12/2/21.
 //
+
+/*
+ This class is the controller for the credit card details view. It is integrated to firebase to save the information in the Sale. It uses an external library called MonthYearPicker for the expiry date of the credit card.
+ **/
 
 import UIKit
 import MonthYearPicker

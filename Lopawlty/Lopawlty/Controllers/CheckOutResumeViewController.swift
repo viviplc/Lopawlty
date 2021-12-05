@@ -2,8 +2,12 @@
 //  CheckOutResumeViewController.swift
 //  Lopawlty
 //
-//  Created by user193926 on 12/1/21.
+//  Created by Viviana Leyva on 12/1/21.
 //
+
+/*
+ This class is the controller for the checkout view which calculates the taxes and fees. It integrates with firebase to store the result to the sale that was created in the previous view.
+ **/
 
 import UIKit
 import Foundation

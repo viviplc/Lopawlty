@@ -2,8 +2,11 @@
 //  ProductCellTableViewCell.swift
 //  Lopawlty
 //
-//  Created by user193926 on 11/20/21.
+//  Created by Viviana Leyva on 11/20/21.
 //
+/*
+ This class is the table view cell for the product list view. It has the buttons and information relating to an individual product in the list.
+ **/
 
 import UIKit
 

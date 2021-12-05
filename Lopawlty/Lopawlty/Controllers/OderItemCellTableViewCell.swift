@@ -2,8 +2,12 @@
 //  OderItemCellTableViewCell.swift
 //  Lopawlty
 //
-//  Created by user193926 on 12/3/21.
+//  Created by Viviana Leyva on 12/3/21.
 //
+
+/*
+ This class is the table view cell for the order item product list view.
+ **/
 
 import UIKit
 
@@ -15,13 +19,14 @@ class OderItemCellTableViewCell: UITableViewCell {
     @IBOutlet weak var LblProductQuantity: UILabel!
     @IBOutlet weak var LblProductPrice: UILabel!
     
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         
     }
 

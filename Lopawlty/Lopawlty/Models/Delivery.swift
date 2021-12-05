@@ -2,8 +2,12 @@
 //  Delivery.swift
 //  Lopawlty
 //
-//  Created by user194247 on 12/2/21.
+//  Created by Viviana Leyva on 12/2/21.
 //
+
+/**
+ This class is the model for a Delivery which is a single delivery attached to a Sale object. It provides the functionality to initialize using a Firebase Collection Dictionary, as well as convert from a Delivery object to a Firebase collection dictionary.
+ */
 
 import Foundation
 

@@ -2,8 +2,12 @@
 //  AddressInformationViewController.swift
 //  Lopawlty
 //
-//  Created by user194247 on 12/2/21.
+//  Created by Viviana Leyva on 12/2/21.
 //
+
+/*
+ This class is the controller for the address information view. It is integrated to firebase to save the information in the Sale. It uses MapKit and CoreLocation handle the mapView and geocoder to convert postal code to a location in the mapView.
+ **/
 
 import UIKit
 import MapKit

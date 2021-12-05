@@ -2,8 +2,12 @@
 //  Sale.swift
 //  Lopawlty
 //
-//  Created by user194247 on 12/2/21.
+//  Created by Dunumalage Romeno Fernando on 12/2/21.
 //
+
+/**
+ This class is the model for a sale which is a single order that a customer can make. It is attached to Delivery, Payment, CreditCard, Address classes. It provides the functionality to initialize using a Firebase Collection Dictionary, to get the Product array from the Sale object etc.
+ */
 
 import Foundation
 import Firebase

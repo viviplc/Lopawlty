@@ -2,8 +2,12 @@
 //  Address.swift
 //  Lopawlty
 //
-//  Created by user194247 on 12/2/21.
+//  Created by Viviana Leyva on 12/2/21.
 //
+
+/**
+ This class is the model for a Address which is a single address for a delivery attached to a Sale object. It provides the functionality to initialize using a Firebase Collection Dictionary, to get get delivery data as well as convert from a Delivery object to a Firebase collection dictionary.
+ */
 
 import Foundation
 

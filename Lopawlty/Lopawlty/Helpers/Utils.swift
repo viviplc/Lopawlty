@@ -2,8 +2,12 @@
 //  Utils.swift
 //  Lopawlty
 //
-//  Created by user194247 on 12/3/21.
+//  Created by Dunumalage Romeno Fernando on 12/3/21.
 //
+
+/**
+ This class has static helper functions that are used throughout our app for validation of text fields, presenting a common alert view, checking if user is logging in, logging out the user etc.
+ */
 
 import Foundation
 import UIKit

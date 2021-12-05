@@ -2,8 +2,12 @@
 //  UnauthenticatedNavigationController.swift
 //  Lopawlty
 //
-//  Created by user194247 on 12/3/21.
+//  Created by Dunumalage Romeno Fernando on 12/3/21.
 //
+
+/**
+ Navigation controller for the initial view of the app. It will segue to the the tab bar controller if the user has already logged in.
+ */
 
 import UIKit
 

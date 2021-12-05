@@ -2,8 +2,12 @@
 //  ProductsListViewController.swift
 //  Lopawlty
 //
-//  Created by user193926 on 11/18/21.
+//  Created by Viviana Leyva on 11/18/21.
 //
+
+/*
+ This class is the view controller for the product list view, which includes validation and integration to firebase to store data in the database (firestore). It uses a table view and a table view cell.
+ **/
 
 import UIKit
 import Firebase

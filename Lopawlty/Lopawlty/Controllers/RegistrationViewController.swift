@@ -2,12 +2,17 @@
 //  RegistrationViewController.swift
 //  Lopawlty
 //
-//  Created by user193926 on 11/11/21.
+//  Created by Dunumalage Romeno Fernando on 11/11/21.
 //
+
+/*
+ This class is the view controller for the registration view, which includes validation and integration to firebase to store data in the database (firestore)
+ **/
 
 import UIKit
 import CoreData
 import Firebase
+
 
 class RegistrationViewController: UIViewController , UITextFieldDelegate {
 

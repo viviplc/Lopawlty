@@ -2,8 +2,12 @@
 //  ProvinceSelecViewController.swift
 //  Lopawlty
 //
-//  Created by user193926 on 11/11/21.
+//  Created by Dunumalage Romeno Fernando on 11/11/21.
 //
+
+/*
+ This class is the view controller for the province selector view, which uses a UIPickerView and includes validation and integration to firebase to store data in the database (firestore)
+ **/
 
 import UIKit
 import CoreData

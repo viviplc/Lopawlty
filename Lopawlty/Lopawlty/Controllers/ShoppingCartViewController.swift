@@ -2,8 +2,12 @@
 //  ShoppingCartViewController.swift
 //  Lopawlty
 //
-//  Created by user193926 on 12/1/21.
+//  Created by Viviana Leyva on 12/1/21.
 //
+
+/*
+ This class is the controller for the shopping cart product list view. It has the buttons and information relating to an individual product in the list. It also gives the user the option to checkout their shopping cart.
+ **/
 
 import UIKit
 import Firebase

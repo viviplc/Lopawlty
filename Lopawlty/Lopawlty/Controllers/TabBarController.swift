@@ -2,8 +2,12 @@
 //  TabBarController.swift
 //  Lopawlty
 //
-//  Created by user194247 on 12/3/21.
+//  Created by Dunumalage Romeno Fernando on 12/3/21.
 //
+
+/**
+Tab bar controller for home, orders and profile views
+ */
 
 import UIKit
 

@@ -2,8 +2,12 @@
 //  OrderItemsViewController.swift
 //  Lopawlty
 //
-//  Created by user193926 on 12/3/21.
+//  Created by Viviana Leyva on 12/3/21.
 //
+
+/*
+ This class is the controller for the order items product list view. 
+ **/
 
 import UIKit
 

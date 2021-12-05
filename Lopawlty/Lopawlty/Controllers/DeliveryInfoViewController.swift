@@ -2,8 +2,12 @@
 //  DeliveryInfoViewController.swift
 //  Lopawlty
 //
-//  Created by user193926 on 12/1/21.
+//  Created by Viviana Leyva on 12/1/21.
 //
+
+/*
+ This class is the controller for the delivery date time view. It is integrated to firebase to save the information in the Sale.
+ **/
 
 import UIKit
 import Firebase

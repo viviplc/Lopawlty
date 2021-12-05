@@ -2,8 +2,12 @@
 //  Customer.swift
 //  Lopawlty
 //
-//  Created by user194247 on 11/30/21.
+//  Created by Dunumalage Romeno Fernando on 11/30/21.
 //
+
+/**
+ This class is the model for a Customer which is a single user of our app. It provides the functionality to initialize using a Firebase Collection Dictionary, to get get customer data.
+ */
 
 import Foundation
 import Firebase
@@ -13,7 +17,6 @@ enum Pet : String {
 }
 
 class Customer {
-    //test push from Romeno
     var id : String
     var fullName : String
     var email : String

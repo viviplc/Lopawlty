@@ -2,8 +2,11 @@
 //  SampleData.swift
 //  Lopawlty
 //
-//  Created by user194247 on 11/25/21.
+//  Created by Dunumalage Romeno Fernando on 11/25/21.
 //
+/*
+ This SampleData class was used to test the views by providing sample data.
+ **/
 
 import Foundation
 import UIKit
@@ -11,9 +14,6 @@ import Firebase
 
 
 class SampleData {
-    static func createSampleData() {
-       
-        }
     
     static func getProducts() ->[Product] {
         var products : [Product] = []

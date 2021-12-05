@@ -2,9 +2,12 @@
 //  Payment.swift
 //  Lopawlty
 //
-//  Created by user194247 on 12/2/21.
+//  Created by Viviana Leyva on 12/2/21.
 //
 
+/**
+ This class is the model for a Payment which is a single payment calculation object attached to a Sale object. It provides the functionality to initialize using a Firebase Collection Dictionary, to get get payment data as well as convert from a Payment object to a Firebase collection dictionary.
+ */
 import Foundation
 
 class Payment {
