@@ -32,6 +32,8 @@ class Utils {
     
     //function to empty cart data model in core data
     static func emptyCartInCoreData() {
+        emptyCoreDataEntity(entity: "Cart")
+        /*
         //code taken from https://www.advancedswift.com/batch-delete-everything-core-data-swift/ to batch delete core data
         var persistentContainer = (UIApplication.shared.delegate as! AppDelegate).persistentContainer
         
@@ -64,6 +66,7 @@ class Utils {
             (store, error) in
             // Handle errors
         }
+        */
     }
     
     //function to validate a text field
@@ -156,20 +159,15 @@ class Utils {
     //function to empty core data
     static func emptyCoreDataEntity(entity: String)
     {
-        let managedContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entity)
-        fetchRequest.returnsObjectsAsFaults = false
+        let persistentContainer = (UIApplication.shared.delegate as! AppDelegate).persistentContainer
+        let managedContext = persistentContainer.viewContext
+        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: entity)
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
 
-        do
-        {
-            let results = try managedContext.fetch(fetchRequest)
-            for managedObject in results
-            {
-                let managedObjectData:NSManagedObject = managedObject as! NSManagedObject
-                managedContext.delete(managedObjectData)
-            }
+        do {
+            try managedContext.execute(deleteRequest)
         } catch let error as NSError {
-            print("Deleted all data in \(entity) error : \(error) \(error.userInfo)")
+            print("error \(error)")
         }
     }
     
