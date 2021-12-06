@@ -100,7 +100,7 @@ class RegistrationViewController: UIViewController , UITextFieldDelegate {
         self.view.endEditing(true)
     }
     
-    
+    //saves a customer to the firebase firestore database
     func register(newCustomer: Customer) {
        
         do{

@@ -64,7 +64,7 @@ class SignInViewController: UIViewController {
         
     }
     
-    
+    //method to check if email password valid in firebase and store id in userDefaults for persistance of user login session
     func signIn(email : String, password : String){
         let db = Firestore.firestore()
         db.collection("Customers").whereField("email", isEqualTo: email).whereField("password", isEqualTo: password).limit(to: 1).getDocuments() { (querySnapshot, err) in

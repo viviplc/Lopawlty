@@ -66,6 +66,7 @@ class ProvinceSelecViewController: UIViewController , UIPickerViewDelegate, UIPi
         selectedProvince = provinces[row].name
     }
     
+    //method that updates province field in firebase for current user
     func updateProvince(provinceString : String) {
         do {
         

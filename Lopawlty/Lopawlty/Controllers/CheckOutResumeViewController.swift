@@ -51,24 +51,28 @@ class CheckOutResumeViewController: UIViewController {
         LblGrandTotal.text = "$ \(String(format: "%.2f", grandTotal))"
     }
     
+    //method to calculate the total without taxes
     func calculatePriceNotaxes() -> Double {
         var totalNoTax = 0.0
         totalNoTax = subTotal + shipping
         return totalNoTax
     }
     
+    //method to calculate the total with gst tax
     func calculateTaxGstHst(priceNoTax : Double) -> Double{
         var totalGstHst = 0.0
         totalGstHst = priceNoTax * 0.08
         return totalGstHst
     }
 
+    //method to calculate total with rst tax
     func calculateTaxPstRst(priceNoTax : Double) -> Double{
         var totalPstRst = 0.0
         totalPstRst = priceNoTax * 0.05
         return totalPstRst
     }
     
+    //method to calculate total with both types of taxes
     func calculateGrandTotal(noTax: Double, gst : Double, pst: Double) -> Double{
         var total = 0.0
         total = noTax + gst + pst
@@ -97,6 +101,7 @@ class CheckOutResumeViewController: UIViewController {
             }
         }
     
+    //method that creates a new payment object using data created in class
     func createPayment() -> Payment {
         let taxes = calculateTaxGstHst(priceNoTax : subTotal) + calculateTaxPstRst(priceNoTax: subTotal)
         let totalCost = taxes + subTotal

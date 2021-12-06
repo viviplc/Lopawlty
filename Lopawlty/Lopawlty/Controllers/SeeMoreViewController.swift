@@ -71,6 +71,7 @@ class SeeMoreViewController: UIViewController {
         
     }
     
+    //method that adds a product to the cart in Core Data
     func addProductToCart(productCode : Int64, numberOfProduct : Int32) {
         do {
                let request = Cart.fetchRequest() as NSFetchRequest<Cart>

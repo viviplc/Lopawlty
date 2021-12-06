@@ -43,6 +43,7 @@ class ShoppingCartViewController: UIViewController, UITableViewDataSource, UITab
         loadProductsFromFirebase()
     }
     
+    //method that creates a sale object by calculating and getting the data
     func createSale() -> Sale {
         let customerId = UserDefaults.standard.object(forKey: "LoggedInCustomerId")
         let totalItems = calculateTotalItems()
@@ -53,6 +54,7 @@ class ShoppingCartViewController: UIViewController, UITableViewDataSource, UITab
         return sale
     }
     
+    //method that iterates through a list of products and returns an array of the product codes
     func getProductCodeArray() -> [Int] {
         var productCodes : [Int] = []
         for product in productsInCart {
@@ -61,6 +63,7 @@ class ShoppingCartViewController: UIViewController, UITableViewDataSource, UITab
         return productCodes
     }
     
+    //method that iterates through a list of products and returns an array of the product quantities
     func getProductQuantities() -> [Int] {
         var productCodes : [Int] = []
         for product in productsInCart {
@@ -69,6 +72,7 @@ class ShoppingCartViewController: UIViewController, UITableViewDataSource, UITab
         return productCodes
     }
     
+    //method that iterates through the list of products and calculates the total cost
     func calculateTotalOrder() -> Double {
         var total = 0.0
         
@@ -79,6 +83,7 @@ class ShoppingCartViewController: UIViewController, UITableViewDataSource, UITab
         return total
     }
     
+    //method that iterates through the list of products and calculates the total number of items
     func calculateTotalItems() -> Int {
         var total = 0
         
@@ -89,6 +94,7 @@ class ShoppingCartViewController: UIViewController, UITableViewDataSource, UITab
         return total
     }
     
+    //method that refreshes the checkout total label after calculating it
     func refreshTotalOrderAmountLabel() {
         let checkOutTotal = String(format: "%.2f",calculateTotalOrder())
         BtnCheckout.setTitle("   Check Out $ \(checkOutTotal)", for: .normal)
@@ -162,6 +168,7 @@ class ShoppingCartViewController: UIViewController, UITableViewDataSource, UITab
         refreshTotalOrderAmountLabel()
     }
     
+    //method that updates the cart item count for a specific cart item
     func updateCartItemCountInCoreData(productCode: Int64, productCount: Int32) {
         do {
                let request = Cart.fetchRequest() as NSFetchRequest<Cart>
@@ -180,6 +187,7 @@ class ShoppingCartViewController: UIViewController, UITableViewDataSource, UITab
                }
     }
     
+    //method that deletes a cart item from core data
     func deleteCartItemInCoreData(productCode: Int64) {
         do {
                let request = Cart.fetchRequest() as NSFetchRequest<Cart>
@@ -197,6 +205,7 @@ class ShoppingCartViewController: UIViewController, UITableViewDataSource, UITab
                }
     }
     
+    //method that updates product addedToCart and currentSelectedAmount fields
     func updateAddedToCartFieldInCartProducts() {
         do {
                let request = Cart.fetchRequest() as NSFetchRequest<Cart>
@@ -213,6 +222,7 @@ class ShoppingCartViewController: UIViewController, UITableViewDataSource, UITab
                }
     }
     
+    //method that will return the index of a product from the product list by product code
     func getIndexByProductCode(productList: [Product],productCode : Int64) -> Int{
         for (index,product) in productList.enumerated() {
             if product.productCode == productCode {
@@ -222,6 +232,7 @@ class ShoppingCartViewController: UIViewController, UITableViewDataSource, UITab
         return -1
     }
     
+    //method to load the products from firebase
     func loadProductsFromFirebase() {
         let db = Firestore.firestore()
         db.collection("Products")
@@ -239,6 +250,7 @@ class ShoppingCartViewController: UIViewController, UITableViewDataSource, UITab
         }
     }
     
+    //method to refresh the products added to cart by checking the addedToCart field
     func refreshProductsAddedToCart() {
         productsInCart = []
         for (index,product) in allProducts.enumerated() {
@@ -268,6 +280,7 @@ class ShoppingCartViewController: UIViewController, UITableViewDataSource, UITab
             }
         }
     
+    //method to store sale in firebase firestore database
     func saveSaleToFirebase(newSale : Sale) {
         let db = Firestore.firestore()
         let ref = db.collection("Sales").document()
