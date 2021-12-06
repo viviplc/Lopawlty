@@ -215,6 +215,7 @@ class ProductsListViewController: UIViewController, UITableViewDataSource, UITab
         refreshProductsNotAddedToCart();
     }
     
+    //method that adds a product to the cart in Core Data
     func addProductToCart(productCode : Int64, numberOfProduct : Int32) {
         do {
                let request = Cart.fetchRequest() as NSFetchRequest<Cart>
@@ -241,6 +242,7 @@ class ProductsListViewController: UIViewController, UITableViewDataSource, UITab
         
     }
     
+    //method that refreshes products that are not in cart by checking products array addedToCart field for each product
     func refreshProductsNotAddedToCart() {
         productsNotInCart = []
         for (index,product) in products.enumerated() {
@@ -252,6 +254,7 @@ class ProductsListViewController: UIViewController, UITableViewDataSource, UITab
         
     }
     
+    //method that will return the index of a product from the product list by product code
     func getIndexByProductCode(productList: [Product],productCode : Int64) -> Int{
         for (index,product) in productList.enumerated() {
             if product.productCode == productCode {
@@ -261,6 +264,7 @@ class ProductsListViewController: UIViewController, UITableViewDataSource, UITab
         return -1
     }
     
+    //method to update the added to cart and selected amount fields in Product array from the cart in Core Data
     func updateAddedToCartFieldInProducts() {
         do {
                let request = Cart.fetchRequest() as NSFetchRequest<Cart>
@@ -278,6 +282,7 @@ class ProductsListViewController: UIViewController, UITableViewDataSource, UITab
                }
     }
     
+    //method to load the products from firebase
     func loadProductsFromFirebase() {
         var newProducts : [Product] = []
         let db = Firestore.firestore()
